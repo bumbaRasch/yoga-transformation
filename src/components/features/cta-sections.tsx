@@ -3,10 +3,13 @@
 import { motion } from "framer-motion"
 import { ArrowRight, Clock, Users, Trophy, Heart, Sparkles } from "lucide-react"
 import { Button } from "@/components/ui/button"
+import { useTranslations } from "@/contexts/language-context"
 import { ErrorBoundary } from "@/components/ui/error-boundary"
 
 // Mid-page CTA after benefits
 export function MidPageCTA() {
+  const t = useTranslations()
+  
   return (
     <ErrorBoundary>
       <motion.section
@@ -24,19 +27,18 @@ export function MidPageCTA() {
             viewport={{ once: true }}
           >
             <h3 className="text-2xl sm:text-3xl font-bold text-white mb-4">
-              Ready to Transform Your Life?
+              {t('cta.midPage.title')}
             </h3>
             <p className="text-purple-100 text-lg mb-6 max-w-2xl mx-auto">
-              Join thousands who have already discovered the power of our 14-day program. 
-              Your journey to wellness starts with a single step.
+              {t('cta.midPage.subtitle')}
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
               <Button size="lg" variant="secondary" className="min-w-48">
                 <Heart className="w-5 h-5" />
-                Start Free Preview
+                {t('cta.midPage.button')}
               </Button>
               <div className="text-purple-100 text-sm">
-                No commitment required
+                {t('cta.midPage.noCommitment')}
               </div>
             </div>
           </motion.div>
@@ -48,6 +50,8 @@ export function MidPageCTA() {
 
 // Urgency CTA after testimonials
 export function UrgencyCTA() {
+  const t = useTranslations()
+  
   return (
     <ErrorBoundary>
       <motion.section
@@ -66,39 +70,38 @@ export function UrgencyCTA() {
           >
             <div className="inline-flex items-center gap-2 bg-white/20 backdrop-blur rounded-full px-4 py-2 mb-6">
               <Clock className="w-4 h-4 text-white" />
-              <span className="text-white font-medium text-sm">Limited Time Offer</span>
+              <span className="text-white font-medium text-sm">{t('cta.urgency.subtitle')}</span>
             </div>
             
             <h3 className="text-3xl sm:text-4xl font-bold text-white mb-4">
-              Don&apos;t Wait - Transform Today!
+              {t('cta.urgency.title')}
             </h3>
             <p className="text-orange-100 text-lg mb-8 max-w-2xl mx-auto">
-              Special launch pricing ends soon. Start your transformation now and 
-              save 50% on all premium plans.
+              {t('cta.urgency.description')}
             </p>
             
             <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 mb-8">
               <div className="bg-white/10 backdrop-blur rounded-lg p-4">
                 <div className="text-2xl font-bold text-white mb-1">2,500+</div>
-                <div className="text-orange-100 text-sm">Success Stories</div>
+                <div className="text-orange-100 text-sm">{t('cta.urgency.stats.successStories')}</div>
               </div>
               <div className="bg-white/10 backdrop-blur rounded-lg p-4">
                 <div className="text-2xl font-bold text-white mb-1">94%</div>
-                <div className="text-orange-100 text-sm">Success Rate</div>
+                <div className="text-orange-100 text-sm">{t('cta.urgency.stats.successRate')}</div>
               </div>
               <div className="bg-white/10 backdrop-blur rounded-lg p-4">
                 <div className="text-2xl font-bold text-white mb-1">14 Days</div>
-                <div className="text-orange-100 text-sm">To Transform</div>
+                <div className="text-orange-100 text-sm">{t('cta.urgency.stats.daysToTransform')}</div>
               </div>
             </div>
             
             <Button size="xl" variant="secondary" className="min-w-64">
               <ArrowRight className="w-5 h-5" />
-              Claim Your 50% Discount
+              {t('cta.urgency.button')}
             </Button>
             
             <div className="mt-4 text-orange-100 text-sm">
-              🔥 Only 24 hours left at this price
+              {t('cta.urgency.timer')}
             </div>
           </motion.div>
         </div>
@@ -109,6 +112,8 @@ export function UrgencyCTA() {
 
 // Final CTA at bottom of page
 export function FinalCTA() {
+  const t = useTranslations()
+  
   return (
     <ErrorBoundary>
       <motion.section
@@ -129,20 +134,16 @@ export function FinalCTA() {
               <div className="inline-flex items-center gap-2 bg-purple-100 dark:bg-purple-900/30 rounded-full px-4 py-2 mb-6">
                 <Sparkles className="w-4 h-4 text-purple-600 dark:text-purple-400" />
                 <span className="text-purple-600 dark:text-purple-400 font-medium text-sm">
-                  Your Journey Starts Now
+                  {t('cta.final.badge')}
                 </span>
               </div>
               
               <h3 className="text-3xl sm:text-4xl font-bold text-white mb-6">
-                Transform Your Life in{' '}
-                <span className="bg-gradient-to-r from-purple-400 to-pink-400 bg-clip-text text-transparent">
-                  Just 14 Days
-                </span>
+                {t('cta.final.title')}
               </h3>
               
               <p className="text-gray-300 text-lg mb-8 max-w-3xl mx-auto leading-relaxed">
-                You&apos;ve seen the results, heard the stories, and learned about our proven method. 
-                The only question left is: Are you ready to become the next success story?
+                {t('cta.final.subtitle')}
               </p>
             </motion.div>
           </div>
@@ -159,9 +160,9 @@ export function FinalCTA() {
               <div className="inline-flex items-center justify-center w-16 h-16 bg-gradient-to-r from-purple-500 to-pink-500 rounded-full text-white mb-4">
                 <Trophy className="w-8 h-8" />
               </div>
-              <h4 className="text-xl font-semibold text-white mb-2">Proven Results</h4>
+              <h4 className="text-xl font-semibold text-white mb-2">{t('cta.final.features.proven.title')}</h4>
               <p className="text-gray-400">
-                94% of students see significant improvement within 14 days
+                {t('cta.final.features.proven.description')}
               </p>
             </div>
             
@@ -169,9 +170,9 @@ export function FinalCTA() {
               <div className="inline-flex items-center justify-center w-16 h-16 bg-gradient-to-r from-blue-500 to-purple-500 rounded-full text-white mb-4">
                 <Users className="w-8 h-8" />
               </div>
-              <h4 className="text-xl font-semibold text-white mb-2">Expert Guidance</h4>
+              <h4 className="text-xl font-semibold text-white mb-2">{t('cta.final.features.expert.title')}</h4>
               <p className="text-gray-400">
-                Learn from Maya Chen, certified instructor with 12 years experience
+                {t('cta.final.features.expert.description')}
               </p>
             </div>
             
@@ -179,9 +180,9 @@ export function FinalCTA() {
               <div className="inline-flex items-center justify-center w-16 h-16 bg-gradient-to-r from-green-500 to-blue-500 rounded-full text-white mb-4">
                 <Heart className="w-8 h-8" />
               </div>
-              <h4 className="text-xl font-semibold text-white mb-2">Risk-Free</h4>
+              <h4 className="text-xl font-semibold text-white mb-2">{t('cta.final.features.riskFree.title')}</h4>
               <p className="text-gray-400">
-                60-day money-back guarantee. Transform or get your money back
+                {t('cta.final.features.riskFree.description')}
               </p>
             </div>
           </motion.div>
@@ -197,18 +198,18 @@ export function FinalCTA() {
             <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-6">
               <Button size="xl" className="min-w-64 bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700">
                 <ArrowRight className="w-5 h-5" />
-                Start My Transformation
+                {t('cta.final.button')}
               </Button>
               <Button size="xl" variant="outline" className="min-w-48 border-white text-white hover:bg-white hover:text-gray-900">
                 <Users className="w-5 h-5" />
-                View Success Stories
+                {t('cta.final.buttonSecondary')}
               </Button>
             </div>
             
             <div className="text-gray-400 text-sm space-y-1">
-              <div>✓ Instant access after purchase</div>
-              <div>✓ All devices supported</div>
-              <div>✓ Lifetime access included</div>
+              <div>{t('cta.final.checklist.instantAccess')}</div>
+              <div>{t('cta.final.checklist.allDevices')}</div>
+              <div>{t('cta.final.checklist.lifetimeAccess')}</div>
             </div>
           </motion.div>
         </div>

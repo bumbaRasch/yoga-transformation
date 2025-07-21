@@ -4,6 +4,7 @@ import React from "react"
 import { motion } from "framer-motion"
 import { Dumbbell, Move, Brain, Scale, Zap, Moon } from "lucide-react"
 import { benefitsData, getBenefitIcon } from "@/lib/benefits-data"
+import { useTranslations } from "@/contexts/language-context"
 import { ErrorBoundary } from "@/components/ui/error-boundary"
 
 // Icon component mapping
@@ -23,6 +24,7 @@ interface BenefitCardProps {
 }
 
 const BenefitCard = React.memo(function BenefitCard({ benefit, index }: BenefitCardProps) {
+  const t = useTranslations()
   const IconComponent = iconComponents[getBenefitIcon(benefit.icon) as keyof typeof iconComponents]
 
   return (
@@ -60,10 +62,10 @@ const BenefitCard = React.memo(function BenefitCard({ benefit, index }: BenefitC
       {/* Content */}
       <div className="relative z-10">
         <h3 className="text-xl font-semibold text-gray-900 dark:text-white mb-3">
-          {benefit.title}
+          {t(`benefits.${benefit.id}.title`)}
         </h3>
         <p className="text-gray-600 dark:text-gray-300 text-sm leading-relaxed mb-4">
-          {benefit.description}
+          {t(`benefits.${benefit.id}.description`)}
         </p>
 
         {/* Stats */}
@@ -100,6 +102,8 @@ const BenefitCard = React.memo(function BenefitCard({ benefit, index }: BenefitC
 })
 
 function BenefitsContent() {
+  const t = useTranslations()
+  
   return (
     <section className="py-16 bg-gray-50 dark:bg-gray-900">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -109,28 +113,13 @@ function BenefitsContent() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
-        >
-          <motion.div
-            className="inline-block px-4 py-2 bg-purple-100 dark:bg-purple-900/30 rounded-full mb-4"
-            initial={{ scale: 0.8 }}
-            animate={{ scale: 1 }}
-            transition={{ delay: 0.2, type: "spring", stiffness: 200 }}
-          >
-            <span className="text-purple-600 dark:text-purple-400 text-sm font-medium">
-              Transform Your Life
-            </span>
-          </motion.div>
-          
+        >          
           <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 dark:text-white mb-4">
-            Why Choose Our{' '}
-            <span className="bg-gradient-to-r from-purple-600 to-pink-600 bg-clip-text text-transparent">
-              14-Day Journey
-            </span>
+            {t('benefits.title')}
           </h2>
           
           <p className="text-lg text-gray-600 dark:text-gray-300 max-w-2xl mx-auto">
-            Experience comprehensive transformation through scientifically-backed practices. 
-            Join thousands who have already transformed their lives.
+            {t('benefits.subtitle')}
           </p>
         </motion.div>
 

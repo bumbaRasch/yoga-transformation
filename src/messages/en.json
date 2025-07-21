@@ -1,0 +1,447 @@
+{
+  "navigation": {
+    "benefits": "Benefits",
+    "timeline": "Timeline", 
+    "instructor": "Instructor",
+    "testimonials": "Testimonials",
+    "pricing": "Pricing",
+    "getStarted": "Get Started",
+    "languageSwitch": "Switch language"
+  },
+  "hero": {
+    "greeting": "Ready for transformation?",
+    "title": "14-Day Yoga",
+    "titleSecond": "Transformation", 
+    "subtitle": "Join thousands on a journey to transform your mind and body. Expert-guided sessions, personalized progressions, and mindful practices designed for every level.",
+    "ctaPrimary": "Start Your Journey",
+    "ctaSecondary": "Watch Preview",
+    "stats": {
+      "days": "14 Days",
+      "daysLabel": "Transform",
+      "levels": "All Levels", 
+      "levelsLabel": "Welcome",
+      "access": "Lifetime",
+      "accessLabel": "Access"
+    }
+  },
+  "benefits": {
+    "title": "Why 14 Days Will Change Everything",
+    "subtitle": "Science-backed benefits that compound daily",
+    "strength": {
+      "title": "Build Strength",
+      "description": "Develop functional strength through progressive poses and flows that target your entire body."
+    },
+    "flexibility": {
+      "title": "Increase Flexibility",
+      "description": "Unlock your body's natural range of motion with targeted stretches and mobility work."
+    },
+    "mindfulness": {
+      "title": "Mental Clarity",
+      "description": "Cultivate mindfulness and reduce stress through meditation and breathwork practices."
+    },
+    "balance": {
+      "title": "Better Balance",
+      "description": "Improve physical and mental balance through focused stability and coordination exercises."
+    },
+    "energy": {
+      "title": "Boost Energy",
+      "description": "Feel more energized throughout your day with invigorating morning and evening flows."
+    },
+    "sleep": {
+      "title": "Better Sleep",
+      "description": "Improve sleep quality with restorative poses and evening relaxation sequences."
+    }
+  },
+  "timeline": {
+    "title": "Your 14-Day Transformation Journey",
+    "subtitle": "Each day builds upon the last, creating lasting change",
+    "progress": "Day {{current}} of {{total}}",
+    "completed": "Completed",
+    "current": "Current Day",
+    "remaining": "Remaining",
+    "upcoming": "Coming Up",
+    "progressTitle": "Your Progress",
+    "startPractice": "Start Practice",
+    "preview": "Preview",
+    "locked": "Locked",
+    "difficulty": {
+      "beginner": "Beginner",
+      "intermediate": "Intermediate", 
+      "advanced": "Advanced"
+    },
+    "days": {
+      "day1": {
+        "title": "Foundation & Breath",
+        "description": "Learn basic poses and breathing techniques. Start your transformation with mindful awareness."
+      },
+      "day2": {
+        "title": "Strength Building",
+        "description": "Build core strength with warrior poses and planks. Feel your body getting stronger."
+      },
+      "day3": {
+        "title": "Flexibility Focus",
+        "description": "Deep stretches and hip openers. Release tension and increase mobility."
+      },
+      "day4": {
+        "title": "Balance & Stability",
+        "description": "Tree pose and single-leg stands. Develop physical and mental balance."
+      },
+      "day5": {
+        "title": "Flow Sequence",
+        "description": "Connect breath with movement in sun salutation variations."
+      },
+      "day6": {
+        "title": "Power Practice",
+        "description": "Challenge yourself with stronger poses and longer holds."
+      },
+      "day7": {
+        "title": "Reflection & Rest",
+        "description": "Gentle restorative poses and meditation. Honor your practice."
+      },
+      "day8": {
+        "title": "Advanced Poses",
+        "description": "Introduction to arm balances and deeper backbends."
+      },
+      "day9": {
+        "title": "Mindful Movement",
+        "description": "Slow, intentional practice focusing on alignment and awareness."
+      },
+      "day10": {
+        "title": "Heart Opening",
+        "description": "Chest and shoulder opening poses to release emotional tension."
+      },
+      "day11": {
+        "title": "Twisting & Detox",
+        "description": "Spinal twists to cleanse the body and improve digestion."
+      },
+      "day12": {
+        "title": "Integration Practice",
+        "description": "Combine all learned elements in flowing sequences."
+      },
+      "day13": {
+        "title": "Peak Challenge",
+        "description": "Advanced poses and challenging sequences. Test your limits."
+      },
+      "day14": {
+        "title": "Celebration & Gratitude",
+        "description": "Complete your transformation journey with joy and gratitude practice."
+      }
+    }
+  },
+  "instructor": {
+    "title": "Meet Your Guide",
+    "headerTitle": "Learn from a Certified Expert",
+    "name": "Maya Chen",
+    "credentials": "Lead Yoga Instructor & Wellness Expert",
+    "quote": "Yoga is not about perfecting poses—it's about discovering the perfect version of yourself that already exists within.",
+    "bio": "Maya has dedicated over a decade to the transformative practice of yoga, specializing in therapeutic approaches that heal both body and mind. Her unique methodology combines traditional Hatha and Vinyasa flows with modern wellness science.",
+    "experience": "With 12 years of teaching experience across 3 continents, Maya has helped thousands of students discover their inner strength and achieve lasting transformation.",
+    "experienceLabel": "Experience",
+    "experienceYears": "12+ Years",
+    "studentsLabel": "Students",
+    "studentsHelped": "2.5K+ students helped",
+    "cta": "Start Your Journey with Maya",
+    "specializationsTitle": "Specializations",
+    "specializations": {
+      "therapeutic": "Therapeutic Yoga",
+      "mindfulness": "Mindfulness Meditation", 
+      "breathwork": "Breathwork & Pranayama",
+      "stress": "Stress Reduction",
+      "flexibility": "Flexibility Training",
+      "connection": "Mind-Body Connection"
+    },
+    "achievementsTitle": "Recognition & Achievements",
+    "achievements": {
+      "top-instructor": {
+        "title": "Top Yoga Instructor 2023",
+        "description": "Recognized by Yoga Alliance for outstanding teaching and student transformation"
+      },
+      "wellness-expert": {
+        "title": "Wellness Conference Speaker",
+        "description": "Featured speaker at International Wellness Summit on therapeutic yoga"
+      },
+      "published-author": {
+        "title": "Published Author",
+        "description": "Co-authored \"Mindful Movement: A Guide to Therapeutic Yoga Practice\""
+      },
+      "community-impact": {
+        "title": "Community Impact Award",
+        "description": "Honored for bringing yoga to underserved communities worldwide"
+      }
+    }
+  },
+  "testimonials": {
+    "title": "Stories of Transformation",
+    "subtitle": "Join thousands who have transformed their lives in just 14 days. Here are their authentic stories and real results.",
+    "badge": "Real Results",
+    "viewAll": "View All {{count}} Reviews",
+    "verified": "Verified Student",
+    "featured": "Featured",
+    "transformation": "{{timeframe}} Transformation",
+    "before": "Before: ",
+    "after": "After: ",
+    "age": "Age {{age}}",
+    "stats": {
+      "averageRating": "Average Rating",
+      "successRate": "Success Rate",
+      "reviews": "Reviews",
+      "recommend": "Recommend",
+      "improvementTitle": "Average Improvement by Category",
+      "studentsLabel": "{{count}} students"
+    }
+  },
+  "gallery": {
+    "title": "Your Transformation Journey",
+    "subtitle": "Experience the perfect blend of movement, mindfulness, and personal growth",
+    "viewAll": "View All Poses",
+    "optimized": "Images optimized with WebP/AVIF for fast loading",
+    "poses": {
+      "balance": {
+        "title": "Balance & Focus",
+        "description": "Develop stability and mental clarity with foundational poses"
+      },
+      "strength": {
+        "title": "Strength & Power",
+        "description": "Build physical strength and inner confidence through dynamic flows"
+      },
+      "mindfulness": {
+        "title": "Peace & Mindfulness",
+        "description": "Find inner peace and mental clarity through guided meditation"
+      },
+      "flexibility": {
+        "title": "Flexibility & Flow",
+        "description": "Increase flexibility and create graceful movement patterns"
+      }
+    }
+  },
+  "pricing": {
+    "title": "Choose Your Transformation",
+    "subtitle": "Invest in yourself with our risk-free program",
+    "monthlyBilling": "Monthly",
+    "annualBilling": "Annual", 
+    "saveAmount": "Save {{amount}}%",
+    "cta": "Start Your Journey",
+    "guarantee": "30-day money-back guarantee",
+    "billingPeriods": {
+      "year": "year",
+      "month": "month"
+    },
+    "savingsNote": "Save {{savings}}% vs monthly billing",
+    "keyBenefits": "Key Benefits:",
+    "limitedTimeOffer": "Limited Time Offer",
+    "chooseYour": "Choose Your",
+    "transformationPlan": "Transformation Plan",
+    "subtitle2": "Start your 14-day journey today. All plans include lifetime access and are backed by our success guarantee.",
+    "promoMessage": "50% OFF - Limited Time Only!",
+    "socialProof": "Join 2,500+ Happy Students",
+    "testimonial": {
+      "quote": "This program exceeded all my expectations. The results speak for themselves!",
+      "author": "- Sarah M."
+    },
+    "plans": {
+      "basic": {
+        "name": "Yoga Essentials",
+        "description": "Perfect for beginners starting their yoga journey",
+        "cta": "Start Your Journey",
+        "features": [
+          "14-day progressive program",
+          "HD video instructions",
+          "Downloadable pose guides",
+          "Basic breathing exercises",
+          "Email support",
+          "Mobile & desktop access",
+          "New content monthly"
+        ],
+        "benefits": [
+          "Build flexibility",
+          "Reduce stress",
+          "Improve posture"
+        ]
+      },
+      "premium": {
+        "name": "Complete Wellness",
+        "description": "Everything you need for lasting transformation",
+        "badge": "Most Popular",
+        "cta": "Get Complete Package",
+        "features": [
+          "Everything in Yoga Essentials",
+          "30+ advanced sessions library",
+          "Personalized meal planning guide",
+          "Meditation & mindfulness series",
+          "Live monthly Q&A sessions",
+          "Private community access",
+          "Priority email support",
+          "Progress tracking tools",
+          "Weekly new content"
+        ],
+        "benefits": [
+          "Complete transformation",
+          "Long-term wellness",
+          "Community support",
+          "Expert guidance"
+        ]
+      },
+      "vip": {
+        "name": "VIP Coaching",
+        "description": "1-on-1 guidance for maximum results",
+        "badge": "Best Value",
+        "cta": "Book VIP Experience",
+        "features": [
+          "Everything in Complete Wellness",
+          "Monthly 1-on-1 coaching calls",
+          "Custom practice plan creation",
+          "Real-time form correction",
+          "WhatsApp support access",
+          "Personalized nutrition advice",
+          "Goal setting & accountability",
+          "Priority feature requests",
+          "Unlimited email support"
+        ],
+        "benefits": [
+          "Personal attention",
+          "Faster results",
+          "Expert accountability",
+          "Lifetime guidance"
+        ]
+      }
+    },
+    "additionalFeatures": {
+      "moneyBackGuarantee": {
+        "title": "60-Day Money-Back Guarantee",
+        "description": "Try risk-free. If you're not completely satisfied, get a full refund."
+      },
+      "lifetimeAccess": {
+        "title": "Lifetime Access",
+        "description": "Keep all materials forever. Practice at your own pace, anytime."
+      },
+      "allDevicesSupported": {
+        "title": "All Devices Supported",
+        "description": "Access on mobile, tablet, or desktop. Download for offline use."
+      },
+      "supportiveCommunity": {
+        "title": "Supportive Community",
+        "description": "Join thousands of practitioners on the same transformation journey."
+      }
+    }
+  },
+  "cta": {
+    "midPage": {
+      "title": "Ready to Transform Your Life?",
+      "subtitle": "Join thousands who have already discovered the power of our 14-day program. Your journey to wellness starts with a single step.",
+      "button": "Start Free Preview",
+      "noCommitment": "No commitment required"
+    },
+    "urgency": {
+      "title": "Don't Wait - Transform Today!",
+      "subtitle": "Limited Time Offer",
+      "description": "Special launch pricing ends soon. Start your transformation now and save 50% on all premium plans.",
+      "button": "Claim Your 50% Discount",
+      "timer": "🔥 Only 24 hours left at this price",
+      "stats": {
+        "successStories": "Success Stories",
+        "successRate": "Success Rate", 
+        "daysToTransform": "To Transform"
+      }
+    },
+    "final": {
+      "title": "Transform Your Life in Just 14 Days",
+      "subtitle": "You've seen the results, heard the stories, and learned about our proven method. The only question left is: Are you ready to become the next success story?",
+      "badge": "Your Journey Starts Now",
+      "button": "Start My Transformation",
+      "buttonSecondary": "View Success Stories",
+      "features": {
+        "proven": {
+          "title": "Proven Results",
+          "description": "94% of students see significant improvement within 14 days"
+        },
+        "expert": {
+          "title": "Expert Guidance", 
+          "description": "Learn from Maya Chen, certified instructor with 12 years experience"
+        },
+        "riskFree": {
+          "title": "Risk-Free",
+          "description": "60-day money-back guarantee. Transform or get your money back"
+        }
+      },
+      "checklist": {
+        "instantAccess": "✓ Instant access after purchase",
+        "allDevices": "✓ All devices supported",
+        "lifetimeAccess": "✓ Lifetime access included"
+      }
+    }
+  },
+  "footer": {
+    "tagline": "Transform your body, calm your mind, elevate your life.",
+    "newsletter": {
+      "title": "Stay Connected with Your Yoga Journey",
+      "subtitle": "Get weekly wellness tips, new pose tutorials, and exclusive content delivered to your inbox.",
+      "placeholder": "Enter your email address",
+      "button": "Join Our Community",
+      "success": "Thank you for subscribing!",
+      "privacy": "We respect your privacy. Unsubscribe at any time."
+    },
+    "contact": {
+      "title": "Get in Touch",
+      "email": "hello@yogatransformation.com",
+      "phone": "+1 (555) 123-4567",
+      "address": "123 Wellness Street, Mindful City, MC 12345"
+    },
+    "social": {
+      "title": "Follow Us",
+      "subtitle": "Join our community for daily inspiration"
+    },
+    "copyright": "© {{year}} Yoga Transformation. All rights reserved."
+  },
+  "common": {
+    "loading": "Loading...",
+    "error": "Something went wrong",
+    "close": "Close",
+    "backToTop": "Back to top"
+  },
+  "pwa": {
+    "installTitle": "Install App",
+    "installSubtitle": "Quick access & offline support",
+    "installDescription": "Add to your home screen for quick access",
+    "installButton": "Install Now",
+    "dismissLabel": "Dismiss install prompt",
+    "ios": {
+      "title": "Install on iOS",
+      "step1": "Tap the <strong>Share</strong> button in Safari",
+      "step2": "Scroll down and tap <strong>\"Add to Home Screen\"</strong>",
+      "step3": "Tap <strong>\"Add\"</strong> to install the app"
+    }
+  },
+  "accessibility": {
+    "skipToContent": "Skip to main content",
+    "skipToBenefits": "Skip to benefits",
+    "skipToJourney": "Skip to your journey",
+    "skipToReviews": "Skip to reviews",
+    "skipToPricing": "Skip to pricing",
+    "skipNavigation": "Skip navigation links",
+    "toggleDarkMode": "Toggle dark mode",
+    "toggleMenu": "Toggle menu",
+    "selectLanguage": "Select language",
+    "languageOptions": "Language options",
+    "scrollToTop": "Scroll to top",
+    "readingProgress": "Reading progress",
+    "closeVideo": "Close video",
+    "playVideo": "Play video",
+    "pauseVideo": "Pause video",
+    "videoProgress": "Video progress",
+    "muteVideo": "Mute",
+    "unmuteVideo": "Unmute"
+  },
+  "errors": {
+    "boundary": {
+      "title": "Something went wrong",
+      "developmentTitle": "Development Error",
+      "description": "We apologize for the inconvenience. Please try again or refresh the page.",
+      "developmentDescription": "Check the console for detailed error information.",
+      "tryAgain": "Try Again",
+      "refreshPage": "Refresh Page",
+      "retrying": "Retrying...",
+      "contactSupport": "If the problem persists, please contact support",
+      "reportError": "Report this error"
+    }
+  }
+}

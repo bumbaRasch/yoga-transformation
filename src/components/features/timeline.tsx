@@ -7,6 +7,7 @@ import { Button } from "@/components/ui/button"
 import { timelineData, getDifficultyColor, getDurationText } from "@/lib/timeline-data"
 import { TimelineDay } from "@/types"
 import { useTimeline } from "@/hooks/useTimeline"
+import { useTranslations } from "@/contexts/language-context"
 import { ErrorBoundary } from "@/components/ui/error-boundary"
 import { getFocusClasses } from "@/lib/focus-styles"
 
@@ -34,6 +35,7 @@ const TimelineDayCard = React.memo(function TimelineDayCard({
   isAccessible,
   onDayClick
 }: TimelineDayCardProps) {
+  const t = useTranslations()
   return (
     <motion.div
       key={day.id}
@@ -100,13 +102,13 @@ const TimelineDayCard = React.memo(function TimelineDayCard({
               id={`day-${day.id}-title`}
               className="text-xl font-semibold text-gray-900 dark:text-white mb-2"
             >
-              {day.title}
+              {t(`timeline.days.day${day.id}.title`)}
             </h3>
             <p 
               id={`day-${day.id}-description`}
               className="text-gray-600 dark:text-gray-300 text-sm leading-relaxed"
             >
-              {day.description}
+              {t(`timeline.days.day${day.id}.description`)}
             </p>
           </div>
 
@@ -120,7 +122,7 @@ const TimelineDayCard = React.memo(function TimelineDayCard({
               px-2 py-1 rounded-full text-xs font-medium
               ${getDifficultyColor(day.difficulty)}
             `}>
-              {day.difficulty}
+              {t(`timeline.difficulty.${day.difficulty}`)}
             </div>
           </div>
 
@@ -136,22 +138,22 @@ const TimelineDayCard = React.memo(function TimelineDayCard({
             {isCompleted(day) ? (
               <>
                 <CheckCircle className="w-4 h-4" />
-                Completed
+                {t('timeline.completed')}
               </>
             ) : isCurrent(day) ? (
               <>
                 <Play className="w-4 h-4" />
-                Start Practice
+                {t('timeline.startPractice')}
               </>
             ) : isAccessible(day) ? (
               <>
                 <Calendar className="w-4 h-4" />
-                Preview
+                {t('timeline.preview')}
               </>
             ) : (
               <>
                 <Lock className="w-4 h-4" />
-                Locked
+                {t('timeline.locked')}
               </>
             )}
           </Button>
@@ -174,6 +176,8 @@ const TimelineDayCard = React.memo(function TimelineDayCard({
 })
 
 function TimelineContent({ currentDay = 1, completedDays = [], onDayClick, className }: TimelineProps) {
+  const t = useTranslations()
+  
   // Validate props
   if (currentDay < 1 || currentDay > 14) {
     throw new Error(`Invalid currentDay: ${currentDay}. Must be between 1 and 14.`)
@@ -199,11 +203,10 @@ function TimelineContent({ currentDay = 1, completedDays = [], onDayClick, class
           transition={{ duration: 0.6 }}
         >
           <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 dark:text-white mb-4">
-            Your 14-Day Journey
+            {t('timeline.title')}
           </h2>
           <p className="text-lg text-gray-600 dark:text-gray-300 max-w-2xl mx-auto">
-            Follow the progressive path designed to transform your practice and mindset. 
-            Each day builds upon the previous, creating sustainable change.
+            {t('timeline.subtitle')}
           </p>
         </motion.div>
 
@@ -262,7 +265,7 @@ function TimelineContent({ currentDay = 1, completedDays = [], onDayClick, class
             aria-label="Progress summary"
           >
             <h3 className="text-lg font-semibold text-gray-900 dark:text-white mb-4">
-              Your Progress
+              {t('timeline.progressTitle')}
             </h3>
             <div className="grid grid-cols-3 gap-4 text-center">
               <div>
@@ -272,7 +275,7 @@ function TimelineContent({ currentDay = 1, completedDays = [], onDayClick, class
                 >
                   {progressStats.currentDay}
                 </div>
-                <div className="text-sm text-gray-600 dark:text-gray-400">Current Day</div>
+                <div className="text-sm text-gray-600 dark:text-gray-400">{t('timeline.current')}</div>
               </div>
               <div>
                 <div 
@@ -281,7 +284,7 @@ function TimelineContent({ currentDay = 1, completedDays = [], onDayClick, class
                 >
                   {progressStats.completed}
                 </div>
-                <div className="text-sm text-gray-600 dark:text-gray-400">Completed</div>
+                <div className="text-sm text-gray-600 dark:text-gray-400">{t('timeline.completed')}</div>
               </div>
               <div>
                 <div 
@@ -290,7 +293,7 @@ function TimelineContent({ currentDay = 1, completedDays = [], onDayClick, class
                 >
                   {progressStats.remaining}
                 </div>
-                <div className="text-sm text-gray-600 dark:text-gray-400">Remaining</div>
+                <div className="text-sm text-gray-600 dark:text-gray-400">{t('timeline.remaining')}</div>
               </div>
             </div>
           </div>

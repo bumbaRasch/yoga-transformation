@@ -7,6 +7,7 @@ import { Button } from "@/components/ui/button"
 import { PricingToggle } from "@/components/ui/pricing-toggle"
 import { pricingPlans, additionalFeatures, formatPrice, calculateSavings, getPlanPrice, calculateAnnualSavings } from "@/lib/pricing-data"
 import { ErrorBoundary } from "@/components/ui/error-boundary"
+import { useTranslations } from "@/contexts/language-context"
 
 const featureIcons = {
   'shield-check': ShieldCheck,
@@ -22,9 +23,20 @@ interface PricingCardProps {
 }
 
 function PricingCard({ plan, index, isAnnual }: PricingCardProps) {
+  const t = useTranslations()
   const currentPrice = getPlanPrice(plan, isAnnual)
   const savings = currentPrice.originalPrice ? calculateSavings(currentPrice.originalPrice, currentPrice.amount) : 0
   const annualSavings = calculateAnnualSavings(plan)
+
+  // Error handling for translation keys
+  const safeTranslate = (key: string, fallback: string = '', variables?: Record<string, string>) => {
+    try {
+      return t(key, variables) || fallback
+    } catch (error) {
+      console.warn(`Translation error for key: ${key}`, error)
+      return fallback
+    }
+  }
 
   return (
     <motion.div
@@ -48,17 +60,17 @@ function PricingCard({ plan, index, isAnnual }: PricingCardProps) {
           absolute -top-4 left-1/2 transform -translate-x-1/2 px-6 py-2 rounded-full text-sm font-semibold text-white
           ${plan.popular ? 'bg-gradient-to-r from-purple-500 to-pink-500' : 'bg-gradient-to-r from-green-500 to-blue-500'}
         `}>
-          {plan.badge}
+          {safeTranslate(`pricing.plans.${plan.id}.badge`, plan.badge)}
         </div>
       )}
 
       {/* Header */}
       <div className="text-center mb-8">
         <h3 className="text-2xl font-bold text-gray-900 dark:text-white mb-2">
-          {plan.name}
+          {safeTranslate(`pricing.plans.${plan.id}.name`, plan.name)}
         </h3>
         <p className="text-gray-600 dark:text-gray-300 text-sm mb-6">
-          {plan.description}
+          {safeTranslate(`pricing.plans.${plan.id}.description`, plan.description)}
         </p>
 
         {/* Pricing */}
@@ -69,7 +81,7 @@ function PricingCard({ plan, index, isAnnual }: PricingCardProps) {
                 {formatPrice(currentPrice.originalPrice, currentPrice.currency)}
               </span>
               <span className="bg-red-100 text-red-800 text-xs px-2 py-1 rounded-full font-medium">
-                Save {savings}%
+                {safeTranslate('pricing.saveAmount', `Save ${savings}%`, { amount: savings.toString() })}
               </span>
             </div>
           )}
@@ -80,11 +92,11 @@ function PricingCard({ plan, index, isAnnual }: PricingCardProps) {
             `}>
               {formatPrice(currentPrice.amount, currentPrice.currency)}
             </span>
-            <span className="text-gray-500">/{isAnnual ? 'year' : 'month'}</span>
+            <span className="text-gray-500">/{safeTranslate(`pricing.billingPeriods.${isAnnual ? 'year' : 'month'}`, isAnnual ? 'year' : 'month')}</span>
           </div>
           {isAnnual && annualSavings > 0 && (
             <p className="text-sm text-green-600 dark:text-green-400 font-medium">
-              Save {annualSavings}% vs monthly billing
+              {safeTranslate('pricing.savingsNote', `Save ${annualSavings}% vs monthly billing`, { savings: annualSavings.toString() })}
             </p>
           )}
         </div>
@@ -92,7 +104,7 @@ function PricingCard({ plan, index, isAnnual }: PricingCardProps) {
 
       {/* Features */}
       <div className="space-y-4 mb-8">
-        {plan.features.map((feature, i) => (
+        {(plan.features || []).map((_, i) => (
           <motion.div
             key={i}
             className="flex items-start gap-3"
@@ -102,7 +114,7 @@ function PricingCard({ plan, index, isAnnual }: PricingCardProps) {
           >
             <Check className="w-5 h-5 text-green-500 flex-shrink-0 mt-0.5" />
             <span className="text-gray-700 dark:text-gray-300 text-sm">
-              {feature}
+              {safeTranslate(`pricing.plans.${plan.id}.features.${i}`, plan.features[i])}
             </span>
           </motion.div>
         ))}
@@ -111,15 +123,15 @@ function PricingCard({ plan, index, isAnnual }: PricingCardProps) {
       {/* Benefits */}
       <div className="mb-8">
         <h4 className="font-semibold text-gray-900 dark:text-white mb-3 text-sm">
-          Key Benefits:
+          {safeTranslate('pricing.keyBenefits', 'Key Benefits:')}
         </h4>
         <div className="flex flex-wrap gap-2">
-          {plan.benefits.map((benefit, i) => (
+          {(plan.benefits || []).map((_, i) => (
             <span
               key={i}
               className="px-3 py-1 bg-purple-100 dark:bg-purple-900/30 text-purple-700 dark:text-purple-300 rounded-full text-xs font-medium"
             >
-              {benefit}
+              {safeTranslate(`pricing.plans.${plan.id}.benefits.${i}`, plan.benefits[i])}
             </span>
           ))}
         </div>
@@ -137,7 +149,7 @@ function PricingCard({ plan, index, isAnnual }: PricingCardProps) {
         `}
         variant={plan.popular ? "default" : "outline"}
       >
-        {plan.cta}
+        {safeTranslate(`pricing.plans.${plan.id}.cta`, plan.cta)}
       </Button>
 
       {/* Guarantee */}
@@ -145,7 +157,7 @@ function PricingCard({ plan, index, isAnnual }: PricingCardProps) {
         <div className="mt-4 text-center">
           <div className="flex items-center justify-center gap-2 text-sm text-green-600 dark:text-green-400">
             <ShieldCheck className="w-4 h-4" />
-            <span>60-Day Money-Back Guarantee</span>
+            <span>{safeTranslate('pricing.additionalFeatures.moneyBackGuarantee.title', '60-Day Money-Back Guarantee')}</span>
           </div>
         </div>
       )}
@@ -155,6 +167,17 @@ function PricingCard({ plan, index, isAnnual }: PricingCardProps) {
 
 function PricingContent() {
   const [isAnnual, setIsAnnual] = useState(false)
+  const t = useTranslations()
+
+  // Error handling for translation keys
+  const safeTranslate = (key: string, fallback: string = '', variables?: Record<string, string>) => {
+    try {
+      return t(key, variables) || fallback
+    } catch (error) {
+      console.warn(`Translation error for key: ${key}`, error)
+      return fallback
+    }
+  }
 
   return (
     <section className="py-16 bg-white dark:bg-gray-900">
@@ -173,20 +196,19 @@ function PricingContent() {
             transition={{ delay: 0.2, type: "spring", stiffness: 200 }}
           >
             <span className="text-orange-600 dark:text-orange-400 text-sm font-medium">
-              Limited Time Offer
+              {safeTranslate('pricing.limitedTimeOffer', 'Limited Time Offer')}
             </span>
           </motion.div>
           
           <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 dark:text-white mb-4">
-            Choose Your{' '}
+            {safeTranslate('pricing.chooseYour', 'Choose Your')}{' '}
             <span className="bg-gradient-to-r from-orange-600 to-red-600 bg-clip-text text-transparent">
-              Transformation Plan
+              {safeTranslate('pricing.transformationPlan', 'Transformation Plan')}
             </span>
           </h2>
           
           <p className="text-lg text-gray-600 dark:text-gray-300 max-w-2xl mx-auto">
-            Start your 14-day journey today. All plans include lifetime access 
-            and are backed by our success guarantee.
+            {safeTranslate('pricing.subtitle2', 'Start your 14-day journey today. All plans include lifetime access and are backed by our success guarantee.')}
           </p>
 
           {/* Special Offer Banner */}
@@ -197,7 +219,7 @@ function PricingContent() {
             transition={{ delay: 0.5, type: "spring" }}
           >
             <Zap className="w-5 h-5" />
-            <span className="font-semibold">50% OFF - Limited Time Only!</span>
+            <span className="font-semibold">{safeTranslate('pricing.promoMessage', '50% OFF - Limited Time Only!')}</span>
           </motion.div>
         </motion.div>
 
@@ -244,10 +266,10 @@ function PricingContent() {
                   <IconComponent className="w-6 h-6" />
                 </div>
                 <h4 className="font-semibold text-gray-900 dark:text-white mb-2">
-                  {feature.title}
+                  {safeTranslate(`pricing.additionalFeatures.${Object.keys(additionalFeatures)[index]}.title`, feature.title)}
                 </h4>
                 <p className="text-sm text-gray-600 dark:text-gray-300">
-                  {feature.description}
+                  {safeTranslate(`pricing.additionalFeatures.${Object.keys(additionalFeatures)[index]}.description`, feature.description)}
                 </p>
               </motion.div>
             )
@@ -267,11 +289,11 @@ function PricingContent() {
             ))}
           </div>
           <p className="text-lg font-semibold text-gray-900 dark:text-white mb-2">
-            Join 2,500+ Happy Students
+            {safeTranslate('pricing.socialProof', 'Join 2,500+ Happy Students')}
           </p>
           <p className="text-gray-600 dark:text-gray-300">
-            &ldquo;This program exceeded all my expectations. The results speak for themselves!&rdquo; 
-            <span className="font-medium">- Sarah M.</span>
+            &ldquo;{safeTranslate('pricing.testimonial.quote', 'This program exceeded all my expectations. The results speak for themselves!')}&rdquo; 
+            <span className="font-medium">{safeTranslate('pricing.testimonial.author', '- Sarah M.')}</span>
           </p>
         </motion.div>
       </div>

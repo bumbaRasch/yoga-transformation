@@ -1,0 +1,447 @@
+{
+  "navigation": {
+    "benefits": "Beneficios",
+    "timeline": "Cronología",
+    "instructor": "Instructora",
+    "testimonials": "Testimonios",
+    "pricing": "Precios",
+    "getStarted": "Comenzar",
+    "languageSwitch": "Cambiar idioma"
+  },
+  "hero": {
+    "greeting": "¿Listo para la transformación?",
+    "title": "Yoga de 14 Días",
+    "titleSecond": "Transformación",
+    "subtitle": "Únete a miles en un viaje para transformar tu mente y cuerpo. Sesiones guiadas por expertos, progresiones personalizadas y prácticas conscientes diseñadas para todos los niveles.",
+    "ctaPrimary": "Comienza tu Viaje",
+    "ctaSecondary": "Ver Vista Previa",
+    "stats": {
+      "days": "14 Días",
+      "daysLabel": "Transformar",
+      "levels": "Todos los Niveles",
+      "levelsLabel": "Bienvenidos",
+      "access": "De por Vida",
+      "accessLabel": "Acceso"
+    }
+  },
+  "benefits": {
+    "title": "Por qué 14 Días lo Cambiará Todo",
+    "subtitle": "Beneficios respaldados por la ciencia que se componen diariamente",
+    "strength": {
+      "title": "Desarrollar Fuerza",
+      "description": "Desarrolla fuerza funcional a través de posturas progresivas y flujos que trabajan todo tu cuerpo."
+    },
+    "flexibility": {
+      "title": "Aumentar Flexibilidad",
+      "description": "Libera el rango natural de movimiento de tu cuerpo con estiramientos dirigidos y trabajo de movilidad."
+    },
+    "mindfulness": {
+      "title": "Claridad Mental",
+      "description": "Cultiva la atención plena y reduce el estrés a través de prácticas de meditación y respiración."
+    },
+    "balance": {
+      "title": "Mejor Equilibrio",
+      "description": "Mejora el equilibrio físico y mental a través de ejercicios enfocados de estabilidad y coordinación."
+    },
+    "energy": {
+      "title": "Impulsar Energía",
+      "description": "Siéntete más energizado durante todo el día con flujos matutinos y vespertinos vigorizantes."
+    },
+    "sleep": {
+      "title": "Mejor Sueño",
+      "description": "Mejora la calidad del sueño con posturas restaurativas y secuencias de relajación nocturna."
+    }
+  },
+  "timeline": {
+    "title": "Tu Viaje de Transformación de 14 Días",
+    "subtitle": "Cada día se basa en el anterior, creando un cambio duradero",
+    "progress": "Día {{current}} de {{total}}",
+    "completed": "Completado",
+    "current": "Día Actual",
+    "remaining": "Restante",
+    "upcoming": "Próximo",
+    "progressTitle": "Tu Progreso",
+    "startPractice": "Comenzar Práctica",
+    "preview": "Vista Previa",
+    "locked": "Bloqueado",
+    "difficulty": {
+      "beginner": "Principiante",
+      "intermediate": "Intermedio",
+      "advanced": "Avanzado"
+    },
+    "days": {
+      "day1": {
+        "title": "Fundamento y Respiración",
+        "description": "Aprende posturas básicas y técnicas de respiración. Comienza tu transformación con conciencia plena."
+      },
+      "day2": {
+        "title": "Construcción de Fuerza",
+        "description": "Desarrolla fuerza central con posturas de guerrero y planchas. Siente cómo tu cuerpo se fortalece."
+      },
+      "day3": {
+        "title": "Enfoque en Flexibilidad",
+        "description": "Estiramientos profundos y aperturas de cadera. Libera tensión y aumenta la movilidad."
+      },
+      "day4": {
+        "title": "Equilibrio y Estabilidad",
+        "description": "Postura del árbol y apoyos en una pierna. Desarrolla equilibrio físico y mental."
+      },
+      "day5": {
+        "title": "Secuencia de Flujo",
+        "description": "Conecta la respiración con el movimiento en variaciones de saludo al sol."
+      },
+      "day6": {
+        "title": "Práctica de Poder",
+        "description": "Desafíate con posturas más fuertes y mantenimientos más largos."
+      },
+      "day7": {
+        "title": "Reflexión y Descanso",
+        "description": "Posturas restaurativas suaves y meditación. Honra tu práctica."
+      },
+      "day8": {
+        "title": "Posturas Avanzadas",
+        "description": "Introducción a equilibrios de brazos y flexiones más profundas hacia atrás."
+      },
+      "day9": {
+        "title": "Movimiento Consciente",
+        "description": "Práctica lenta e intencional enfocada en la alineación y la conciencia."
+      },
+      "day10": {
+        "title": "Apertura del Corazón",
+        "description": "Posturas de apertura del pecho y hombros para liberar tensión emocional."
+      },
+      "day11": {
+        "title": "Torsiones y Desintoxicación",
+        "description": "Torsiones espinales para limpiar el cuerpo y mejorar la digestión."
+      },
+      "day12": {
+        "title": "Práctica de Integración",
+        "description": "Combina todos los elementos aprendidos en secuencias fluidas."
+      },
+      "day13": {
+        "title": "Desafío Máximo",
+        "description": "Posturas avanzadas y secuencias desafiantes. Pon a prueba tus límites."
+      },
+      "day14": {
+        "title": "Celebración y Gratitud",
+        "description": "Completa tu viaje de transformación con práctica de alegría y gratitud."
+      }
+    }
+  },
+  "instructor": {
+    "title": "Conoce a tu Guía",
+    "headerTitle": "Aprende de una Experta Certificada",
+    "name": "Maya Chen",
+    "credentials": "Instructora Principal de Yoga y Experta en Bienestar",
+    "quote": "El yoga no se trata de perfeccionar posturas—se trata de descubrir la versión perfecta de ti que ya existe dentro de ti.",
+    "bio": "Maya ha dedicado más de una década a la práctica transformadora del yoga, especializándose en enfoques terapéuticos que sanan tanto el cuerpo como la mente. Su metodología única combina flujos tradicionales de Hatha y Vinyasa con la ciencia moderna del bienestar.",
+    "experience": "Con 12 años de experiencia docente en 3 continentes, Maya ha ayudado a miles de estudiantes a descubrir su fuerza interior y lograr una transformación duradera.",
+    "experienceLabel": "Experiencia",
+    "experienceYears": "12+ Años",
+    "studentsLabel": "Estudiantes",
+    "studentsHelped": "2.5K+ estudiantes ayudados",
+    "cta": "Comienza tu Viaje con Maya",
+    "specializationsTitle": "Especializaciones",
+    "specializations": {
+      "therapeutic": "Yoga Terapéutico",
+      "mindfulness": "Meditación Mindfulness",
+      "breathwork": "Trabajo de Respiración y Pranayama",
+      "stress": "Reducción del Estrés",
+      "flexibility": "Entrenamiento de Flexibilidad",
+      "connection": "Conexión Mente-Cuerpo"
+    },
+    "achievementsTitle": "Reconocimiento y Logros",
+    "achievements": {
+      "top-instructor": {
+        "title": "Mejor Instructora de Yoga 2023",
+        "description": "Reconocida por Yoga Alliance por enseñanza excepcional y transformación de estudiantes"
+      },
+      "wellness-expert": {
+        "title": "Oradora de Conferencia de Bienestar",
+        "description": "Oradora destacada en la Cumbre Internacional de Bienestar sobre yoga terapéutico"
+      },
+      "published-author": {
+        "title": "Autora Publicada",
+        "description": "Co-autora de \"Movimiento Consciente: Una Guía para la Práctica de Yoga Terapéutico\""
+      },
+      "community-impact": {
+        "title": "Premio de Impacto Comunitario",
+        "description": "Honrada por llevar yoga a comunidades desatendidas en todo el mundo"
+      }
+    }
+  },
+  "testimonials": {
+    "title": "Historias de Transformación",
+    "subtitle": "Únete a miles que han transformado sus vidas en solo 14 días. Aquí están sus historias auténticas y resultados reales.",
+    "badge": "Resultados Reales",
+    "viewAll": "Ver todas las {{count}} reseñas",
+    "verified": "Estudiante verificada",
+    "featured": "Destacado",
+    "transformation": "Transformación de {{timeframe}}",
+    "before": "Antes: ",
+    "after": "Después: ",
+    "age": "Edad {{age}}",
+    "stats": {
+      "averageRating": "Calificación promedio",
+      "successRate": "Tasa de éxito",
+      "reviews": "Reseñas",
+      "recommend": "Recomiendan",
+      "improvementTitle": "Mejora promedio por categoría",
+      "studentsLabel": "{{count}} estudiantes"
+    }
+  },
+  "gallery": {
+    "title": "Tu Viaje de Transformación",
+    "subtitle": "Experimenta la mezcla perfecta de movimiento, atención plena y crecimiento personal",
+    "viewAll": "Ver todas las poses",
+    "optimized": "Imágenes optimizadas con WebP/AVIF para carga rápida",
+    "poses": {
+      "balance": {
+        "title": "Equilibrio y Enfoque",
+        "description": "Desarrolla estabilidad y claridad mental con poses fundamentales"
+      },
+      "strength": {
+        "title": "Fuerza y Poder",
+        "description": "Construye fuerza física y confianza interna a través de flujos dinámicos"
+      },
+      "mindfulness": {
+        "title": "Paz y Atención Plena",
+        "description": "Encuentra paz interior y claridad mental a través de meditación guiada"
+      },
+      "flexibility": {
+        "title": "Flexibilidad y Fluidez",
+        "description": "Aumenta la flexibilidad y crea patrones de movimiento elegantes"
+      }
+    }
+  },
+  "pricing": {
+    "title": "Elige tu Transformación",
+    "subtitle": "Invierte en ti mismo con nuestro programa sin riesgo",
+    "monthlyBilling": "Mensual",
+    "annualBilling": "Anual",
+    "saveAmount": "Ahorra {{amount}}%",
+    "cta": "Comienza tu Viaje",
+    "guarantee": "Garantía de devolución de dinero de 30 días",
+    "billingPeriods": {
+      "year": "año",
+      "month": "mes"
+    },
+    "savingsNote": "Ahorra {{savings}}% vs facturación mensual",
+    "keyBenefits": "Beneficios clave:",
+    "limitedTimeOffer": "Oferta por tiempo limitado",
+    "chooseYour": "Elige tu",
+    "transformationPlan": "Plan de Transformación",
+    "subtitle2": "Comienza tu viaje de 14 días hoy. Todos los planes incluyen acceso de por vida y están respaldados por nuestra garantía de éxito.",
+    "promoMessage": "50% DESCUENTO - ¡Solo por tiempo limitado!",
+    "socialProof": "Únete a 2,500+ estudiantes felices",
+    "testimonial": {
+      "quote": "Este programa superó todas mis expectativas. ¡Los resultados hablan por sí solos!",
+      "author": "- Sarah M."
+    },
+    "plans": {
+      "basic": {
+        "name": "Fundamentos de Yoga",
+        "description": "Perfecto para principiantes que comienzan su viaje de yoga",
+        "cta": "Comienza tu viaje",
+        "features": [
+          "Programa progresivo de 14 días",
+          "Instrucciones en video HD",
+          "Guías de posturas descargables",
+          "Ejercicios básicos de respiración",
+          "Soporte por correo electrónico",
+          "Acceso móvil y escritorio",
+          "Contenido nuevo mensualmente"
+        ],
+        "benefits": [
+          "Desarrollar flexibilidad",
+          "Reducir estrés",
+          "Mejorar postura"
+        ]
+      },
+      "premium": {
+        "name": "Bienestar Completo",
+        "description": "Todo lo que necesitas para una transformación duradera",
+        "badge": "Más popular",
+        "cta": "Obtener paquete completo",
+        "features": [
+          "Todo en Fundamentos de Yoga",
+          "Biblioteca de 30+ sesiones avanzadas",
+          "Guía personalizada de planificación de comidas",
+          "Serie de meditación y atención plena",
+          "Sesiones en vivo mensuales de P&R",
+          "Acceso a comunidad privada",
+          "Soporte por correo prioritario",
+          "Herramientas de seguimiento de progreso",
+          "Contenido nuevo semanalmente"
+        ],
+        "benefits": [
+          "Transformación completa",
+          "Bienestar a largo plazo",
+          "Apoyo de la comunidad",
+          "Orientación experta"
+        ]
+      },
+      "vip": {
+        "name": "Coaching VIP",
+        "description": "Orientación 1 a 1 para resultados máximos",
+        "badge": "Mejor valor",
+        "cta": "Reservar experiencia VIP",
+        "features": [
+          "Todo en Bienestar Completo",
+          "Llamadas mensuales de coaching 1 a 1",
+          "Creación de plan de práctica personalizado",
+          "Corrección de forma en tiempo real",
+          "Acceso a soporte por WhatsApp",
+          "Consejos nutricionales personalizados",
+          "Establecimiento de metas y responsabilidad",
+          "Solicitudes de funciones prioritarias",
+          "Soporte por correo ilimitado"
+        ],
+        "benefits": [
+          "Atención personal",
+          "Resultados más rápidos",
+          "Responsabilidad de experto",
+          "Orientación de por vida"
+        ]
+      }
+    },
+    "additionalFeatures": {
+      "moneyBackGuarantee": {
+        "title": "Garantía de devolución de dinero de 60 días",
+        "description": "Prueba sin riesgo. Si no estás completamente satisfecho, obtén un reembolso completo."
+      },
+      "lifetimeAccess": {
+        "title": "Acceso de por vida",
+        "description": "Conserva todos los materiales para siempre. Practica a tu propio ritmo, en cualquier momento."
+      },
+      "allDevicesSupported": {
+        "title": "Compatible con todos los dispositivos",
+        "description": "Acceso en móvil, tablet o escritorio. Descarga para uso sin conexión."
+      },
+      "supportiveCommunity": {
+        "title": "Comunidad de apoyo",
+        "description": "Únete a miles de practicantes en el mismo viaje de transformación."
+      }
+    }
+  },
+  "cta": {
+    "midPage": {
+      "title": "¿Listo para transformar tu vida?",
+      "subtitle": "Únete a miles que ya han descubierto el poder de nuestro programa de 14 días. Tu viaje al bienestar comienza con un solo paso.",
+      "button": "Comenzar Vista Previa Gratuita",
+      "noCommitment": "No se requiere compromiso"
+    },
+    "urgency": {
+      "title": "¡No esperes - Transfórmate hoy!",
+      "subtitle": "Oferta por tiempo limitado",
+      "description": "Los precios especiales de lanzamiento terminan pronto. Comienza tu transformación ahora y ahorra 50% en todos los planes premium.",
+      "button": "Reclama tu 50% de descuento",
+      "timer": "🔥 Solo quedan 24 horas a este precio",
+      "stats": {
+        "successStories": "Historias de éxito",
+        "successRate": "Tasa de éxito",
+        "daysToTransform": "Para transformar"
+      }
+    },
+    "final": {
+      "title": "Transforma tu vida en solo 14 días",
+      "subtitle": "Has visto los resultados, escuchado las historias y aprendido sobre nuestro método comprobado. La única pregunta que queda es: ¿Estás listo para convertirte en la próxima historia de éxito?",
+      "badge": "Tu viaje comienza ahora",
+      "button": "Comenzar mi transformación",
+      "buttonSecondary": "Ver historias de éxito",
+      "features": {
+        "proven": {
+          "title": "Resultados comprobados",
+          "description": "94% de los estudiantes ven mejoras significativas en 14 días"
+        },
+        "expert": {
+          "title": "Orientación experta",
+          "description": "Aprende de Maya Chen, instructora certificada con 12 años de experiencia"
+        },
+        "riskFree": {
+          "title": "Sin riesgo",
+          "description": "Garantía de devolución de dinero de 60 días. Transfórmate o recupera tu dinero"
+        }
+      },
+      "checklist": {
+        "instantAccess": "✓ Acceso instantáneo después de la compra",
+        "allDevices": "✓ Compatible con todos los dispositivos",
+        "lifetimeAccess": "✓ Acceso de por vida incluido"
+      }
+    }
+  },
+  "footer": {
+    "tagline": "Transforma tu cuerpo, calma tu mente, eleva tu vida.",
+    "newsletter": {
+      "title": "Mantente conectado con tu viaje de yoga",
+      "subtitle": "Recibe consejos semanales de bienestar, tutoriales de nuevas poses y contenido exclusivo directamente en tu bandeja de entrada.",
+      "placeholder": "Ingresa tu dirección de correo",
+      "button": "Únete a nuestra comunidad",
+      "success": "¡Gracias por suscribirte!",
+      "privacy": "Respetamos tu privacidad. Cancela suscripción en cualquier momento."
+    },
+    "contact": {
+      "title": "Ponte en contacto",
+      "email": "hola@yogatransformacion.com",
+      "phone": "+34 (0)123 456-789",
+      "address": "Calle Bienestar 123, Ciudad Mindful, CB 12345"
+    },
+    "social": {
+      "title": "Síguenos",
+      "subtitle": "Únete a nuestra comunidad para inspiración diaria"
+    },
+    "copyright": "© {{year}} Yoga Transformación. Todos los derechos reservados."
+  },
+  "common": {
+    "loading": "Cargando...",
+    "error": "Algo salió mal",
+    "close": "Cerrar",
+    "backToTop": "Volver arriba"
+  },
+  "pwa": {
+    "installTitle": "Instalar App",
+    "installSubtitle": "Acceso rápido y soporte sin conexión",
+    "installDescription": "Añadir a tu pantalla de inicio para acceso rápido",
+    "installButton": "Instalar ahora",
+    "dismissLabel": "Descartar solicitud de instalación",
+    "ios": {
+      "title": "Instalar en iOS",
+      "step1": "Toca el botón <strong>Compartir</strong> en Safari",
+      "step2": "Desplázate hacia abajo y toca <strong>\"Añadir a pantalla de inicio\"</strong>",
+      "step3": "Toca <strong>\"Añadir\"</strong> para instalar la app"
+    }
+  },
+  "accessibility": {
+    "skipToContent": "Saltar al contenido principal",
+    "skipToBenefits": "Saltar a beneficios",
+    "skipToJourney": "Saltar a tu viaje",
+    "skipToReviews": "Saltar a reseñas",
+    "skipToPricing": "Saltar a precios",
+    "skipNavigation": "Saltar enlaces de navegación",
+    "toggleDarkMode": "Alternar modo oscuro",
+    "toggleMenu": "Alternar menú",
+    "selectLanguage": "Seleccionar idioma",
+    "languageOptions": "Opciones de idioma",
+    "scrollToTop": "Desplazarse hacia arriba",
+    "readingProgress": "Progreso de lectura",
+    "closeVideo": "Cerrar video",
+    "playVideo": "Reproducir video",
+    "pauseVideo": "Pausar video",
+    "videoProgress": "Progreso del video",
+    "muteVideo": "Silenciar",
+    "unmuteVideo": "Quitar silencio"
+  },
+  "errors": {
+    "boundary": {
+      "title": "Algo salió mal",
+      "developmentTitle": "Error de desarrollo",
+      "description": "Nos disculpamos por las molestias. Por favor inténtalo de nuevo o actualiza la página.",
+      "developmentDescription": "Revisa la consola para información detallada del error.",
+      "tryAgain": "Intentar de nuevo",
+      "refreshPage": "Actualizar página",
+      "retrying": "Reintentando...",
+      "contactSupport": "Si el problema persiste, por favor contacta al soporte",
+      "reportError": "Reportar este error"
+    }
+  }
+}

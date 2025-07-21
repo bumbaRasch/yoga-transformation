@@ -2,6 +2,7 @@
 
 import React, { useState, useEffect, useCallback } from 'react'
 import { motion } from 'framer-motion'
+import { useTranslations } from '@/contexts/language-context'
 
 interface ScrollProgressProps {
   className?: string
@@ -16,6 +17,7 @@ export const ScrollProgress = React.memo(function ScrollProgress({
   showThreshold = 5,
   hideWhenComplete = false
 }: ScrollProgressProps) {
+  const t = useTranslations()
   const [scrollProgress, setScrollProgress] = useState(0)
   const [isVisible, setIsVisible] = useState(false)
 
@@ -55,7 +57,7 @@ export const ScrollProgress = React.memo(function ScrollProgress({
       aria-valuenow={Math.round(scrollProgress)}
       aria-valuemin={0}
       aria-valuemax={100}
-      aria-label="Reading progress"
+      aria-label={t('accessibility.readingProgress')}
       aria-hidden={!isVisible}
       initial={{ opacity: 0, scaleY: 0 }}
       animate={{ 

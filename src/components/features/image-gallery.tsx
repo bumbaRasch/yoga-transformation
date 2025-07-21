@@ -3,53 +3,44 @@
 import React from 'react'
 import { motion } from 'framer-motion'
 import { OptimizedImage, RESPONSIVE_SIZES } from '@/components/ui/optimized-image'
+import { useTranslations } from '@/contexts/language-context'
 
-interface GalleryImage {
-  src: string
-  alt: string
-  title: string
-  description: string
-}
-
-// Sample yoga poses and benefits images
-const GALLERY_IMAGES: GalleryImage[] = [
+// Sample yoga poses and benefits images - keys for translation
+const GALLERY_IMAGE_KEYS = [
   {
     src: '/images/yoga-pose-tree.png',
-    alt: 'Tree pose for balance and focus',
-    title: 'Balance & Focus',
-    description: 'Develop stability and mental clarity with foundational poses'
+    altKey: 'Tree pose for balance and focus',
+    titleKey: 'balance',
+    descriptionKey: 'balance'
   },
   {
     src: '/images/yoga-pose-warrior.png',
-    alt: 'Warrior pose for strength and confidence',
-    title: 'Strength & Power',
-    description: 'Build physical strength and inner confidence through dynamic flows'
+    altKey: 'Warrior pose for strength and confidence',
+    titleKey: 'strength',
+    descriptionKey: 'strength'
   },
   {
     src: '/images/yoga-pose-meditation.png',
-    alt: 'Meditation pose for mindfulness and peace',
-    title: 'Peace & Mindfulness', 
-    description: 'Find inner peace and mental clarity through guided meditation'
+    altKey: 'Meditation pose for mindfulness and peace',
+    titleKey: 'mindfulness',
+    descriptionKey: 'mindfulness'
   },
   {
     src: '/images/yoga-pose-stretch.png',
-    alt: 'Stretching pose for flexibility and relaxation',
-    title: 'Flexibility & Flow',
-    description: 'Increase flexibility and create graceful movement patterns'
+    altKey: 'Stretching pose for flexibility and relaxation',
+    titleKey: 'flexibility',
+    descriptionKey: 'flexibility'
   }
 ]
 
 interface ImageGalleryProps {
   className?: string
-  title?: string
-  subtitle?: string
 }
 
 export const ImageGallery = React.memo(function ImageGallery({
-  className = '',
-  title = "Your Transformation Journey",
-  subtitle = "Experience the perfect blend of movement, mindfulness, and personal growth"
+  className = ''
 }: ImageGalleryProps) {
+  const t = useTranslations()
   
   const containerVariants = {
     hidden: { opacity: 0 },
@@ -85,10 +76,10 @@ export const ImageGallery = React.memo(function ImageGallery({
           transition={{ duration: 0.6 }}
         >
           <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 dark:text-white mb-4">
-            {title}
+            {t('gallery.title')}
           </h2>
           <p className="text-lg text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
-            {subtitle}
+            {t('gallery.subtitle')}
           </p>
         </motion.div>
 
@@ -100,7 +91,7 @@ export const ImageGallery = React.memo(function ImageGallery({
           whileInView="visible"
           viewport={{ once: true, margin: "-100px" }}
         >
-          {GALLERY_IMAGES.map((image, index) => (
+          {GALLERY_IMAGE_KEYS.map((image, index) => (
             <motion.div
               key={image.src}
               variants={itemVariants}
@@ -111,7 +102,7 @@ export const ImageGallery = React.memo(function ImageGallery({
                 <div className="relative h-64 overflow-hidden">
                   <OptimizedImage
                     src={image.src}
-                    alt={image.alt}
+                    alt={image.altKey}
                     fill
                     sizes={RESPONSIVE_SIZES.card}
                     quality={85}
@@ -126,10 +117,10 @@ export const ImageGallery = React.memo(function ImageGallery({
                 {/* Content */}
                 <div className="p-6">
                   <h3 className="text-xl font-semibold text-gray-900 dark:text-white mb-2 group-hover:text-purple-600 dark:group-hover:text-purple-400 transition-colors">
-                    {image.title}
+                    {t(`gallery.poses.${image.titleKey}.title`)}
                   </h3>
                   <p className="text-gray-600 dark:text-gray-300 text-sm leading-relaxed">
-                    {image.description}
+                    {t(`gallery.poses.${image.descriptionKey}.description`)}
                   </p>
                 </div>
 
@@ -138,7 +129,7 @@ export const ImageGallery = React.memo(function ImageGallery({
                   <motion.div
                     className="h-full bg-gradient-to-r from-purple-600 to-pink-600"
                     initial={{ width: 0 }}
-                    whileInView={{ width: `${((index + 1) / GALLERY_IMAGES.length) * 100}%` }}
+                    whileInView={{ width: `${((index + 1) / GALLERY_IMAGE_KEYS.length) * 100}%` }}
                     viewport={{ once: true }}
                     transition={{ duration: 1, delay: index * 0.2 }}
                   />
@@ -160,7 +151,7 @@ export const ImageGallery = React.memo(function ImageGallery({
             <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
             </svg>
-            <span>Images optimized with WebP/AVIF for fast loading</span>
+            <span>{t('gallery.optimized')}</span>
           </div>
         </motion.div>
       </div>

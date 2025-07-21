@@ -1,20 +1,22 @@
 'use client'
 
 import { ErrorBoundary } from '@/components/ui/error-boundary'
+import { useTranslations } from '@/contexts/language-context'
 
 interface SkipToContentProps {
   className?: string
 }
 
 const skipLinks = [
-  { href: '#main-content', label: 'Skip to main content' },
-  { href: '#benefits', label: 'Skip to benefits' },
-  { href: '#timeline', label: 'Skip to your journey' },
-  { href: '#testimonials', label: 'Skip to reviews' },
-  { href: '#pricing', label: 'Skip to pricing' }
+  { href: '#main-content', labelKey: 'accessibility.skipToContent' },
+  { href: '#benefits', labelKey: 'accessibility.skipToBenefits' },
+  { href: '#timeline', labelKey: 'accessibility.skipToJourney' },
+  { href: '#testimonials', labelKey: 'accessibility.skipToReviews' },
+  { href: '#pricing', labelKey: 'accessibility.skipToPricing' }
 ] as const
 
 function SkipToContentLinks({ className }: SkipToContentProps) {
+  const t = useTranslations()
   const handleSkipClick = (href: string) => {
     const element = document.getElementById(href.substring(1))
     if (element) {
@@ -26,7 +28,7 @@ function SkipToContentLinks({ className }: SkipToContentProps) {
   return (
     <div className={`skip-to-content ${className || ''}`}>
       <div className="sr-only focus-within:not-sr-only focus-within:fixed focus-within:top-0 focus-within:left-0 focus-within:z-[9999] focus-within:bg-white focus-within:border focus-within:border-gray-300 focus-within:p-2 focus-within:shadow-lg">
-        <nav aria-label="Skip navigation links">
+        <nav aria-label={t('accessibility.skipNavigation')}>
           <ul className="list-none space-y-1">
             {skipLinks.map((link) => (
               <li key={link.href}>
@@ -40,7 +42,7 @@ function SkipToContentLinks({ className }: SkipToContentProps) {
                     }
                   }}
                 >
-                  {link.label}
+                  {t(link.labelKey)}
                 </button>
               </li>
             ))}

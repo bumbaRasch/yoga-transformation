@@ -3,8 +3,9 @@
 import { useState, useEffect } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 import { Menu, X, Heart, Sun, Moon } from 'lucide-react'
+import { useTranslations } from '@/contexts/language-context'
 import { Button } from '@/components/ui/button'
-import { navigationItems } from '@/lib/navigation-data'
+import { LanguageSwitcher } from '@/components/ui/language-switcher'
 import { ErrorBoundary } from '@/components/ui/error-boundary'
 import { getFocusClasses } from '@/lib/focus-styles'
 import { useLocalStorage } from '@/hooks/useLocalStorage'
@@ -14,9 +15,19 @@ interface NavigationProps {
 }
 
 function NavigationContent({ className }: NavigationProps) {
+  const t = useTranslations()
   const [isMenuOpen, setIsMenuOpen] = useState(false)
   const [isScrolled, setIsScrolled] = useState(false)
   const [isDarkMode, setIsDarkMode] = useLocalStorage('darkMode', false)
+
+  // Navigation items with translations
+  const navigationItems = [
+    { id: 'benefits', label: t('navigation.benefits'), href: '#benefits' },
+    { id: 'timeline', label: t('navigation.timeline'), href: '#timeline' },
+    { id: 'instructor', label: t('navigation.instructor'), href: '#instructor' },
+    { id: 'testimonials', label: t('navigation.testimonials'), href: '#testimonials' },
+    { id: 'pricing', label: t('navigation.pricing'), href: '#pricing' },
+  ]
 
   // Handle scroll detection
   useEffect(() => {
@@ -97,7 +108,7 @@ function NavigationContent({ className }: NavigationProps) {
             {navigationItems.map((item, index) => (
               <motion.button
                 key={item.id}
-                onClick={() => handleNavClick(item.href, item.external)}
+                onClick={() => handleNavClick(item.href)}
                 className={`text-gray-700 dark:text-gray-300 hover:text-purple-600 dark:hover:text-purple-400 font-medium transition-colors relative group rounded-md px-3 py-2 ${getFocusClasses('primary')}`}
                 initial={{ opacity: 0, y: -10 }}
                 animate={{ opacity: 1, y: 0 }}
@@ -118,7 +129,7 @@ function NavigationContent({ className }: NavigationProps) {
               className={`p-2 text-gray-700 dark:text-gray-300 hover:text-purple-600 dark:hover:text-purple-400 transition-colors rounded-md ${getFocusClasses('primary')}`}
               whileHover={{ scale: 1.1 }}
               whileTap={{ scale: 0.9 }}
-              aria-label="Toggle dark mode"
+              aria-label={t('accessibility.toggleDarkMode')}
             >
               {isDarkMode ? <Sun className="w-5 h-5" /> : <Moon className="w-5 h-5" />}
             </motion.button>
@@ -129,17 +140,22 @@ function NavigationContent({ className }: NavigationProps) {
               onClick={() => scrollToSection('#pricing')}
               className="bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700"
             >
-              Start Now
+              {t('navigation.getStarted')}
             </Button>
+            
+            {/* Language Switcher */}
+            <LanguageSwitcher />
           </div>
 
           {/* Mobile Menu Button */}
           <div className="md:hidden flex items-center space-x-2">
+            <LanguageSwitcher />
+            
             <motion.button
               onClick={toggleDarkMode}
               className="p-2 text-gray-700 dark:text-gray-300"
               whileTap={{ scale: 0.9 }}
-              aria-label="Toggle dark mode"
+              aria-label={t('accessibility.toggleDarkMode')}
             >
               {isDarkMode ? <Sun className="w-5 h-5" /> : <Moon className="w-5 h-5" />}
             </motion.button>
@@ -148,7 +164,7 @@ function NavigationContent({ className }: NavigationProps) {
               onClick={() => setIsMenuOpen(!isMenuOpen)}
               className="p-2 text-gray-700 dark:text-gray-300 hover:text-purple-600 transition-colors"
               whileTap={{ scale: 0.9 }}
-              aria-label="Toggle menu"
+              aria-label={t('accessibility.toggleMenu')}
             >
               {isMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
             </motion.button>
@@ -169,7 +185,7 @@ function NavigationContent({ className }: NavigationProps) {
                 {navigationItems.map((item, index) => (
                   <motion.button
                     key={item.id}
-                    onClick={() => handleNavClick(item.href, item.external)}
+                    onClick={() => handleNavClick(item.href)}
                     className="block w-full text-left py-2 text-gray-700 dark:text-gray-300 hover:text-purple-600 dark:hover:text-purple-400 font-medium transition-colors"
                     initial={{ opacity: 0, x: -20 }}
                     animate={{ opacity: 1, x: 0 }}
@@ -184,7 +200,7 @@ function NavigationContent({ className }: NavigationProps) {
                     className="w-full bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700"
                     onClick={() => scrollToSection('#pricing')}
                   >
-                    Start Now
+                    {t('navigation.getStarted')}
                   </Button>
                 </div>
               </div>

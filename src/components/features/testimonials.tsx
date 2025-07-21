@@ -6,6 +6,7 @@ import { Star, Quote, CheckCircle, MapPin, TrendingUp } from "lucide-react"
 import { testimonialsData, testimonialStats, getFeaturedTestimonials } from "@/lib/testimonials-data"
 import { ErrorBoundary } from "@/components/ui/error-boundary"
 import { SkeletonCard } from "@/components/ui/skeleton"
+import { useTranslations } from "@/contexts/language-context"
 
 interface TestimonialCardProps {
   testimonial: typeof testimonialsData[0]
@@ -14,6 +15,7 @@ interface TestimonialCardProps {
 }
 
 const TestimonialCard = React.memo(function TestimonialCard({ testimonial, index, featured = false }: TestimonialCardProps) {
+  const t = useTranslations()
   return (
     <motion.div
       className={`
@@ -39,7 +41,7 @@ const TestimonialCard = React.memo(function TestimonialCard({ testimonial, index
       {/* Featured Badge */}
       {featured && (
         <div className="absolute -top-2 -right-2 bg-gradient-to-r from-purple-500 to-pink-500 text-white text-xs px-2 py-1 rounded-full font-medium">
-          Featured
+          {t('testimonials.featured')}
         </div>
       )}
 
@@ -65,12 +67,18 @@ const TestimonialCard = React.memo(function TestimonialCard({ testimonial, index
             )}
           </div>
           <div className="flex items-center gap-2 text-sm text-gray-500 dark:text-gray-400 mb-2">
-            <span>Age {testimonial.age}</span>
+            <span>{t('testimonials.age', { age: testimonial.age })}</span>
             <span>•</span>
             <div className="flex items-center gap-1">
               <MapPin className="w-3 h-3" />
               <span>{testimonial.location}</span>
             </div>
+            {testimonial.verified && (
+              <>
+                <span>•</span>
+                <span className="text-green-600">{t('testimonials.verified')}</span>
+              </>
+            )}
           </div>
           {/* Rating */}
           <div className="flex items-center gap-1">
@@ -102,18 +110,18 @@ const TestimonialCard = React.memo(function TestimonialCard({ testimonial, index
           <div className="flex items-center gap-2 mb-2">
             <TrendingUp className="w-4 h-4 text-green-600" />
             <span className="text-sm font-medium text-green-700 dark:text-green-400">
-              {testimonial.transformation.timeframe} Transformation
+              {t('testimonials.transformation', { timeframe: testimonial.transformation.timeframe })}
             </span>
           </div>
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 text-xs">
             <div>
-              <span className="text-red-600 dark:text-red-400 font-medium">Before: </span>
+              <span className="text-red-600 dark:text-red-400 font-medium">{t('testimonials.before')}</span>
               <span className="text-gray-600 dark:text-gray-300">
                 {testimonial.transformation.before}
               </span>
             </div>
             <div>
-              <span className="text-green-600 dark:text-green-400 font-medium">After: </span>
+              <span className="text-green-600 dark:text-green-400 font-medium">{t('testimonials.after')}</span>
               <span className="text-gray-600 dark:text-gray-300">
                 {testimonial.transformation.after}
               </span>
@@ -138,6 +146,7 @@ const TestimonialCard = React.memo(function TestimonialCard({ testimonial, index
 })
 
 function TestimonialsContent() {
+  const t = useTranslations()
   const [showAll, setShowAll] = useState(false)
   const [isLoading, setIsLoading] = useState(true)
   const featuredTestimonials = getFeaturedTestimonials()
@@ -170,20 +179,16 @@ function TestimonialsContent() {
             transition={{ delay: 0.2, type: "spring", stiffness: 200 }}
           >
             <span className="text-yellow-600 dark:text-yellow-400 text-sm font-medium">
-              Real Results
+              {t('testimonials.badge')}
             </span>
           </motion.div>
           
           <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 dark:text-white mb-4">
-            Stories of{' '}
-            <span className="bg-gradient-to-r from-yellow-600 to-orange-600 bg-clip-text text-transparent">
-              Transformation
-            </span>
+            {t('testimonials.title')}
           </h2>
           
           <p className="text-lg text-gray-600 dark:text-gray-300 max-w-2xl mx-auto">
-            Join thousands who have transformed their lives in just 14 days. 
-            Here are their authentic stories and real results.
+            {t('testimonials.subtitle')}
           </p>
         </motion.div>
 
@@ -196,7 +201,7 @@ function TestimonialsContent() {
         >
           <div className="bg-white dark:bg-gray-800 rounded-lg p-4 text-center">
             <div className="text-2xl font-bold text-purple-600">{testimonialStats.averageRating}</div>
-            <div className="text-sm text-gray-600 dark:text-gray-400">Average Rating</div>
+            <div className="text-sm text-gray-600 dark:text-gray-400">{t('testimonials.stats.averageRating')}</div>
             <div className="flex justify-center mt-1">
               {[...Array(5)].map((_, i) => (
                 <Star key={i} className="w-3 h-3 text-yellow-400 fill-current" />
@@ -205,15 +210,15 @@ function TestimonialsContent() {
           </div>
           <div className="bg-white dark:bg-gray-800 rounded-lg p-4 text-center">
             <div className="text-2xl font-bold text-green-600">{testimonialStats.transformationRate}%</div>
-            <div className="text-sm text-gray-600 dark:text-gray-400">Success Rate</div>
+            <div className="text-sm text-gray-600 dark:text-gray-400">{t('testimonials.stats.successRate')}</div>
           </div>
           <div className="bg-white dark:bg-gray-800 rounded-lg p-4 text-center">
             <div className="text-2xl font-bold text-blue-600">{testimonialStats.totalReviews}</div>
-            <div className="text-sm text-gray-600 dark:text-gray-400">Reviews</div>
+            <div className="text-sm text-gray-600 dark:text-gray-400">{t('testimonials.stats.reviews')}</div>
           </div>
           <div className="bg-white dark:bg-gray-800 rounded-lg p-4 text-center">
             <div className="text-2xl font-bold text-orange-600">{testimonialStats.recommendationRate}%</div>
-            <div className="text-sm text-gray-600 dark:text-gray-400">Recommend</div>
+            <div className="text-sm text-gray-600 dark:text-gray-400">{t('testimonials.stats.recommend')}</div>
           </div>
         </motion.div>
 
@@ -255,7 +260,7 @@ function TestimonialsContent() {
               onClick={() => setShowAll(true)}
               className="px-8 py-3 bg-gradient-to-r from-purple-600 to-pink-600 text-white rounded-lg hover:from-purple-700 hover:to-pink-700 transition-all duration-300 font-medium"
             >
-              View All {testimonialsData.length} Reviews
+              {t('testimonials.viewAll', { count: testimonialsData.length })}
             </button>
           </motion.div>
         )}
@@ -268,7 +273,7 @@ function TestimonialsContent() {
           transition={{ duration: 0.6, delay: 0.8 }}
         >
           <h3 className="text-2xl font-bold text-gray-900 dark:text-white mb-6 text-center">
-            Average Improvement by Category
+            {t('testimonials.stats.improvementTitle')}
           </h3>
           <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-6">
             {testimonialStats.categories.map((category, index) => (
@@ -286,7 +291,7 @@ function TestimonialsContent() {
                   {category.name}
                 </div>
                 <div className="text-xs text-gray-500">
-                  {category.count} students
+                  {t('testimonials.stats.studentsLabel', { count: category.count })}
                 </div>
               </motion.div>
             ))}

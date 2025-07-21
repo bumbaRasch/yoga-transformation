@@ -3,6 +3,7 @@
 import React, { useState, useEffect } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 import { ChevronUp } from 'lucide-react'
+import { useTranslations } from '@/contexts/language-context'
 
 interface BackToTopProps {
   showThreshold?: number
@@ -21,6 +22,7 @@ export const BackToTop = React.memo(function BackToTop({
   showThreshold = 300,
   className = ''
 }: BackToTopProps) {
+  const t = useTranslations()
   const [isVisible, setIsVisible] = useState(false)
 
   useEffect(() => {
@@ -71,8 +73,8 @@ export const BackToTop = React.memo(function BackToTop({
           transition={ANIMATION_CONFIG.spring}
           whileHover={ANIMATION_CONFIG.hover}
           whileTap={ANIMATION_CONFIG.tap}
-          aria-label="Scroll to top"
-          title="Back to top"
+          aria-label={t('accessibility.scrollToTop')}
+          title={t('common.backToTop')}
         >
           <motion.div
             animate={{ y: [0, -2, 0] }}

@@ -5,6 +5,7 @@ import { Heart, Mail, Phone, MapPin, Instagram, Youtube, Twitter } from 'lucide-
 import { Button } from '@/components/ui/button'
 import { footerSections, socialLinks } from '@/lib/navigation-data'
 import { ErrorBoundary } from '@/components/ui/error-boundary'
+import { useTranslations } from '@/contexts/language-context'
 
 const socialIcons = {
   instagram: Instagram,
@@ -18,6 +19,7 @@ interface FooterProps {
 
 function FooterContent({ className }: FooterProps) {
   const currentYear = new Date().getFullYear()
+  const t = useTranslations()
 
   const scrollToSection = (href: string) => {
     if (href.startsWith('#')) {
@@ -44,17 +46,16 @@ function FooterContent({ className }: FooterProps) {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center">
             <h3 className="text-2xl font-bold text-white mb-4">
-              Stay Connected with Your Yoga Journey
+              {t('footer.newsletter.title')}
             </h3>
             <p className="text-purple-100 mb-6 max-w-2xl mx-auto">
-              Get weekly wellness tips, new pose tutorials, and exclusive content 
-              delivered to your inbox. Join our community of mindful practitioners.
+              {t('footer.newsletter.subtitle')}
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center items-center max-w-md mx-auto">
               <div className="flex-1 w-full">
                 <input
                   type="email"
-                  placeholder="Enter your email"
+                  placeholder={t('footer.newsletter.placeholder')}
                   className="w-full px-4 py-3 rounded-lg text-gray-900 placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-white/50"
                 />
               </div>
@@ -63,11 +64,11 @@ function FooterContent({ className }: FooterProps) {
                 variant="secondary"
                 className="min-w-32 bg-white text-purple-600 hover:bg-gray-100"
               >
-                Subscribe
+                {t('footer.newsletter.button')}
               </Button>
             </div>
             <p className="text-xs text-purple-200 mt-3">
-              No spam, unsubscribe anytime. Your privacy is protected.
+              {t('footer.newsletter.privacy')}
             </p>
           </div>
         </div>
@@ -91,24 +92,23 @@ function FooterContent({ className }: FooterProps) {
               <span className="font-bold text-xl">YogaTransform</span>
             </div>
             <p className="text-gray-400 mb-6 leading-relaxed">
-              Transform your mind, body, and spirit with our expertly crafted 
-              14-day yoga journey. Join thousands who have discovered their inner 
-              strength and achieved lasting wellness.
+              {t('footer.tagline')}
             </p>
             
             {/* Contact Info */}
             <div className="space-y-3">
+              <h4 className="font-semibold text-white mb-4">{t('footer.contact.title')}</h4>
               <div className="flex items-center space-x-3 text-gray-400">
                 <Mail className="w-4 h-4" />
-                <span>hello@yogatransform.com</span>
+                <span>{t('footer.contact.email')}</span>
               </div>
               <div className="flex items-center space-x-3 text-gray-400">
                 <Phone className="w-4 h-4" />
-                <span>+1 (555) 123-YOGA</span>
+                <span>{t('footer.contact.phone')}</span>
               </div>
               <div className="flex items-center space-x-3 text-gray-400">
                 <MapPin className="w-4 h-4" />
-                <span>San Francisco, CA</span>
+                <span>{t('footer.contact.address')}</span>
               </div>
             </div>
           </motion.div>
@@ -150,7 +150,7 @@ function FooterContent({ className }: FooterProps) {
           <div className="flex flex-col md:flex-row justify-between items-center gap-6">
             {/* Social Links */}
             <div className="flex items-center space-x-6">
-              <span className="text-gray-400 text-sm">Follow us:</span>
+              <span className="text-gray-400 text-sm">{t('footer.social.title')}:</span>
               <div className="flex space-x-4">
                 {socialLinks.map((social) => {
                   const IconComponent = socialIcons[social.icon as keyof typeof socialIcons]
@@ -190,7 +190,7 @@ function FooterContent({ className }: FooterProps) {
           {/* Copyright */}
           <div className="text-center mt-8 pt-8 border-t border-gray-800">
             <p className="text-gray-400 text-sm">
-              © {currentYear} YogaTransform. All rights reserved. 
+              {t('footer.copyright', { year: currentYear })}
               <span className="mx-2">•</span>
               Made with <Heart className="w-4 h-4 inline text-red-500" /> for your wellness journey.
             </p>
@@ -210,10 +210,10 @@ function FooterContent({ className }: FooterProps) {
           <div className="flex flex-col sm:flex-row items-center justify-between gap-4">
             <div className="text-center sm:text-left">
               <p className="text-white font-semibold">
-                🔥 Limited Time: 50% OFF All Plans
+                🔥 {t('cta.urgency.subtitle')}: 50% OFF All Plans
               </p>
               <p className="text-orange-100 text-sm">
-                Don&apos;t miss out - transform your life today!
+                {t('cta.urgency.title')}
               </p>
             </div>
             <Button
@@ -222,7 +222,7 @@ function FooterContent({ className }: FooterProps) {
               className="bg-white text-red-600 hover:bg-gray-100 min-w-32"
               onClick={() => scrollToSection('#pricing')}
             >
-              Claim Discount
+              {t('cta.urgency.button')}
             </Button>
           </div>
         </div>

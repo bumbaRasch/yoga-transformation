@@ -6,11 +6,13 @@ import { Button } from "@/components/ui/button"
 import { VideoModal } from "@/components/ui/video-modal"
 import { HeroSocialProof } from "@/components/ui/social-proof-badges"
 import { OptimizedImage, RESPONSIVE_SIZES } from "@/components/ui/optimized-image"
+import { useTranslations } from "@/contexts/language-context"
 import { getGreeting } from "@/lib/utils"
 import { Heart, Play } from "lucide-react"
 
 export function Hero() {
   const greeting = getGreeting()
+  const t = useTranslations()
   const [isVideoOpen, setIsVideoOpen] = useState(false)
 
   const scrollToTimeline = () => {
@@ -80,7 +82,7 @@ export function Hero() {
             animate={{ opacity: 1 }}
             transition={{ delay: 0.2 }}
           >
-            {greeting}! Ready for transformation?
+{greeting}! {t('hero.greeting')}
           </motion.p>
           
           <motion.h1
@@ -90,11 +92,11 @@ export function Hero() {
             transition={{ delay: 0.3 }}
           >
             <span className="bg-gradient-to-r from-purple-600 to-pink-600 bg-clip-text text-transparent">
-              14-Day Yoga
+              {t('hero.title')}
             </span>
             <br />
             <span className="text-gray-900 dark:text-white">
-              Transformation
+              {t('hero.titleSecond')}
             </span>
           </motion.h1>
           
@@ -104,9 +106,7 @@ export function Hero() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.5 }}
           >
-            Join thousands on a journey to transform your mind and body. 
-            Expert-guided sessions, personalized progressions, and mindful practices 
-            designed for every level.
+{t('hero.subtitle')}
           </motion.p>
           
           <motion.div
@@ -121,7 +121,7 @@ export function Hero() {
               onClick={scrollToTimeline}
             >
               <Heart className="w-5 h-5" />
-              Start Your Journey
+{t('hero.ctaPrimary')}
             </Button>
             <Button 
               variant="outline" 
@@ -130,7 +130,7 @@ export function Hero() {
               onClick={() => setIsVideoOpen(true)}
             >
               <Play className="w-5 h-5" />
-              Watch Preview
+{t('hero.ctaSecondary')}
             </Button>
           </motion.div>
           
@@ -145,16 +145,16 @@ export function Hero() {
             {/* Program highlights */}
             <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 max-w-2xl mx-auto">
               <div className="text-center">
-                <div className="text-xl font-bold text-purple-600">14 Days</div>
-                <div className="text-sm text-gray-600 dark:text-gray-400">Transform</div>
+                <div className="text-xl font-bold text-purple-600">{t('hero.stats.days')}</div>
+                <div className="text-sm text-gray-600 dark:text-gray-400">{t('hero.stats.daysLabel')}</div>
               </div>
               <div className="text-center">
-                <div className="text-xl font-bold text-pink-600">All Levels</div>
-                <div className="text-sm text-gray-600 dark:text-gray-400">Welcome</div>
+                <div className="text-xl font-bold text-pink-600">{t('hero.stats.levels')}</div>
+                <div className="text-sm text-gray-600 dark:text-gray-400">{t('hero.stats.levelsLabel')}</div>
               </div>
               <div className="text-center">
-                <div className="text-xl font-bold text-orange-600">Lifetime</div>
-                <div className="text-sm text-gray-600 dark:text-gray-400">Access</div>
+                <div className="text-xl font-bold text-orange-600">{t('hero.stats.access')}</div>
+                <div className="text-sm text-gray-600 dark:text-gray-400">{t('hero.stats.accessLabel')}</div>
               </div>
             </div>
           </motion.div>
