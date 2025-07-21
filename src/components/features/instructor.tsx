@@ -59,17 +59,49 @@ function InstructorContent() {
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.6, delay: 0.3 }}
           >
-            {/* Instructor Image Placeholder */}
-            <div className="relative mb-6">
-              <div 
-                className="w-full aspect-square max-w-md mx-auto bg-gradient-to-br from-green-400 to-blue-500 rounded-2xl flex items-center justify-center"
-                role="img"
-                aria-label={`Professional photo of ${instructor.name}, certified yoga instructor and wellness expert`}
+            {/* Instructor Image */}
+            <div className="relative mb-6 mt-44 sm:mt-48 md:mt-52 lg:mt-56">
+              <motion.div
+                className="w-full aspect-square max-w-md mx-auto rounded-2xl overflow-hidden shadow-xl"
+                initial={{ scale: 0.9, opacity: 0 }}
+                animate={{ scale: 1, opacity: 1 }}
+                transition={{ duration: 0.6, delay: 0.2 }}
               >
-                <div className="text-white text-6xl font-bold">
-                  {instructor.name.split(' ').map(n => n[0]).join('')}
-                </div>
-              </div>
+                <picture>
+                  {/* AVIF format for best compression */}
+                  <source
+                    srcSet="
+                      /images/serene_yoga_harmony-256w.avif 256w,
+                      /images/serene_yoga_harmony-400w.avif 400w,
+                      /images/serene_yoga_harmony-600w.avif 600w,
+                      /images/serene_yoga_harmony-800w.avif 800w
+                    "
+                    sizes="(max-width: 400px) 256px, (max-width: 600px) 400px, (max-width: 800px) 600px, 800px"
+                    type="image/avif"
+                  />
+                  
+                  {/* WebP format for good compression and compatibility */}
+                  <source
+                    srcSet="
+                      /images/serene_yoga_harmony-256w.webp 256w,
+                      /images/serene_yoga_harmony-400w.webp 400w,
+                      /images/serene_yoga_harmony-600w.webp 600w,
+                      /images/serene_yoga_harmony-800w.webp 800w
+                    "
+                    sizes="(max-width: 400px) 256px, (max-width: 600px) 400px, (max-width: 800px) 600px, 800px"
+                    type="image/webp"
+                  />
+                  
+                  {/* Fallback PNG for older browsers */}
+                  <img
+                    src="/images/serene_yoga_harmony.png"
+                    alt={`Professional photo of ${instructor.name}, certified yoga instructor and wellness expert`}
+                    className="w-full h-full object-cover transition-transform duration-500 hover:scale-105"
+                    loading="lazy"
+                    decoding="async"
+                  />
+                </picture>
+              </motion.div>
               
               {/* Floating Stats */}
               <motion.div
