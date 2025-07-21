@@ -2,6 +2,7 @@ import { Navigation } from "@/components/layout/navigation"
 import { Footer } from "@/components/layout/footer"
 import { SkipToContent } from "@/components/ui/skip-to-content"
 import { ScrollProgress } from "@/components/ui/scroll-progress"
+import { BackToTop } from "@/components/ui/back-to-top"
 import { Hero } from "@/components/features/hero"
 import { Benefits } from "@/components/features/benefits"
 import { MidPageCTA } from "@/components/features/cta-sections"
@@ -40,6 +41,7 @@ export default function Home() {
         <FinalCTA />
       </main>
       <Footer />
+      <BackToTop />
     </>
   )
 }
