@@ -7,6 +7,7 @@ import { Button } from '@/components/ui/button'
 import { navigationItems } from '@/lib/navigation-data'
 import { ErrorBoundary } from '@/components/ui/error-boundary'
 import { getFocusClasses } from '@/lib/focus-styles'
+import { useLocalStorage } from '@/hooks/useLocalStorage'
 
 interface NavigationProps {
   className?: string
@@ -15,7 +16,7 @@ interface NavigationProps {
 function NavigationContent({ className }: NavigationProps) {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
   const [isScrolled, setIsScrolled] = useState(false)
-  const [isDark, setIsDark] = useState(false)
+  const [isDarkMode, setIsDarkMode] = useLocalStorage('darkMode', false)
 
   // Handle scroll detection
   useEffect(() => {
@@ -27,15 +28,17 @@ function NavigationContent({ className }: NavigationProps) {
     return () => window.removeEventListener('scroll', handleScroll)
   }, [])
 
-  // Handle dark mode
+  // Initialize dark mode from localStorage
   useEffect(() => {
-    const isDarkMode = document.documentElement.classList.contains('dark')
-    setIsDark(isDarkMode)
-  }, [])
+    if (isDarkMode) {
+      document.documentElement.classList.add('dark')
+    } else {
+      document.documentElement.classList.remove('dark')
+    }
+  }, [isDarkMode])
 
   const toggleDarkMode = () => {
-    document.documentElement.classList.toggle('dark')
-    setIsDark(!isDark)
+    setIsDarkMode(!isDarkMode)
   }
 
   const scrollToSection = (href: string) => {
@@ -117,7 +120,7 @@ function NavigationContent({ className }: NavigationProps) {
               whileTap={{ scale: 0.9 }}
               aria-label="Toggle dark mode"
             >
-              {isDark ? <Sun className="w-5 h-5" /> : <Moon className="w-5 h-5" />}
+              {isDarkMode ? <Sun className="w-5 h-5" /> : <Moon className="w-5 h-5" />}
             </motion.button>
 
             {/* CTA Button */}
@@ -138,7 +141,7 @@ function NavigationContent({ className }: NavigationProps) {
               whileTap={{ scale: 0.9 }}
               aria-label="Toggle dark mode"
             >
-              {isDark ? <Sun className="w-5 h-5" /> : <Moon className="w-5 h-5" />}
+              {isDarkMode ? <Sun className="w-5 h-5" /> : <Moon className="w-5 h-5" />}
             </motion.button>
             
             <motion.button
