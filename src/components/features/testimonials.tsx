@@ -1,10 +1,11 @@
 'use client'
 
-import React, { useState } from "react"
+import React, { useState, useEffect } from "react"
 import { motion } from "framer-motion"
 import { Star, Quote, CheckCircle, MapPin, TrendingUp } from "lucide-react"
 import { testimonialsData, testimonialStats, getFeaturedTestimonials } from "@/lib/testimonials-data"
 import { ErrorBoundary } from "@/components/ui/error-boundary"
+import { SkeletonCard } from "@/components/ui/skeleton"
 
 interface TestimonialCardProps {
   testimonial: typeof testimonialsData[0]
@@ -138,8 +139,18 @@ const TestimonialCard = React.memo(function TestimonialCard({ testimonial, index
 
 function TestimonialsContent() {
   const [showAll, setShowAll] = useState(false)
+  const [isLoading, setIsLoading] = useState(true)
   const featuredTestimonials = getFeaturedTestimonials()
   const displayTestimonials = showAll ? testimonialsData : featuredTestimonials
+
+  // Simulate loading for better UX demonstration
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setIsLoading(false)
+    }, 800) // Short delay to show skeleton
+
+    return () => clearTimeout(timer)
+  }, [])
 
   return (
     <section className="py-16 bg-gradient-to-b from-gray-50 to-white dark:from-gray-900 dark:to-gray-800">
@@ -208,14 +219,28 @@ function TestimonialsContent() {
 
         {/* Testimonials Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-8">
-          {displayTestimonials.map((testimonial, index) => (
-            <TestimonialCard
-              key={testimonial.id}
-              testimonial={testimonial}
-              index={index}
-              featured={testimonial.featured}
-            />
-          ))}
+          {isLoading ? (
+            // Skeleton loading state
+            Array.from({ length: 6 }).map((_, index) => (
+              <motion.div
+                key={`skeleton-${index}`}
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: index * 0.1 }}
+              >
+                <SkeletonCard />
+              </motion.div>
+            ))
+          ) : (
+            displayTestimonials.map((testimonial, index) => (
+              <TestimonialCard
+                key={testimonial.id}
+                testimonial={testimonial}
+                index={index}
+                featured={testimonial.featured}
+              />
+            ))
+          )}
         </div>
 
         {/* Load More Button */}
