@@ -1,0 +1,28 @@
+# Commit Message Template
+# 
+# Format: <type>: <subject>
+# 
+# <body>
+#
+# Authored-By: Dimitri Pisarev <info@dimitripisarev.com>
+#
+# Types:
+# feat: New feature
+# fix: Bug fix
+# docs: Documentation changes
+# style: Code style changes (formatting, semicolons, etc.)
+# refactor: Code refactoring
+# perf: Performance improvements
+# test: Adding or updating tests
+# chore: Maintenance tasks
+#
+# Subject line rules:
+# - Use imperative mood ("Add" not "Added")
+# - Start with capital letter
+# - No period at the end
+# - Keep under 50 characters
+#
+# Body rules:
+# - Wrap at 72 characters
+# - Explain what and why, not how
+# - Use present tense
