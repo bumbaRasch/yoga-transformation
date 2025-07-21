@@ -4,6 +4,7 @@ import { useState } from "react"
 import { motion } from "framer-motion"
 import { Button } from "@/components/ui/button"
 import { VideoModal } from "@/components/ui/video-modal"
+import { HeroSocialProof } from "@/components/ui/social-proof-badges"
 import { getGreeting } from "@/lib/utils"
 import { Heart, Play } from "lucide-react"
 
@@ -118,22 +119,27 @@ export function Hero() {
           </motion.div>
           
           <motion.div
-            className="mt-12 grid grid-cols-1 sm:grid-cols-3 gap-6 text-center"
+            className="mt-12"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ delay: 1 }}
           >
-            <div className="bg-white/50 dark:bg-gray-800/50 backdrop-blur-sm rounded-lg p-4">
-              <div className="text-2xl font-bold text-purple-600">14</div>
-              <div className="text-sm text-gray-600 dark:text-gray-400">Days of Practice</div>
-            </div>
-            <div className="bg-white/50 dark:bg-gray-800/50 backdrop-blur-sm rounded-lg p-4">
-              <div className="text-2xl font-bold text-pink-600">2.5K+</div>
-              <div className="text-sm text-gray-600 dark:text-gray-400">Happy Students</div>
-            </div>
-            <div className="bg-white/50 dark:bg-gray-800/50 backdrop-blur-sm rounded-lg p-4">
-              <div className="text-2xl font-bold text-orange-600">All Levels</div>
-              <div className="text-sm text-gray-600 dark:text-gray-400">Beginner to Advanced</div>
+            <HeroSocialProof className="mb-6" />
+            
+            {/* Program highlights */}
+            <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 max-w-2xl mx-auto">
+              <div className="text-center">
+                <div className="text-xl font-bold text-purple-600">14 Days</div>
+                <div className="text-sm text-gray-600 dark:text-gray-400">Transform</div>
+              </div>
+              <div className="text-center">
+                <div className="text-xl font-bold text-pink-600">All Levels</div>
+                <div className="text-sm text-gray-600 dark:text-gray-400">Welcome</div>
+              </div>
+              <div className="text-center">
+                <div className="text-xl font-bold text-orange-600">Lifetime</div>
+                <div className="text-sm text-gray-600 dark:text-gray-400">Access</div>
+              </div>
             </div>
           </motion.div>
         </motion.div>
