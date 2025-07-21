@@ -1,0 +1,113 @@
+{
+  "name": "14-Day Yoga Transformation",
+  "short_name": "Yoga Transform",
+  "description": "Transform your mind and body with our expert-guided 14-day yoga journey. Suitable for all levels with personalized progressions.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#8B5CF6",
+  "orientation": "portrait-primary",
+  "categories": ["health", "fitness", "wellness", "lifestyle"],
+  "lang": "en",
+  "dir": "ltr",
+  "scope": "/",
+  "icons": [
+    {
+      "src": "/icons/icon-72x72.svg",
+      "sizes": "72x72",
+      "type": "image/svg+xml",
+      "purpose": "maskable any"
+    },
+    {
+      "src": "/icons/icon-96x96.svg",
+      "sizes": "96x96",
+      "type": "image/svg+xml",
+      "purpose": "maskable any"
+    },
+    {
+      "src": "/icons/icon-128x128.svg",
+      "sizes": "128x128",
+      "type": "image/svg+xml",
+      "purpose": "maskable any"
+    },
+    {
+      "src": "/icons/icon-144x144.svg",
+      "sizes": "144x144",
+      "type": "image/svg+xml",
+      "purpose": "maskable any"
+    },
+    {
+      "src": "/icons/icon-152x152.svg",
+      "sizes": "152x152",
+      "type": "image/svg+xml",
+      "purpose": "maskable any"
+    },
+    {
+      "src": "/icons/icon-192x192.svg",
+      "sizes": "192x192",
+      "type": "image/svg+xml",
+      "purpose": "maskable any"
+    },
+    {
+      "src": "/icons/icon-384x384.svg",
+      "sizes": "384x384",
+      "type": "image/svg+xml",
+      "purpose": "maskable any"
+    },
+    {
+      "src": "/icons/icon-512x512.svg",
+      "sizes": "512x512",
+      "type": "image/svg+xml",
+      "purpose": "maskable any"
+    }
+  ],
+  "screenshots": [
+    {
+      "src": "/screenshots/desktop-hero.svg",
+      "sizes": "1280x800",
+      "type": "image/svg+xml",
+      "form_factor": "wide",
+      "label": "Hero section with transformation journey preview"
+    },
+    {
+      "src": "/screenshots/mobile-timeline.svg",
+      "sizes": "390x844",
+      "type": "image/svg+xml",
+      "form_factor": "narrow",
+      "label": "Interactive 14-day timeline"
+    }
+  ],
+  "shortcuts": [
+    {
+      "name": "Start Journey",
+      "short_name": "Start",
+      "description": "Begin your 14-day transformation",
+      "url": "/#timeline",
+      "icons": [
+        {
+          "src": "/icons/shortcut-start.svg",
+          "sizes": "96x96",
+          "type": "image/svg+xml"
+        }
+      ]
+    },
+    {
+      "name": "Pricing",
+      "short_name": "Plans",
+      "description": "View transformation plans",
+      "url": "/#pricing",
+      "icons": [
+        {
+          "src": "/icons/shortcut-pricing.svg",
+          "sizes": "96x96",
+          "type": "image/svg+xml"
+        }
+      ]
+    }
+  ],
+  "related_applications": [],
+  "prefer_related_applications": false,
+  "edge_side_panel": {
+    "preferred_width": 400
+  }
+}

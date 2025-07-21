@@ -1,0 +1,33 @@
+<svg width="192" height="192" viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background circle -->
+  <circle cx="256" cy="256" r="256" fill="#8B5CF6"/>
+  
+  <!-- Yoga figure -->
+  <g fill="white">
+    <!-- Head -->
+    <circle cx="256" cy="160" r="32"/>
+    
+    <!-- Body -->
+    <rect x="240" y="192" width="32" height="80" rx="16"/>
+    
+    <!-- Arms in meditation pose -->
+    <ellipse cx="200" cy="220" rx="12" ry="40" transform="rotate(-30 200 220)"/>
+    <ellipse cx="312" cy="220" rx="12" ry="40" transform="rotate(30 312 220)"/>
+    
+    <!-- Legs in lotus position -->
+    <ellipse cx="230" cy="320" rx="40" ry="16"/>
+    <ellipse cx="282" cy="320" rx="40" ry="16"/>
+    
+    <!-- Meditation hands -->
+    <circle cx="188" cy="240" r="8"/>
+    <circle cx="324" cy="240" r="8"/>
+  </g>
+  
+  <!-- Decorative elements -->
+  <g fill="rgba(255,255,255,0.3)">
+    <circle cx="150" cy="120" r="4"/>
+    <circle cx="380" cy="140" r="6"/>
+    <circle cx="120" cy="300" r="5"/>
+    <circle cx="400" cy="350" r="4"/>
+  </g>
+</svg>

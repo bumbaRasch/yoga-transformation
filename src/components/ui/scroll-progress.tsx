@@ -66,13 +66,13 @@ export const ScrollProgress = React.memo(function ScrollProgress({
       style={{
         height: `${height}px`,
         transformOrigin: 'top',
-        background: 'rgba(255, 255, 255, 0.1)',
-        backdropFilter: 'blur(8px)',
-        borderBottom: '1px solid rgba(255, 255, 255, 0.2)'
+        background: 'rgba(255, 255, 255, 0.05)',
+        backdropFilter: 'blur(12px)',
+        borderBottom: '1px solid rgba(139, 92, 246, 0.1)'
       }}
     >
       <motion.div
-        className="h-full bg-gradient-to-r from-purple-500 via-pink-500 to-orange-500 shadow-lg"
+        className="h-full bg-gradient-to-r from-purple-600 via-purple-500 to-pink-500 shadow-lg relative overflow-hidden"
         initial={{ width: 0 }}
         animate={{ width: `${scrollProgress}%` }}
         transition={{
@@ -82,7 +82,7 @@ export const ScrollProgress = React.memo(function ScrollProgress({
           mass: 0.1
         }}
         style={{
-          boxShadow: '0 0 20px rgba(147, 51, 234, 0.4), 0 0 40px rgba(236, 72, 153, 0.2)'
+          boxShadow: '0 0 25px rgba(139, 92, 246, 0.6), 0 0 50px rgba(236, 72, 153, 0.3)'
         }}
       />
     </motion.div>
