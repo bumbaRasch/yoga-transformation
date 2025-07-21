@@ -13,6 +13,20 @@ const nextConfig = {
   // Enable static optimization
   trailingSlash: false,
   
+  // Image optimization configuration
+  images: {
+    formats: ['image/avif', 'image/webp'],
+    deviceSizes: [320, 480, 640, 768, 1024, 1280, 1920],
+    imageSizes: [16, 32, 48, 64, 96, 128, 256, 384, 512],
+    domains: [],
+    minimumCacheTTL: 31536000, // 1 year cache
+    dangerouslyAllowSVG: true,
+    contentSecurityPolicy: "default-src 'self'; script-src 'none'; sandbox;",
+    remotePatterns: [],
+    unoptimized: false, // Enable Next.js image optimization
+    loader: 'default'
+  },
+  
   // Security headers
   async headers() {
     return [

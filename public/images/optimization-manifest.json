@@ -1,0 +1,273 @@
+{
+  "hero-yoga": {
+    "original": "/images/hero-yoga.png",
+    "webp": [
+      "/images/hero-yoga-480w.webp",
+      "/images/hero-yoga-768w.webp",
+      "/images/hero-yoga-1024w.webp",
+      "/images/hero-yoga-1280w.webp",
+      "/images/hero-yoga-1920w.webp",
+      "/images/hero-yoga-2560w.webp"
+    ],
+    "avif": [
+      "/images/hero-yoga-480w.avif",
+      "/images/hero-yoga-768w.avif",
+      "/images/hero-yoga-1024w.avif",
+      "/images/hero-yoga-1280w.avif",
+      "/images/hero-yoga-1920w.avif",
+      "/images/hero-yoga-2560w.avif"
+    ],
+    "responsive": [
+      {
+        "size": 480,
+        "webp": "/images/hero-yoga-480w.webp",
+        "avif": "/images/hero-yoga-480w.avif"
+      },
+      {
+        "size": 768,
+        "webp": "/images/hero-yoga-768w.webp",
+        "avif": "/images/hero-yoga-768w.avif"
+      },
+      {
+        "size": 1024,
+        "webp": "/images/hero-yoga-1024w.webp",
+        "avif": "/images/hero-yoga-1024w.avif"
+      },
+      {
+        "size": 1280,
+        "webp": "/images/hero-yoga-1280w.webp",
+        "avif": "/images/hero-yoga-1280w.avif"
+      },
+      {
+        "size": 1920,
+        "webp": "/images/hero-yoga-1920w.webp",
+        "avif": "/images/hero-yoga-1920w.avif"
+      },
+      {
+        "size": 2560,
+        "webp": "/images/hero-yoga-2560w.webp",
+        "avif": "/images/hero-yoga-2560w.avif"
+      }
+    ],
+    "blurDataURL": "data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iOCIgaGVpZ2h0PSI4IiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPgogICAgICA8cmVjdCB3aWR0aD0iOCIgaGVpZ2h0PSI4IiBmaWxsPSIjRjNGNEY2Ii8+CiAgICAgIDxmaWx0ZXIgaWQ9ImJsdXIiPgogICAgICAgIDxmZUdhdXNzaWFuQmx1ciBzdGREZXZpYXRpb249IjEiLz4KICAgICAgPC9maWx0ZXI+CiAgICAgIDxyZWN0IHdpZHRoPSI4IiBoZWlnaHQ9IjgiIGZpbGw9IiNGM0Y0RjYiIGZpbHRlcj0idXJsKCNibHVyKSIgb3BhY2l0eT0iMC43Ii8+CiAgICA8L3N2Zz4=",
+    "config": {
+      "sizes": [
+        480,
+        768,
+        1024,
+        1280,
+        1920,
+        2560
+      ],
+      "quality": {
+        "webp": 90,
+        "avif": 85
+      },
+      "priority": true
+    }
+  },
+  "yoga-pose-meditation": {
+    "original": "/images/yoga-pose-meditation.png",
+    "webp": [
+      "/images/yoga-pose-meditation-256w.webp",
+      "/images/yoga-pose-meditation-400w.webp",
+      "/images/yoga-pose-meditation-600w.webp",
+      "/images/yoga-pose-meditation-800w.webp"
+    ],
+    "avif": [
+      "/images/yoga-pose-meditation-256w.avif",
+      "/images/yoga-pose-meditation-400w.avif",
+      "/images/yoga-pose-meditation-600w.avif",
+      "/images/yoga-pose-meditation-800w.avif"
+    ],
+    "responsive": [
+      {
+        "size": 256,
+        "webp": "/images/yoga-pose-meditation-256w.webp",
+        "avif": "/images/yoga-pose-meditation-256w.avif"
+      },
+      {
+        "size": 400,
+        "webp": "/images/yoga-pose-meditation-400w.webp",
+        "avif": "/images/yoga-pose-meditation-400w.avif"
+      },
+      {
+        "size": 600,
+        "webp": "/images/yoga-pose-meditation-600w.webp",
+        "avif": "/images/yoga-pose-meditation-600w.avif"
+      },
+      {
+        "size": 800,
+        "webp": "/images/yoga-pose-meditation-800w.webp",
+        "avif": "/images/yoga-pose-meditation-800w.avif"
+      }
+    ],
+    "blurDataURL": "data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iOCIgaGVpZ2h0PSI4IiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPgogICAgICA8cmVjdCB3aWR0aD0iOCIgaGVpZ2h0PSI4IiBmaWxsPSIjRjNGNEY2Ii8+CiAgICAgIDxmaWx0ZXIgaWQ9ImJsdXIiPgogICAgICAgIDxmZUdhdXNzaWFuQmx1ciBzdGREZXZpYXRpb249IjEiLz4KICAgICAgPC9maWx0ZXI+CiAgICAgIDxyZWN0IHdpZHRoPSI4IiBoZWlnaHQ9IjgiIGZpbGw9IiNGM0Y0RjYiIGZpbHRlcj0idXJsKCNibHVyKSIgb3BhY2l0eT0iMC43Ii8+CiAgICA8L3N2Zz4=",
+    "config": {
+      "sizes": [
+        256,
+        400,
+        600,
+        800
+      ],
+      "quality": {
+        "webp": 85,
+        "avif": 80
+      },
+      "priority": false
+    }
+  },
+  "yoga-pose-stretch": {
+    "original": "/images/yoga-pose-stretch.png",
+    "webp": [
+      "/images/yoga-pose-stretch-256w.webp",
+      "/images/yoga-pose-stretch-400w.webp",
+      "/images/yoga-pose-stretch-600w.webp",
+      "/images/yoga-pose-stretch-800w.webp"
+    ],
+    "avif": [
+      "/images/yoga-pose-stretch-256w.avif",
+      "/images/yoga-pose-stretch-400w.avif",
+      "/images/yoga-pose-stretch-600w.avif",
+      "/images/yoga-pose-stretch-800w.avif"
+    ],
+    "responsive": [
+      {
+        "size": 256,
+        "webp": "/images/yoga-pose-stretch-256w.webp",
+        "avif": "/images/yoga-pose-stretch-256w.avif"
+      },
+      {
+        "size": 400,
+        "webp": "/images/yoga-pose-stretch-400w.webp",
+        "avif": "/images/yoga-pose-stretch-400w.avif"
+      },
+      {
+        "size": 600,
+        "webp": "/images/yoga-pose-stretch-600w.webp",
+        "avif": "/images/yoga-pose-stretch-600w.avif"
+      },
+      {
+        "size": 800,
+        "webp": "/images/yoga-pose-stretch-800w.webp",
+        "avif": "/images/yoga-pose-stretch-800w.avif"
+      }
+    ],
+    "blurDataURL": "data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iOCIgaGVpZ2h0PSI4IiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPgogICAgICA8cmVjdCB3aWR0aD0iOCIgaGVpZ2h0PSI4IiBmaWxsPSIjRjNGNEY2Ii8+CiAgICAgIDxmaWx0ZXIgaWQ9ImJsdXIiPgogICAgICAgIDxmZUdhdXNzaWFuQmx1ciBzdGREZXZpYXRpb249IjEiLz4KICAgICAgPC9maWx0ZXI+CiAgICAgIDxyZWN0IHdpZHRoPSI4IiBoZWlnaHQ9IjgiIGZpbGw9IiNGM0Y0RjYiIGZpbHRlcj0idXJsKCNibHVyKSIgb3BhY2l0eT0iMC43Ii8+CiAgICA8L3N2Zz4=",
+    "config": {
+      "sizes": [
+        256,
+        400,
+        600,
+        800
+      ],
+      "quality": {
+        "webp": 85,
+        "avif": 80
+      },
+      "priority": false
+    }
+  },
+  "yoga-pose-tree": {
+    "original": "/images/yoga-pose-tree.png",
+    "webp": [
+      "/images/yoga-pose-tree-256w.webp",
+      "/images/yoga-pose-tree-400w.webp",
+      "/images/yoga-pose-tree-600w.webp",
+      "/images/yoga-pose-tree-800w.webp"
+    ],
+    "avif": [
+      "/images/yoga-pose-tree-256w.avif",
+      "/images/yoga-pose-tree-400w.avif",
+      "/images/yoga-pose-tree-600w.avif",
+      "/images/yoga-pose-tree-800w.avif"
+    ],
+    "responsive": [
+      {
+        "size": 256,
+        "webp": "/images/yoga-pose-tree-256w.webp",
+        "avif": "/images/yoga-pose-tree-256w.avif"
+      },
+      {
+        "size": 400,
+        "webp": "/images/yoga-pose-tree-400w.webp",
+        "avif": "/images/yoga-pose-tree-400w.avif"
+      },
+      {
+        "size": 600,
+        "webp": "/images/yoga-pose-tree-600w.webp",
+        "avif": "/images/yoga-pose-tree-600w.avif"
+      },
+      {
+        "size": 800,
+        "webp": "/images/yoga-pose-tree-800w.webp",
+        "avif": "/images/yoga-pose-tree-800w.avif"
+      }
+    ],
+    "blurDataURL": "data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iOCIgaGVpZ2h0PSI4IiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPgogICAgICA8cmVjdCB3aWR0aD0iOCIgaGVpZ2h0PSI4IiBmaWxsPSIjRTVFN0VCIi8+CiAgICAgIDxmaWx0ZXIgaWQ9ImJsdXIiPgogICAgICAgIDxmZUdhdXNzaWFuQmx1ciBzdGREZXZpYXRpb249IjEiLz4KICAgICAgPC9maWx0ZXI+CiAgICAgIDxyZWN0IHdpZHRoPSI4IiBoZWlnaHQ9IjgiIGZpbGw9IiNFNUU3RUIiIGZpbHRlcj0idXJsKCNibHVyKSIgb3BhY2l0eT0iMC43Ii8+CiAgICA8L3N2Zz4=",
+    "config": {
+      "sizes": [
+        256,
+        400,
+        600,
+        800
+      ],
+      "quality": {
+        "webp": 85,
+        "avif": 80
+      },
+      "priority": false
+    }
+  },
+  "yoga-pose-warrior": {
+    "original": "/images/yoga-pose-warrior.png",
+    "webp": [
+      "/images/yoga-pose-warrior-256w.webp",
+      "/images/yoga-pose-warrior-400w.webp",
+      "/images/yoga-pose-warrior-600w.webp",
+      "/images/yoga-pose-warrior-800w.webp"
+    ],
+    "avif": [
+      "/images/yoga-pose-warrior-256w.avif",
+      "/images/yoga-pose-warrior-400w.avif",
+      "/images/yoga-pose-warrior-600w.avif",
+      "/images/yoga-pose-warrior-800w.avif"
+    ],
+    "responsive": [
+      {
+        "size": 256,
+        "webp": "/images/yoga-pose-warrior-256w.webp",
+        "avif": "/images/yoga-pose-warrior-256w.avif"
+      },
+      {
+        "size": 400,
+        "webp": "/images/yoga-pose-warrior-400w.webp",
+        "avif": "/images/yoga-pose-warrior-400w.avif"
+      },
+      {
+        "size": 600,
+        "webp": "/images/yoga-pose-warrior-600w.webp",
+        "avif": "/images/yoga-pose-warrior-600w.avif"
+      },
+      {
+        "size": 800,
+        "webp": "/images/yoga-pose-warrior-800w.webp",
+        "avif": "/images/yoga-pose-warrior-800w.avif"
+      }
+    ],
+    "blurDataURL": "data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iOCIgaGVpZ2h0PSI4IiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPgogICAgICA8cmVjdCB3aWR0aD0iOCIgaGVpZ2h0PSI4IiBmaWxsPSIjRTVFN0VCIi8+CiAgICAgIDxmaWx0ZXIgaWQ9ImJsdXIiPgogICAgICAgIDxmZUdhdXNzaWFuQmx1ciBzdGREZXZpYXRpb249IjEiLz4KICAgICAgPC9maWx0ZXI+CiAgICAgIDxyZWN0IHdpZHRoPSI4IiBoZWlnaHQ9IjgiIGZpbGw9IiNFNUU3RUIiIGZpbHRlcj0idXJsKCNibHVyKSIgb3BhY2l0eT0iMC43Ii8+CiAgICA8L3N2Zz4=",
+    "config": {
+      "sizes": [
+        256,
+        400,
+        600,
+        800
+      ],
+      "quality": {
+        "webp": 85,
+        "avif": 80
+      },
+      "priority": false
+    }
+  }
+}

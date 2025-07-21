@@ -5,6 +5,7 @@ import { motion } from "framer-motion"
 import { Button } from "@/components/ui/button"
 import { VideoModal } from "@/components/ui/video-modal"
 import { HeroSocialProof } from "@/components/ui/social-proof-badges"
+import { OptimizedImage, RESPONSIVE_SIZES } from "@/components/ui/optimized-image"
 import { getGreeting } from "@/lib/utils"
 import { Heart, Play } from "lucide-react"
 
@@ -23,7 +24,22 @@ export function Hero() {
   }
 
   return (
-    <section className="relative min-h-[calc(100vh-4rem)] flex items-center justify-center bg-gradient-to-br from-purple-50 via-pink-50 to-orange-50 dark:from-gray-900 dark:via-purple-900/20 dark:to-pink-900/20">
+    <section className="relative min-h-[calc(100vh-4rem)] flex items-center justify-center overflow-hidden">
+      {/* Optimized background image */}
+      <div className="absolute inset-0">
+        <OptimizedImage
+          src="/images/hero-yoga.png"
+          alt="Serene yoga meditation scene with mountains and peaceful sky"
+          fill
+          priority
+          quality={95}
+          sizes={RESPONSIVE_SIZES.hero}
+          className="object-cover object-center"
+        />
+        {/* Overlay for text readability */}
+        <div className="absolute inset-0 bg-gradient-to-br from-white/80 via-purple-50/70 to-pink-50/60 dark:from-gray-900/80 dark:via-purple-900/60 dark:to-pink-900/50" />
+      </div>
+
       {/* Background decoration */}
       <div className="absolute inset-0 overflow-hidden">
         <motion.div

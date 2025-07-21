@@ -1,0 +1,27 @@
+{
+  "breakpoints": {
+    "xs": 320,
+    "sm": 640,
+    "md": 768,
+    "lg": 1024,
+    "xl": 1280,
+    "2xl": 1536
+  },
+  "formats": [
+    "avif",
+    "webp",
+    "png",
+    "jpg"
+  ],
+  "quality": {
+    "webp": 85,
+    "avif": 80,
+    "jpeg": 90
+  },
+  "sizes": {
+    "hero": "100vw",
+    "card": "(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw",
+    "thumbnail": "(max-width: 768px) 50vw, 200px",
+    "avatar": "80px"
+  }
+}
