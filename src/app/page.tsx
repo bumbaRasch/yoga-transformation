@@ -1,6 +1,7 @@
 import { Navigation } from "@/components/layout/navigation"
 import { Footer } from "@/components/layout/footer"
 import { SkipToContent } from "@/components/ui/skip-to-content"
+import { ScrollProgress } from "@/components/ui/scroll-progress"
 import { Hero } from "@/components/features/hero"
 import { Benefits } from "@/components/features/benefits"
 import { MidPageCTA } from "@/components/features/cta-sections"
@@ -15,6 +16,7 @@ export default function Home() {
   return (
     <>
       <SkipToContent />
+      <ScrollProgress />
       <Navigation />
       <main id="main-content" className="overflow-hidden">
         <Hero />
