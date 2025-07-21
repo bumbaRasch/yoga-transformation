@@ -180,27 +180,99 @@ function InstructorContent() {
                 </p>
               </div>
 
-              {/* Quick Stats */}
-              <div className="grid grid-cols-2 gap-4">
-                <div className="bg-green-50 dark:bg-green-900/20 rounded-lg p-4">
-                  <div className="flex items-center gap-2 mb-1">
-                    <Calendar className="w-4 h-4 text-green-600" />
-                    <span className="text-sm text-green-600 dark:text-green-400">{t('instructor.experienceLabel')}</span>
-                  </div>
-                  <div className="text-2xl font-bold text-gray-900 dark:text-white">
-                    {t('instructor.experience')} {t('instructor.experienceYears')}
-                  </div>
+              {/* Experience & Student Stats */}
+              <motion.section
+                className="grid grid-cols-1 sm:grid-cols-2 gap-4"
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, delay: 0.7 }}
+                aria-labelledby="instructor-stats"
+              >
+                <div className="sr-only" id="instructor-stats">
+                  Instructor Statistics and Achievements
                 </div>
-                <div className="bg-blue-50 dark:bg-blue-900/20 rounded-lg p-4">
-                  <div className="flex items-center gap-2 mb-1">
-                    <Users className="w-4 h-4 text-blue-600" />
-                    <span className="text-sm text-blue-600 dark:text-blue-400">{t('instructor.studentsLabel')}</span>
+                {/* Experience Card */}
+                <motion.article 
+                  className="group relative overflow-hidden rounded-lg bg-gradient-to-br from-green-50 via-emerald-50 to-teal-50 dark:from-green-900/30 dark:via-emerald-900/20 dark:to-teal-900/20 p-3 shadow-sm ring-1 ring-green-100 dark:ring-green-800/30 transition-all duration-300 hover:shadow-md hover:shadow-green-100/30 dark:hover:shadow-green-900/20 hover:ring-green-200 dark:hover:ring-green-700/50 hover:-translate-y-0.5"
+                  whileHover={{ scale: 1.02 }}
+                  whileTap={{ scale: 0.98 }}
+                  role="region"
+                  aria-labelledby="experience-stat"
+                  tabIndex={0}
+                >
+                  {/* Background Pattern */}
+                  <div className="absolute inset-0 bg-gradient-to-br from-transparent via-white/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+                  
+                  {/* Icon & Label */}
+                  <div className="relative z-10 flex items-center gap-2 mb-2">
+                    <div className="flex items-center justify-center w-7 h-7 rounded-lg bg-gradient-to-br from-green-500 to-emerald-600 shadow-sm shadow-green-500/20">
+                      <Calendar className="w-3.5 h-3.5 text-white" />
+                    </div>
+                    <div>
+                      <span 
+                        className="block text-xs font-semibold text-green-700 dark:text-green-300 uppercase tracking-wide"
+                        id="experience-stat"
+                      >
+                        {t('instructor.experienceLabel')}
+                      </span>
+                      <span className="block text-[10px] text-green-600/70 dark:text-green-400/70">
+                        Teaching Excellence
+                      </span>
+                    </div>
                   </div>
-                  <div className="text-2xl font-bold text-gray-900 dark:text-white">
-                    {instructor.stats.studentsHelped}
+                  
+                  {/* Value */}
+                  <div className="relative z-10">
+                    <div className="text-lg font-bold text-gray-900 dark:text-white mb-0.5">
+                      {t('instructor.experience')} {t('instructor.experienceYears')}
+                    </div>
+                    <p className="text-xs text-gray-600 dark:text-gray-300 leading-tight">
+                      Global teaching across 3 continents
+                    </p>
                   </div>
-                </div>
-              </div>
+                </motion.article>
+
+                {/* Students Card */}
+                <motion.article 
+                  className="group relative overflow-hidden rounded-lg bg-gradient-to-br from-blue-50 via-indigo-50 to-purple-50 dark:from-blue-900/30 dark:via-indigo-900/20 dark:to-purple-900/20 p-3 shadow-sm ring-1 ring-blue-100 dark:ring-blue-800/30 transition-all duration-300 hover:shadow-md hover:shadow-blue-100/30 dark:hover:shadow-blue-900/20 hover:ring-blue-200 dark:hover:ring-blue-700/50 hover:-translate-y-0.5"
+                  whileHover={{ scale: 1.02 }}
+                  whileTap={{ scale: 0.98 }}
+                  role="region"
+                  aria-labelledby="students-stat"
+                  tabIndex={0}
+                >
+                  {/* Background Pattern */}
+                  <div className="absolute inset-0 bg-gradient-to-br from-transparent via-white/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+                  
+                  {/* Icon & Label */}
+                  <div className="relative z-10 flex items-center gap-2 mb-2">
+                    <div className="flex items-center justify-center w-7 h-7 rounded-lg bg-gradient-to-br from-blue-500 to-indigo-600 shadow-sm shadow-blue-500/20">
+                      <Users className="w-3.5 h-3.5 text-white" />
+                    </div>
+                    <div>
+                      <span 
+                        className="block text-xs font-semibold text-blue-700 dark:text-blue-300 uppercase tracking-wide"
+                        id="students-stat"
+                      >
+                        {t('instructor.studentsLabel')}
+                      </span>
+                      <span className="block text-[10px] text-blue-600/70 dark:text-blue-400/70">
+                        Lives Transformed
+                      </span>
+                    </div>
+                  </div>
+                  
+                  {/* Value */}
+                  <div className="relative z-10">
+                    <div className="text-lg font-bold text-gray-900 dark:text-white mb-0.5">
+                      {instructor.stats.studentsHelped}
+                    </div>
+                    <p className="text-xs text-gray-600 dark:text-gray-300 leading-tight">
+                      Students discovering inner strength
+                    </p>
+                  </div>
+                </motion.article>
+              </motion.section>
 
               {/* CTA Button */}
               <Button size="lg" className="w-full sm:w-auto">
