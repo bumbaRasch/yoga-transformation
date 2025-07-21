@@ -1,9 +1,11 @@
 'use client'
 
+import React, { useState } from "react"
 import { motion } from "framer-motion"
 import { Check, ShieldCheck, Clock, Smartphone, Users, Star, Zap } from "lucide-react"
 import { Button } from "@/components/ui/button"
-import { pricingPlans, additionalFeatures, formatPrice, calculateSavings } from "@/lib/pricing-data"
+import { PricingToggle } from "@/components/ui/pricing-toggle"
+import { pricingPlans, additionalFeatures, formatPrice, calculateSavings, getPlanPrice, calculateAnnualSavings } from "@/lib/pricing-data"
 import { ErrorBoundary } from "@/components/ui/error-boundary"
 
 const featureIcons = {
@@ -16,10 +18,13 @@ const featureIcons = {
 interface PricingCardProps {
   plan: typeof pricingPlans[0]
   index: number
+  isAnnual: boolean
 }
 
-function PricingCard({ plan, index }: PricingCardProps) {
-  const savings = plan.originalPrice ? calculateSavings(plan.originalPrice, plan.price.amount) : 0
+function PricingCard({ plan, index, isAnnual }: PricingCardProps) {
+  const currentPrice = getPlanPrice(plan, isAnnual)
+  const savings = currentPrice.originalPrice ? calculateSavings(currentPrice.originalPrice, currentPrice.amount) : 0
+  const annualSavings = calculateAnnualSavings(plan)
 
   return (
     <motion.div
@@ -58,10 +63,10 @@ function PricingCard({ plan, index }: PricingCardProps) {
 
         {/* Pricing */}
         <div className="space-y-2">
-          {plan.originalPrice && (
+          {currentPrice.originalPrice && (
             <div className="flex items-center justify-center gap-2">
               <span className="text-sm text-gray-500 line-through">
-                {formatPrice(plan.originalPrice)}
+                {formatPrice(currentPrice.originalPrice, currentPrice.currency)}
               </span>
               <span className="bg-red-100 text-red-800 text-xs px-2 py-1 rounded-full font-medium">
                 Save {savings}%
@@ -73,14 +78,14 @@ function PricingCard({ plan, index }: PricingCardProps) {
               text-4xl font-bold
               ${plan.popular ? 'bg-gradient-to-r from-purple-600 to-pink-600 bg-clip-text text-transparent' : 'text-gray-900 dark:text-white'}
             `}>
-              {formatPrice(plan.price.amount)}
+              {formatPrice(currentPrice.amount, currentPrice.currency)}
             </span>
-            {plan.price.period !== 'one-time' && (
-              <span className="text-gray-500">/{plan.price.period}</span>
-            )}
+            <span className="text-gray-500">/{isAnnual ? 'year' : 'month'}</span>
           </div>
-          {plan.price.period === 'one-time' && (
-            <p className="text-sm text-gray-500">One-time payment</p>
+          {isAnnual && annualSavings > 0 && (
+            <p className="text-sm text-green-600 dark:text-green-400 font-medium">
+              Save {annualSavings}% vs monthly billing
+            </p>
           )}
         </div>
       </div>
@@ -149,6 +154,8 @@ function PricingCard({ plan, index }: PricingCardProps) {
 }
 
 function PricingContent() {
+  const [isAnnual, setIsAnnual] = useState(false)
+
   return (
     <section className="py-16 bg-white dark:bg-gray-900">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -194,10 +201,24 @@ function PricingContent() {
           </motion.div>
         </motion.div>
 
+        {/* Pricing Toggle */}
+        <motion.div
+          className="flex justify-center mb-8"
+          initial={{ opacity: 0, y: 10 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ delay: 0.6 }}
+        >
+          <PricingToggle 
+            isAnnual={isAnnual} 
+            onToggle={setIsAnnual}
+            className="mb-4"
+          />
+        </motion.div>
+
         {/* Pricing Cards */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16">
           {pricingPlans.map((plan, index) => (
-            <PricingCard key={plan.id} plan={plan} index={index} />
+            <PricingCard key={plan.id} plan={plan} index={index} isAnnual={isAnnual} />
           ))}
         </div>
 

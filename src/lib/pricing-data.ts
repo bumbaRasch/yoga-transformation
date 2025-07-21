@@ -2,12 +2,18 @@ export interface PricingPlan {
   id: string
   name: string
   description: string
-  price: {
-    amount: number
-    currency: string
-    period: string
+  pricing: {
+    monthly: {
+      amount: number
+      currency: string
+      originalPrice?: number
+    }
+    annual: {
+      amount: number
+      currency: string
+      originalPrice?: number
+    }
   }
-  originalPrice?: number
   badge?: string
   features: string[]
   popular?: boolean
@@ -18,22 +24,28 @@ export interface PricingPlan {
 export const pricingPlans: ReadonlyArray<PricingPlan> = [
   {
     id: 'basic',
-    name: '14-Day Transformation',
+    name: 'Yoga Essentials',
     description: 'Perfect for beginners starting their yoga journey',
-    price: {
-      amount: 47,
-      currency: 'USD',
-      period: 'one-time'
+    pricing: {
+      monthly: {
+        amount: 29,
+        currency: 'USD',
+        originalPrice: 39
+      },
+      annual: {
+        amount: 19,
+        currency: 'USD',
+        originalPrice: 29
+      }
     },
-    originalPrice: 97,
     features: [
-      '14 progressive daily sessions',
+      '14-day progressive program',
       'HD video instructions',
       'Downloadable pose guides',
       'Basic breathing exercises',
       'Email support',
       'Mobile & desktop access',
-      'Lifetime access to course'
+      'New content monthly'
     ],
     cta: 'Start Your Journey',
     benefits: [
@@ -44,63 +56,75 @@ export const pricingPlans: ReadonlyArray<PricingPlan> = [
   },
   {
     id: 'premium',
-    name: 'Complete Wellness Package',
+    name: 'Complete Wellness',
     description: 'Everything you need for lasting transformation',
-    price: {
-      amount: 97,
-      currency: 'USD',
-      period: 'one-time'
+    pricing: {
+      monthly: {
+        amount: 49,
+        currency: 'USD',
+        originalPrice: 69
+      },
+      annual: {
+        amount: 39,
+        currency: 'USD',
+        originalPrice: 49
+      }
     },
-    originalPrice: 197,
     badge: 'Most Popular',
     popular: true,
     features: [
-      'Everything in Basic plan',
-      'Personalized practice schedule',
-      'Advanced breathing techniques',
-      'Meditation & mindfulness sessions',
-      '30-day meal planning guide',
-      'Progress tracking tools',
-      'Direct instructor support',
+      'Everything in Yoga Essentials',
+      '30+ advanced sessions library',
+      'Personalized meal planning guide',
+      'Meditation & mindfulness series',
+      'Live monthly Q&A sessions',
       'Private community access',
-      'Bonus: 7-day advanced challenge'
+      'Priority email support',
+      'Progress tracking tools',
+      'Weekly new content'
     ],
     cta: 'Get Complete Package',
     benefits: [
-      'Accelerated results',
-      'Personal guidance',
+      'Complete transformation',
+      'Long-term wellness',
       'Community support',
-      'Nutritional guidance'
+      'Expert guidance'
     ]
   },
   {
     id: 'vip',
-    name: 'VIP Coaching Experience',
-    description: 'Premium experience with 1-on-1 guidance',
-    price: {
-      amount: 297,
-      currency: 'USD',
-      period: 'one-time'
+    name: 'VIP Coaching',
+    description: '1-on-1 guidance for maximum results',
+    pricing: {
+      monthly: {
+        amount: 97,
+        currency: 'USD',
+        originalPrice: 149
+      },
+      annual: {
+        amount: 77,
+        currency: 'USD',
+        originalPrice: 97
+      }
     },
-    originalPrice: 497,
     badge: 'Best Value',
     features: [
-      'Everything in Premium plan',
-      '2 one-on-one video calls with Maya',
-      'Personalized yoga sequence creation',
-      'Custom modification for injuries',
-      'Weekly progress check-ins',
-      'Priority 24/7 support',
-      'Bonus: 30-day habit tracker',
-      'Bonus: Stress management workshop',
-      '60-day money-back guarantee'
+      'Everything in Complete Wellness',
+      'Monthly 1-on-1 coaching calls',
+      'Custom practice plan creation',
+      'Real-time form correction',
+      'WhatsApp support access',
+      'Personalized nutrition advice',
+      'Goal setting & accountability',
+      'Priority feature requests',
+      'Unlimited email support'
     ],
-    cta: 'Get VIP Access',
+    cta: 'Book VIP Experience',
     benefits: [
       'Personal attention',
-      'Custom modifications',
-      'Fastest results',
-      'Risk-free guarantee'
+      'Faster results',
+      'Expert accountability',
+      'Lifetime guidance'
     ]
   }
 ] as const
@@ -143,4 +167,14 @@ export const formatPrice = (amount: number, currency: string = 'USD'): string =>
 
 export const calculateSavings = (original: number, current: number): number => {
   return Math.round(((original - current) / original) * 100)
+}
+
+export const getPlanPrice = (plan: PricingPlan, isAnnual: boolean) => {
+  return isAnnual ? plan.pricing.annual : plan.pricing.monthly
+}
+
+export const calculateAnnualSavings = (plan: PricingPlan): number => {
+  const monthlyTotal = plan.pricing.monthly.amount * 12
+  const annualPrice = plan.pricing.annual.amount * 12
+  return Math.round(((monthlyTotal - annualPrice) / monthlyTotal) * 100)
 }
