@@ -7,7 +7,7 @@ import { VideoModal } from "@/components/ui/video-modal"
 import { HeroSocialProof } from "@/components/ui/social-proof-badges"
 import { OptimizedImage, RESPONSIVE_SIZES } from "@/components/ui/optimized-image"
 import { useTranslations } from "@/contexts/language-context"
-import { getGreeting } from "@/lib/utils"
+import { getGreeting, getImagePath } from "@/lib/utils"
 import { Heart, Play } from "lucide-react"
 
 export function Hero() {
@@ -188,7 +188,7 @@ export function Hero() {
         videoUrl="https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4"
         title="14-Day Yoga Transformation Preview"
         description="Get a glimpse of what awaits you in our comprehensive yoga program. This preview showcases the gentle yet transformative approach we use to guide you through your 14-day journey to better health, flexibility, and inner peace."
-        thumbnailUrl="/images/yoga-preview-thumbnail.jpg"
+        thumbnailUrl={getImagePath("/images/yoga-preview-thumbnail.jpg")}
       />
     </section>
   )

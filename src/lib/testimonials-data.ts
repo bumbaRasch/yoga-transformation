@@ -1,3 +1,5 @@
+import { getImagePath } from './utils'
+
 export interface Testimonial {
   id: string
   name: string
@@ -23,7 +25,7 @@ export const testimonialsData: ReadonlyArray<Testimonial> = [
     name: 'Sarah Mitchell',
     age: 34,
     location: 'Seattle, WA',
-    avatar: '/images/testimonial-sarah.jpg',
+    avatar: getImagePath('/images/testimonial-sarah.jpg'),
     rating: 5,
     title: 'Life-changing transformation',
     content: 'I was skeptical at first, but Maya\'s 14-day program completely transformed how I feel about my body and mind. The progression is perfect for beginners like me, and I actually look forward to my daily practice now!',
@@ -41,7 +43,7 @@ export const testimonialsData: ReadonlyArray<Testimonial> = [
     name: 'Marcus Johnson',
     age: 28,
     location: 'Austin, TX',
-    avatar: '/images/testimonial-marcus.jpg',
+    avatar: getImagePath('/images/testimonial-marcus.jpg'),
     rating: 5,
     title: 'Perfect for busy professionals',
     content: 'As a software engineer working long hours, I needed something that fit my schedule. These 20-30 minute sessions are perfect, and I\'ve noticed huge improvements in my posture and energy levels.',
@@ -58,7 +60,7 @@ export const testimonialsData: ReadonlyArray<Testimonial> = [
     name: 'Elena Rodriguez',
     age: 42,
     location: 'Miami, FL',
-    avatar: '/images/testimonial-elena.jpg',
+    avatar: getImagePath('/images/testimonial-elena.jpg'),
     rating: 5,
     title: 'Flexibility I never thought possible',
     content: 'At 42, I thought my days of being flexible were over. This program proved me wrong! I can now touch my toes and feel more mobile than I have in years. Maya\'s guidance is exceptional.',
@@ -76,7 +78,7 @@ export const testimonialsData: ReadonlyArray<Testimonial> = [
     name: 'David Kim',
     age: 55,
     location: 'Portland, OR',
-    avatar: '/images/testimonial-david.jpg',
+    avatar: getImagePath('/images/testimonial-david.jpg'),
     rating: 5,
     title: 'Retirement wellness revolution',
     content: 'Recently retired and wanted to focus on my health. This program gave me structure and motivation. I feel stronger and more balanced than I did in my 40s. Highly recommend for anyone over 50!',
@@ -93,7 +95,7 @@ export const testimonialsData: ReadonlyArray<Testimonial> = [
     name: 'Lisa Williams',
     age: 29,
     location: 'Denver, CO',
-    avatar: '/images/testimonial-lisa.jpg',
+    avatar: getImagePath('/images/testimonial-lisa.jpg'),
     rating: 5,
     title: 'Anxiety relief through movement',
     content: 'Dealing with anxiety for years, I found traditional meditation difficult. Maya\'s moving meditation approach was perfect for me. The breathing techniques alone have been life-changing.',
@@ -110,7 +112,7 @@ export const testimonialsData: ReadonlyArray<Testimonial> = [
     name: 'Ahmed Sharma',
     age: 36,
     location: 'New York, NY',
-    avatar: '/images/testimonial-ahmed.jpg',
+    avatar: getImagePath('/images/testimonial-ahmed.jpg'),
     rating: 5,
     title: 'Strength without the gym',
     content: 'Gym closures led me to try yoga, and I\'m never going back! Built more functional strength and flexibility in 14 days than months at the gym. Plus, I can do it anywhere.',

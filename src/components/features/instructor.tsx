@@ -6,6 +6,7 @@ import { Button } from "@/components/ui/button"
 import { instructorData, achievements } from "@/lib/instructor-data"
 import { useTranslations } from "@/contexts/language-context"
 import { ErrorBoundary } from "@/components/ui/error-boundary"
+import { getImagePath } from "@/lib/utils"
 
 // Icon mapping
 const achievementIcons = {
@@ -70,31 +71,31 @@ function InstructorContent() {
                 <picture>
                   {/* AVIF format for best compression */}
                   <source
-                    srcSet="
-                      /images/serene_yoga_harmony-256w.avif 256w,
-                      /images/serene_yoga_harmony-400w.avif 400w,
-                      /images/serene_yoga_harmony-600w.avif 600w,
-                      /images/serene_yoga_harmony-800w.avif 800w
-                    "
+                    srcSet={`
+                      ${getImagePath('/images/serene_yoga_harmony-256w.avif')} 256w,
+                      ${getImagePath('/images/serene_yoga_harmony-400w.avif')} 400w,
+                      ${getImagePath('/images/serene_yoga_harmony-600w.avif')} 600w,
+                      ${getImagePath('/images/serene_yoga_harmony-800w.avif')} 800w
+                    `}
                     sizes="(max-width: 400px) 256px, (max-width: 600px) 400px, (max-width: 800px) 600px, 800px"
                     type="image/avif"
                   />
                   
                   {/* WebP format for good compression and compatibility */}
                   <source
-                    srcSet="
-                      /images/serene_yoga_harmony-256w.webp 256w,
-                      /images/serene_yoga_harmony-400w.webp 400w,
-                      /images/serene_yoga_harmony-600w.webp 600w,
-                      /images/serene_yoga_harmony-800w.webp 800w
-                    "
+                    srcSet={`
+                      ${getImagePath('/images/serene_yoga_harmony-256w.webp')} 256w,
+                      ${getImagePath('/images/serene_yoga_harmony-400w.webp')} 400w,
+                      ${getImagePath('/images/serene_yoga_harmony-600w.webp')} 600w,
+                      ${getImagePath('/images/serene_yoga_harmony-800w.webp')} 800w
+                    `}
                     sizes="(max-width: 400px) 256px, (max-width: 600px) 400px, (max-width: 800px) 600px, 800px"
                     type="image/webp"
                   />
                   
                   {/* Fallback PNG for older browsers */}
                   <img
-                    src="/images/serene_yoga_harmony.png"
+                    src={getImagePath('/images/serene_yoga_harmony.png')}
                     alt={`Professional photo of ${instructor.name}, certified yoga instructor and wellness expert`}
                     className="w-full h-full object-cover transition-transform duration-500 hover:scale-105"
                     loading="lazy"

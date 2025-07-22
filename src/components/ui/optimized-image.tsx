@@ -3,6 +3,7 @@
 import React, { useState, useCallback } from 'react'
 import Image from 'next/image'
 import { motion } from 'framer-motion'
+import { getImagePath } from '@/lib/utils'
 
 interface OptimizedImageProps {
   src: string
@@ -72,7 +73,7 @@ export const OptimizedImage = React.memo(function OptimizedImage({
   const [isLoading, setIsLoading] = useState(true)
   const [hasError, setHasError] = useState(false)
   
-  const [currentSrc, setCurrentSrc] = useState(src)
+  const [currentSrc, setCurrentSrc] = useState(getImagePath(src))
 
   // Handle successful image load
   const handleLoad = useCallback(() => {
@@ -86,12 +87,12 @@ export const OptimizedImage = React.memo(function OptimizedImage({
     setIsLoading(false)
     
     // Try fallbacks if provided
-    if (webpFallback && currentSrc !== webpFallback) {
-      setCurrentSrc(webpFallback)
+    if (webpFallback && currentSrc !== getImagePath(webpFallback)) {
+      setCurrentSrc(getImagePath(webpFallback))
       setIsLoading(true)
       setHasError(false)
-    } else if (avifFallback && currentSrc !== avifFallback) {
-      setCurrentSrc(avifFallback)
+    } else if (avifFallback && currentSrc !== getImagePath(avifFallback)) {
+      setCurrentSrc(getImagePath(avifFallback))
       setIsLoading(true)
       setHasError(false)
     }

@@ -9,6 +9,10 @@ const nextConfig: NextConfig = {
   
   trailingSlash: true,
   
+  env: {
+    NEXT_PUBLIC_BASE_PATH: process.env.NODE_ENV === 'production' ? '/yoga-transformation' : '',
+  },
+  
   // Игнорируем ESLint ошибки при сборке
   eslint: {
     ignoreDuringBuilds: true,

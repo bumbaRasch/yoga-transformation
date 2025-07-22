@@ -3,6 +3,7 @@ import { Geist, Geist_Mono } from "next/font/google";
 import { LanguageProvider } from "@/contexts/language-context";
 import { ThemeProvider } from "@/contexts/theme-context";
 import { themeScript } from "@/lib/theme-script";
+import { getImagePath } from "@/lib/utils";
 import "./globals.css";
 
 const geistSans = Geist({
@@ -37,7 +38,7 @@ export const metadata: Metadata = {
     description: "Join thousands on a journey to transform your mind and body with our expert-guided yoga program.",
     images: [
       {
-        url: "/og-image.png",
+        url: getImagePath("/og-image.png"),
         width: 1200,
         height: 630,
         alt: "14-Day Yoga Transformation Program",
@@ -48,7 +49,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "14-Day Yoga Transformation",
     description: "Transform your mind and body with expert-guided yoga sessions. Start your journey today!",
-    images: ["/og-image.png"],
+    images: [getImagePath("/og-image.png")],
   },
 };
 

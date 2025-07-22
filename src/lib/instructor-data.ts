@@ -1,3 +1,5 @@
+import { getImagePath } from './utils'
+
 export interface Instructor {
   id: string
   name: string
@@ -42,7 +44,7 @@ export const instructorData: Instructor = {
     'Advanced Pranayama Certification',
     'Yoga Alliance Continuing Education Provider'
   ],
-  avatar: '/images/instructor-maya.jpg', // Placeholder path
+  avatar: getImagePath('/images/instructor-maya.jpg'), // Placeholder path
   stats: {
     studentsHelped: '2.5K+',
     yearsExperience: 12,
