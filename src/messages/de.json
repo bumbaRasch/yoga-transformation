@@ -446,5 +446,517 @@
       "contactSupport": "Falls das Problem weiterhin besteht, wenden Sie sich bitte an den Support",
       "reportError": "Diesen Fehler melden"
     }
+  },
+  "legal": {
+    "backToHome": "Zurück zur Startseite",
+    "lastUpdated": "Zuletzt aktualisiert",
+    "availableLanguages": "Verfügbar in mehreren Sprachen",
+    "footer": {
+      "disclaimer": "Diese Informationen werden zur rechtlichen Einhaltung bereitgestellt."
+    },
+    "nav": {
+      "privacy": "Datenschutzrichtlinie",
+      "terms": "Nutzungsbedingungen",
+      "cookies": "Cookie-Richtlinie", 
+      "refund": "Rückerstattungsrichtlinie"
+    },
+    "privacy": {
+      "title": "Datenschutzrichtlinie",
+      "lastUpdated": "15. Dezember 2024",
+      "introduction": {
+        "title": "Einführung",
+        "content": "YogaTransform (\"wir\", \"unser\" oder \"uns\") respektiert Ihre Privatsphäre und verpflichtet sich, Ihre persönlichen Daten zu schützen. Diese Datenschutzrichtlinie erklärt, wie wir Ihre Daten sammeln, verwenden und schützen, wenn Sie unser Yoga-Transformationsprogramm und verwandte Dienste nutzen.",
+        "contact": "Wenn Sie Fragen zu dieser Datenschutzrichtlinie haben, kontaktieren Sie uns bitte unter den am Ende dieses Dokuments angegebenen Informationen."
+      },
+      "dataCollection": {
+        "title": "Informationen, die wir sammeln",
+        "intro": "Wir sammeln Informationen, die Sie uns direkt zur Verfügung stellen, und Informationen automatisch, wenn Sie unsere Dienste nutzen:",
+        "personalInfo": {
+          "title": "Persönliche Informationen",
+          "name": "Vollständiger Name und Kontaktinformationen",
+          "email": "E-Mail-Adresse für Kontoerstellung und Kommunikation",
+          "payment": "Zahlungsinformationen, die sicher über Drittanbieter verarbeitet werden",
+          "preferences": "Yoga-Erfahrungslevel, Ziele und Programmpräferenzen"
+        },
+        "technicalInfo": {
+          "title": "Technische Informationen",
+          "ip": "IP-Adresse und Geräteinformationen",
+          "browser": "Browser-Typ und Version",
+          "device": "Gerätetyp und Betriebssystem",
+          "usage": "Nutzungsmuster und Interaktionsdaten"
+        }
+      },
+      "dataUse": {
+        "title": "Wie wir Ihre Informationen verwenden",
+        "service": "Zur Bereitstellung und Verbesserung unserer Yoga-Transformationsdienste",
+        "communication": "Zur Kommunikation über Ihren Programmfortschritt und Updates",
+        "improvement": "Zur Analyse von Nutzungsmustern und Verbesserung der Benutzererfahrung",
+        "legal": "Zur Einhaltung rechtlicher Verpflichtungen und zum Schutz unserer Rechte",
+        "marketing": "Zum Versenden von Werbematerialien (mit Ihrer Zustimmung)"
+      },
+      "dataSharing": {
+        "title": "Informationsaustausch",
+        "intro": "Wir verkaufen Ihre persönlichen Daten nicht. Wir können Informationen teilen mit:",
+        "thirdParties": {
+          "title": "Drittanbieter-Dienstleister",
+          "payment": {
+            "title": "Zahlungsabwickler",
+            "content": "Stripe und PayPal für sichere Zahlungsabwicklung"
+          },
+          "analytics": {
+            "title": "Analyse-Dienste",
+            "content": "Google Analytics für Nutzungsstatistiken und Verbesserungen"
+          },
+          "email": {
+            "title": "E-Mail-Dienste",
+            "content": "E-Mail-Dienstanbieter für Programmkommunikation"
+          }
+        }
+      },
+      "security": {
+        "title": "Datensicherheit",
+        "content": "Wir implementieren angemessene Sicherheitsmaßnahmen zum Schutz Ihrer Daten:",
+        "encryption": "Verschlüsselung von Daten in Übertragung und Ruhe",
+        "access": "Eingeschränkter Zugang zu persönlichen Daten",
+        "monitoring": "Regelmäßige Sicherheitsüberwachung und Updates",
+        "updates": "Zeitnahe Sicherheits-Patches und System-Updates"
+      },
+      "rights": {
+        "title": "Ihre Rechte",
+        "intro": "Sie haben folgende Rechte bezüglich Ihrer persönlichen Daten:",
+        "access": {
+          "title": "Recht auf Zugang",
+          "content": "Zugang zu Ihren persönlichen Daten anfordern"
+        },
+        "rectification": {
+          "title": "Recht auf Berichtigung",
+          "content": "Korrektur ungenauer Daten anfordern"
+        },
+        "erasure": {
+          "title": "Recht auf Löschung",
+          "content": "Löschung Ihrer persönlichen Daten anfordern"
+        },
+        "portability": {
+          "title": "Recht auf Datenübertragbarkeit",
+          "content": "Übertragung Ihrer Daten an einen anderen Dienst anfordern"
+        },
+        "objection": {
+          "title": "Widerspruchsrecht",
+          "content": "Widerspruch gegen bestimmte Verarbeitung Ihrer Daten"
+        }
+      },
+      "cookies": {
+        "title": "Cookies und ähnliche Technologien",
+        "content": "Wir verwenden Cookies und ähnliche Technologien, um Ihre Erfahrung zu verbessern und Nutzungsmuster zu analysieren.",
+        "reference": "Bitte lesen Sie unsere Cookie-Richtlinie für detaillierte Informationen über unsere Cookie-Nutzung."
+      },
+      "retention": {
+        "title": "Datenspeicherung",
+        "content": "Wir speichern Ihre Daten so lange wie nötig, um Dienste zu erbringen und rechtlichen Verpflichtungen nachzukommen:",
+        "account": "Kontoinformationen gespeichert während das Konto aktiv ist",
+        "marketing": "Marketing-Präferenzen gespeichert bis zur Abmeldung",
+        "legal": "Rechtliche Compliance-Daten nach gesetzlichen Anforderungen gespeichert"
+      },
+      "transfers": {
+        "title": "Internationale Übertragungen",
+        "content": "Ihre Daten können in andere Länder übertragen und verarbeitet werden, mit angemessenen Schutzmaßnahmen."
+      },
+      "children": {
+        "title": "Datenschutz für Kinder",
+        "content": "Unsere Dienste sind nicht für Kinder unter 13 Jahren bestimmt. Wir sammeln wissentlich keine persönlichen Daten von Kindern unter 13."
+      },
+      "changes": {
+        "title": "Änderungen dieser Richtlinie",
+        "content": "Wir können diese Datenschutzrichtlinie regelmäßig aktualisieren. Wir werden Sie über wesentliche Änderungen per E-Mail oder über unseren Service benachrichtigen."
+      },
+      "contact": {
+        "title": "Kontaktinformationen",
+        "content": "Für Fragen zu dieser Datenschutzrichtlinie oder um Ihre Rechte auszuüben, kontaktieren Sie uns bitte:",
+        "company": "YogaTransform Datenschutz-Team",
+        "email": "E-Mail",
+        "address": "Adresse"
+      }
+    },
+    "terms": {
+      "title": "Nutzungsbedingungen",
+      "lastUpdated": "15. Dezember 2024",
+      "introduction": {
+        "title": "Einführung",
+        "content": "Willkommen bei YogaTransform. Diese Nutzungsbedingungen (\"Bedingungen\") regeln Ihre Nutzung unseres 14-Tage-Yoga-Transformationsprogramms und verwandter Dienste.",
+        "agreement": "Durch den Zugriff auf oder die Nutzung unserer Dienste stimmen Sie diesen Bedingungen zu. Wenn Sie diesen Bedingungen nicht zustimmen, nutzen Sie bitte unsere Dienste nicht."
+      },
+      "definitions": {
+        "title": "Definitionen",
+        "service": {
+          "title": "Service",
+          "content": "bedeutet unser Yoga-Transformationsprogramm, Website, mobile Anwendung und verwandte Dienste."
+        },
+        "user": {
+          "title": "Benutzer",
+          "content": "bedeutet jede Person, die auf unseren Service zugreift oder ihn nutzt."
+        },
+        "content": {
+          "title": "Inhalt",
+          "content": "bedeutet alle Yoga-Videos, Audio, Text, Bilder und andere Materialien, die über unseren Service bereitgestellt werden."
+        },
+        "account": {
+          "title": "Konto",
+          "content": "bedeutet Ihr registriertes Benutzerkonto bei YogaTransform."
+        }
+      },
+      "acceptance": {
+        "title": "Annahme der Bedingungen",
+        "content": "Ihre Nutzung unseres Services stellt die Annahme dieser Bedingungen dar. Wir können diese Bedingungen jederzeit ändern, und die fortgesetzte Nutzung stellt die Annahme von Änderungen dar.",
+        "changes": "Wir werden über wesentliche Änderungen per E-Mail oder über unseren Service informieren."
+      },
+      "usage": {
+        "title": "Nutzung unseres Services",
+        "intro": "Sie dürfen unseren Service nur für persönliche, nicht-kommerzielle Zwecke nutzen. Sie stimmen zu:",
+        "permitted": {
+          "title": "Erlaubte Nutzung",
+          "personal": "Service für persönliche Yoga-Praxis und Wellness nutzen",
+          "classes": "Zugang zu bereitgestellten Yoga-Kursen und -Programmen",
+          "progress": "Ihren Fortschritt und Erfolge im Programm verfolgen",
+          "community": "Respektvoll an Community-Features teilnehmen"
+        },
+        "prohibited": {
+          "title": "Verbotene Nutzung",
+          "commercial": "Service für kommerzielle Zwecke ohne Erlaubnis nutzen",
+          "sharing": "Ihre Kontodaten mit anderen teilen",
+          "reverse": "Reverse Engineering oder Zugriff auf Quellcode versuchen",
+          "harm": "Service auf Weise nutzen, die unsere Systeme schädigen könnte",
+          "illegal": "Service für illegale oder unbefugte Zwecke nutzen"
+        }
+      },
+      "account": {
+        "title": "Kontoregistrierung und Sicherheit",
+        "registration": "Sie müssen genaue Informationen bei der Kontoerstellung angeben und Ihre Informationen aktuell halten.",
+        "responsibility": "Sie sind verantwortlich für die Sicherheit Ihres Kontos und Passworts.",
+        "security": "Sie stimmen zu, uns unverzüglich über unbefugte Nutzung Ihres Kontos zu informieren."
+      },
+      "payment": {
+        "title": "Zahlung und Abrechnung",
+        "intro": "Zahlungsbedingungen für unsere Dienste:",
+        "fees": {
+          "title": "Gebühren und Kosten",
+          "upfront": "Alle Gebühren werden im Voraus berechnet und sind nicht erstattungsfähig, außer wie in unserer Rückerstattungsrichtlinie angegeben",
+          "currency": "Preise sind in USD angegeben und können je nach Standort variieren",
+          "taxes": "Sie sind für anfallende Steuern verantwortlich",
+          "changes": "Wir behalten uns das Recht vor, Preise mit 30 Tagen Vorankündigung zu ändern"
+        },
+        "methods": {
+          "title": "Zahlungsmethoden",
+          "content": "Wir akzeptieren wichtige Kreditkarten, PayPal und andere verfügbare Zahlungsmethoden."
+        },
+        "refunds": {
+          "title": "Rückerstattungen",
+          "content": "Bitte lesen Sie unsere Rückerstattungsrichtlinie für detaillierte Informationen über Rückerstattungen und Stornierungen."
+        }
+      },
+      "subscription": {
+        "title": "Abonnement und Kündigung",
+        "auto": "Einige Dienste können sich automatisch verlängern. Sie können die automatische Verlängerung in Ihren Kontoeinstellungen kündigen.",
+        "cancel": "Sie können Ihr Abonnement jederzeit über Ihr Konto oder durch Kontaktaufnahme mit dem Support kündigen.",
+        "access": "Bei Kündigung behalten Sie Zugang zu bezahlten Inhalten bis zum Ende Ihres Abrechnungszeitraums."
+      },
+      "ip": {
+        "title": "Geistiges Eigentum",
+        "ownership": "Alle Inhalte und Materialien in unserem Service gehören YogaTransform oder unseren Lizenzgebern und sind durch Urheberrechte und andere Gesetze zum geistigen Eigentum geschützt.",
+        "license": "Wir gewähren Ihnen eine begrenzte, nicht-exklusive, nicht-übertragbare Lizenz für den Zugang und die Nutzung unseres Services für persönliche Zwecke.",
+        "restrictions": "Sie dürfen unsere Inhalte ohne schriftliche Genehmigung nicht kopieren, verteilen, ändern oder abgeleitete Werke erstellen."
+      },
+      "userContent": {
+        "title": "Benutzergenerierte Inhalte",
+        "responsibility": "Sie sind allein verantwortlich für alle Inhalte, die Sie zu unserem Service beitragen.",
+        "license": "Durch das Einreichen von Inhalten gewähren Sie uns eine Lizenz zur Nutzung, Anzeige und Verteilung solcher Inhalte im Zusammenhang mit unserem Service.",
+        "removal": "Wir behalten uns das Recht vor, alle Inhalte zu entfernen, die gegen diese Bedingungen verstoßen oder anderweitig beanstandenswert sind."
+      },
+      "health": {
+        "title": "Gesundheits- und Sicherheitshaftungsausschluss",
+        "disclaimer": "Unsere Yoga-Programme dienen Bildungs- und Fitnesszwecken. Konsultieren Sie immer einen Gesundheitsdienstleister, bevor Sie ein neues Trainingsprogramm beginnen.",
+        "consultation": "Wenn Sie gesundheitliche Beschwerden, Verletzungen oder Bedenken haben, konsultieren Sie bitte einen qualifizierten Gesundheitsexperten vor der Teilnahme.",
+        "responsibility": "Sie nehmen auf eigenes Risiko an unseren Programmen teil. Wir sind nicht verantwortlich für Verletzungen oder Gesundheitsprobleme, die auftreten können."
+      },
+      "privacy": {
+        "title": "Datenschutzrichtlinie",
+        "content": "Ihr Datenschutz ist uns wichtig. Bitte lesen Sie unsere Datenschutzrichtlinie, um zu verstehen, wie wir Ihre Daten sammeln, verwenden und schützen."
+      },
+      "liability": {
+        "title": "Haftungsbeschränkung",
+        "disclaimer": "Unser Service wird \"wie besehen\" ohne Gewährleistungen jeglicher Art bereitgestellt. Wir lehnen alle ausdrücklichen oder stillschweigenden Gewährleistungen ab.",
+        "limitation": "Soweit gesetzlich zulässig, haften wir nicht für indirekte, zufällige, besondere oder Folgeschäden.",
+        "indemnification": "Sie stimmen zu, uns von allen Ansprüchen freizustellen, die aus Ihrer Nutzung unseres Services entstehen."
+      },
+      "termination": {
+        "title": "Kündigung",
+        "user": "Sie können Ihr Konto jederzeit kündigen, indem Sie uns kontaktieren oder die Kontoeinstellungen verwenden.",
+        "company": "Wir können Ihr Konto bei Verstößen gegen diese Bedingungen oder aus anderen Gründen kündigen oder sperren.",
+        "effect": "Bei Kündigung endet Ihr Zugang zum Service, aber diese Bedingungen gelten weiterhin."
+      },
+      "law": {
+        "title": "Geltendes Recht und Streitigkeiten",
+        "governing": "Diese Bedingungen unterliegen den Gesetzen von [Gerichtsbarkeit] ohne Berücksichtigung von Kollisionsnormen.",
+        "disputes": "Alle Streitigkeiten aus diesen Bedingungen oder Ihrer Nutzung unseres Services werden durch bindende Schiedsverfahren gelöst."
+      },
+      "changes": {
+        "title": "Änderungen der Bedingungen",
+        "content": "Wir können diese Bedingungen jederzeit ändern. Wesentliche Änderungen werden per E-Mail oder über unseren Service kommuniziert.",
+        "notification": "Die fortgesetzte Nutzung unseres Services nach Änderungen stellt die Annahme der neuen Bedingungen dar."
+      },
+      "contact": {
+        "title": "Kontaktinformationen",
+        "content": "Für Fragen zu diesen Bedingungen kontaktieren Sie uns bitte:",
+        "company": "YogaTransform Rechtsabteilung",
+        "email": "E-Mail",
+        "address": "Adresse"
+      }
+    },
+    "cookies": {
+      "title": "Cookie-Richtlinie",
+      "lastUpdated": "15. Dezember 2024",
+      "introduction": {
+        "title": "Einführung",
+        "content": "Diese Cookie-Richtlinie erklärt, wie YogaTransform Cookies und ähnliche Technologien verwendet, wenn Sie unsere Website besuchen oder unsere Dienste nutzen.",
+        "control": "Sie können Cookies über Ihre Browser-Einstellungen und unser Präferenzzentrum kontrollieren und verwalten."
+      },
+      "whatAre": {
+        "title": "Was sind Cookies",
+        "definition": "Cookies sind kleine Textdateien, die auf Ihrem Gerät gespeichert werden, wenn Sie eine Website besuchen. Sie helfen Websites, sich an Informationen über Ihren Besuch zu erinnern.",
+        "purpose": "Cookies dienen verschiedenen Zwecken, einschließlich der Verbesserung der Funktionalität, Personalisierung von Inhalten und Analyse von Nutzungsmustern."
+      },
+      "types": {
+        "title": "Arten von Cookies, die wir verwenden",
+        "essential": {
+          "title": "Erforderliche Cookies",
+          "description": "Diese Cookies sind für das ordnungsgemäße Funktionieren unserer Website erforderlich und können nicht deaktiviert werden.",
+          "authentication": "Benutzerauthentifizierung und Anmeldesitzungen",
+          "preferences": "Grundlegende Benutzerpräferenzen und Einstellungen",
+          "security": "Sicherheitsfeatures und Betrugsprävention",
+          "functionality": "Kern-Website-Funktionalität und Navigation"
+        },
+        "analytics": {
+          "title": "Analyse-Cookies",
+          "description": "Diese Cookies helfen uns zu verstehen, wie Besucher mit unserer Website interagieren.",
+          "usage": "Website-Nutzungsstatistiken und Benutzerverhaltensanalyse",
+          "performance": "Leistungsüberwachung und -optimierung",
+          "errors": "Fehlerverfolgng und Debugging-Informationen",
+          "improvements": "Einblicke für Service-Verbesserungen"
+        },
+        "marketing": {
+          "title": "Marketing-Cookies",
+          "description": "Diese Cookies werden verwendet, um relevante Werbung zu liefern und die Kampagneneffektivität zu messen.",
+          "targeting": "Zielgerichtete Werbung und Zielgruppensegmentierung",
+          "social": "Social-Media-Integration und Sharing-Features",
+          "personalization": "Personalisierte Inhalte und Empfehlungen",
+          "retargeting": "Retargeting-Kampagnen und Conversion-Tracking"
+        },
+        "preferences": {
+          "title": "Präferenz-Cookies",
+          "description": "Diese Cookies merken sich Ihre Auswahl und personalisieren Ihre Erfahrung.",
+          "language": "Sprach- und Gebietsschema-Präferenzen",
+          "theme": "Hell-/Dunkel-Theme-Präferenzen",
+          "layout": "Layout- und Anzeigepräferenzen",
+          "accessibility": "Barrierefreiheitseinstellungen und Anpassungen"
+        }
+      },
+      "specific": {
+        "title": "Spezifische Cookies, die wir verwenden"
+      },
+      "table": {
+        "name": "Cookie-Name",
+        "purpose": "Zweck",
+        "duration": "Dauer",
+        "type": "Typ",
+        "auth": "Benutzerauthentifizierung und Sitzungsverwaltung",
+        "theme": "Ihre bevorzugte Theme-Einstellung (hell/dunkel) merken",
+        "language": "Ihre Sprachpräferenz speichern",
+        "analytics": "Google Analytics-Tracking für Website-Verbesserungen",
+        "days": "Tage",
+        "day": "Tag",
+        "year": "Jahr",
+        "years": "Jahre"
+      },
+      "thirdParty": {
+        "title": "Drittanbieter-Cookies",
+        "intro": "Wir verwenden Drittanbieter-Services, die ihre eigenen Cookies setzen können:",
+        "analytics": "Google Analytics: Hilft uns, Website-Nutzung zu verstehen und Benutzererfahrung zu verbessern. Sie können sich unter https://tools.google.com/dlpage/gaoptout abmelden",
+        "payment": "Stripe: Verarbeitet Zahlungen sicher und kann Cookies für Betrugsprävention und Transaktionsverarbeitung setzen.",
+        "social": "Social-Media-Plattformen: Wenn Sie mit Social-Media-Features interagieren, können diese Plattformen Cookies entsprechend ihren eigenen Richtlinien setzen."
+      },
+      "management": {
+        "title": "Cookie-Präferenzen verwalten",
+        "intro": "Sie können Cookies auf verschiedene Weise kontrollieren:",
+        "browser": {
+          "title": "Browser-Einstellungen",
+          "chrome": "Einstellungen > Datenschutz und Sicherheit > Cookies und andere Websitedaten",
+          "firefox": "Einstellungen > Datenschutz & Sicherheit > Cookies und Website-Daten",
+          "safari": "Einstellungen > Datenschutz > Website-Daten verwalten",
+          "edge": "Einstellungen > Cookie- und Website-Berechtigungen > Cookies und Website-Daten"
+        },
+        "optOut": {
+          "title": "Drittanbieter-Abmeldung",
+          "content": "Sie können sich von bestimmten Drittanbieter-Services abmelden:"
+        }
+      },
+      "consent": {
+        "title": "Cookie-Zustimmung",
+        "required": "Einige Cookies erfordern Ihre Zustimmung, bevor wir sie verwenden können. Wir werden bei Bedarf um Ihre Zustimmung bitten.",
+        "withdrawal": "Sie können Ihre Zustimmung jederzeit über Ihre Browser-Einstellungen oder unser Präferenzzentrum widerrufen.",
+        "preferences": "Sie können Ihre Cookie-Präferenzen jederzeit in Ihren Kontoeinstellungen aktualisieren."
+      },
+      "updates": {
+        "title": "Aktualisierungen dieser Richtlinie",
+        "content": "Wir können diese Cookie-Richtlinie von Zeit zu Zeit aktualisieren. Alle Änderungen werden auf dieser Seite mit einem aktualisierten Überarbeitungsdatum veröffentlicht."
+      },
+      "contact": {
+        "title": "Kontaktieren Sie uns",
+        "content": "Wenn Sie Fragen zur Verwendung von Cookies haben, kontaktieren Sie uns bitte:",
+        "company": "YogaTransform Datenschutz-Team",
+        "email": "E-Mail",
+        "address": "Adresse"
+      }
+    },
+    "refund": {
+      "title": "Rückerstattungsrichtlinie",
+      "lastUpdated": "15. Dezember 2024",
+      "introduction": {
+        "title": "Unser Engagement für Sie",
+        "content": "Bei YogaTransform sind wir Ihrer Zufriedenheit mit unserem 14-Tage-Yoga-Transformationsprogramm verpflichtet. Diese Rückerstattungsrichtlinie umreißt die Bedingungen, unter denen Rückerstattungen angefordert werden können.",
+        "commitment": "Wir stehen hinter der Qualität unserer Inhalte und Ihrer Transformationsreise."
+      },
+      "eligibility": {
+        "title": "Rückerstattungsberechtigung",
+        "intro": "Rückerstattungen können unter folgenden Umständen angefordert werden:",
+        "qualifies": {
+          "title": "Was für eine Rückerstattung qualifiziert",
+          "technical": "Technische Probleme, die den Zugang zu Programminhalten verhindern",
+          "satisfaction": "Unzufriedenheit mit dem Programm innerhalb der ersten 7 Tage",
+          "access": "Unfähigkeit, gekaufte Inhalte aufgrund unserer technischen Probleme zu öffnen",
+          "description": "Erhebliche Diskrepanz zwischen Programmbeschreibung und tatsächlichem Inhalt"
+        },
+        "noRefund": {
+          "title": "Was nicht für eine Rückerstattung qualifiziert",
+          "completion": "Abschluss von mehr als 50% des Programminhalts",
+          "days": "Rückerstattungsanfragen mehr als 30 Tage nach Kauf",
+          "abuse": "Missbrauch unserer Rückerstattungsrichtlinie oder betrügerische Anfragen",
+          "digital": "Sinneswandel nach Zugriff auf digitale Inhalte"
+        }
+      },
+      "timeline": {
+        "title": "Rückerstattungs-Zeitrahmen",
+        "guarantee": {
+          "title": "30-Tage-Geld-zurück-Garantie",
+          "content": "Wir bieten eine 30-Tage-Geld-zurück-Garantie für die meisten Käufe.",
+          "days": "Sie haben 30 Tage ab Kauf, um eine Rückerstattung anzufordern",
+          "conditions": "Vorbehaltlich der oben beschriebenen Berechtigungsbedingungen"
+        },
+        "processing": {
+          "title": "Bearbeitungszeit",
+          "content": "Nach Genehmigung werden Rückerstattungen nach folgendem Zeitrahmen verarbeitet:",
+          "review": "1-2 Werktage für Prüfung und Genehmigung",
+          "payment": "3-10 Werktage für Zahlungsverarbeitung (variiert je nach Zahlungsmethode)"
+        }
+      },
+      "request": {
+        "title": "Wie man eine Rückerstattung anfordert",
+        "intro": "Um eine Rückerstattung anzufordern, befolgen Sie bitte diese Schritte:",
+        "steps": {
+          "title": "Rückerstattungsanfrage-Prozess",
+          "contact": "Kontaktieren Sie unser Support-Team unter refunds@yogatransform.com",
+          "provide": "Geben Sie Ihre Bestellnummer und Konto-E-Mail-Adresse an",
+          "reason": "Erklären Sie den Grund für Ihre Rückerstattungsanfrage",
+          "wait": "Warten Sie auf die Überprüfung und Antwort unseres Teams innerhalb von 2 Werktagen"
+        },
+        "required": {
+          "title": "Erforderliche Informationen",
+          "email": "E-Mail-Adresse, die mit Ihrem Konto verknüpft ist",
+          "order": "Bestellnummer oder Transaktions-ID",
+          "date": "Kaufdatum",
+          "reason": "Detaillierter Grund für die Rückerstattungsanfrage"
+        }
+      },
+      "methods": {
+        "title": "Rückerstattungsmethoden",
+        "intro": "Rückerstattungen werden mit derselben Zahlungsmethode verarbeitet, die für den ursprünglichen Kauf verwendet wurde:",
+        "table": {
+          "payment": "Zahlungsmethode",
+          "method": "Rückerstattungsmethode",
+          "timeframe": "Erwarteter Zeitrahmen",
+          "credit": "Kreditkarte",
+          "creditRefund": "Gutschrift auf ursprüngliche Karte",
+          "debit": "Debitkarte",
+          "debitRefund": "Gutschrift auf ursprüngliche Karte",
+          "paypalRefund": "PayPal-Konto-Gutschrift",
+          "bank": "Banküberweisung",
+          "bankRefund": "Bankkonto-Gutschrift",
+          "days": "Werktage"
+        }
+      },
+      "partial": {
+        "title": "Teilrückerstattungen",
+        "intro": "In einigen Fällen können wir Teilrückerstattungen anbieten:",
+        "situations": {
+          "title": "Teilrückerstattungs-Situationen",
+          "progress": "Erheblicher Fortschritt durch das Programm (25-50% Abschluss)",
+          "promotional": "Aktionspreise oder reduzierte Käufe",
+          "technical": "Technische Probleme, die nur einen Teil des Inhalts betreffen"
+        },
+        "calculation": {
+          "title": "Teilrückerstattungs-Berechnung",
+          "content": "Teilrückerstattungen werden basierend auf ungenutztem Inhalt und verbleibender Zeit in Ihrer Zugangsperiode berechnet."
+        }
+      },
+      "subscription": {
+        "title": "Abonnement-Rückerstattungen",
+        "intro": "Für abonnementbasierte Dienste:",
+        "important": {
+          "title": "Wichtige Hinweise",
+          "cancel": "Sie können Ihr Abonnement jederzeit kündigen, um zukünftige Gebühren zu verhindern",
+          "prorated": "Rückerstattungen für aktuelle Abrechnungsperioden können anteilig erfolgen",
+          "access": "Der Zugang bleibt bis zum Ende Ihrer aktuellen Abrechnungsperiode bestehen"
+        }
+      },
+      "exchanges": {
+        "title": "Umtausch und Gutschriften",
+        "content": "Wir bieten keinen Umtausch für digitale Inhalte an. Alle Verkäufe sind endgültig, außer wie in dieser Rückerstattungsrichtlinie vorgesehen.",
+        "alternative": "Als Alternative zu Rückerstattungen können wir Kontogutschriften für zukünftige Käufe von Fall zu Fall anbieten."
+      },
+      "disputes": {
+        "title": "Streitbeilegung",
+        "intro": "Wenn Sie mit unserer Rückerstattungsentscheidung nicht zufrieden sind:",
+        "resolution": {
+          "title": "Lösungsprozess",
+          "contact": "Kontaktieren Sie unseren Kundendienst-Manager zur Überprüfung",
+          "escalate": "Bei Bedarf an unser Führungsteam eskalieren",
+          "mediation": "Erwägen Sie Drittanbieter-Mediationsdienste falls nötig"
+        }
+      },
+      "exceptions": {
+        "title": "Ausnahmen und besondere Umstände",
+        "intro": "Rückerstattungen werden in folgenden Situationen nicht gewährt:",
+        "noRefund": {
+          "title": "Keine Rückerstattungs-Situationen",
+          "fraud": "Betrügerische Käufe oder Rückbuchungen",
+          "violation": "Verstöße gegen unsere Nutzungsbedingungen",
+          "chargeback": "Streitige Gebühren bereits über Zahlungsanbieter gelöst",
+          "abuse": "Missbrauch unserer Rückerstattungsrichtlinie"
+        }
+      },
+      "changes": {
+        "title": "Änderungen dieser Richtlinie",
+        "content": "Wir behalten uns das Recht vor, diese Rückerstattungsrichtlinie jederzeit zu ändern. Änderungen treten sofort nach Veröffentlichung in Kraft.",
+        "notification": "Wir werden bestehende Kunden über wesentliche Änderungen per E-Mail benachrichtigen."
+      },
+      "contact": {
+        "title": "Kontaktinformationen",
+        "content": "Für Rückerstattungsanfragen oder Fragen zu dieser Richtlinie kontaktieren Sie uns bitte:",
+        "company": "YogaTransform Rückerstattungs-Team",
+        "email": "E-Mail",
+        "phone": "Telefon",
+        "hours": "Geschäftszeiten",
+        "businessHours": "Montag-Freitag, 9-18 Uhr MEZ",
+        "address": "Adresse"
+      }
+    }
   }
 }

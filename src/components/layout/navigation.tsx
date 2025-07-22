@@ -18,6 +18,7 @@ function NavigationContent({ className }: NavigationProps) {
   const t = useTranslations()
   const [isMenuOpen, setIsMenuOpen] = useState(false)
   const [isScrolled, setIsScrolled] = useState(false)
+  const [focusedIndex, setFocusedIndex] = useState(-1)
   // Navigation items with translations
   const navigationItems = [
     { id: 'benefits', label: t('navigation.benefits'), href: '#benefits' },
@@ -35,6 +36,46 @@ function NavigationContent({ className }: NavigationProps) {
     window.addEventListener('scroll', handleScroll)
     return () => window.removeEventListener('scroll', handleScroll)
   }, [])
+
+  // Handle keyboard navigation
+  useEffect(() => {
+    const handleKeyDown = (e: KeyboardEvent) => {
+      if (!isMenuOpen) return
+
+      switch (e.key) {
+        case 'ArrowDown':
+          e.preventDefault()
+          setFocusedIndex(prev => 
+            prev < navigationItems.length - 1 ? prev + 1 : 0
+          )
+          break
+        case 'ArrowUp':
+          e.preventDefault()
+          setFocusedIndex(prev => 
+            prev > 0 ? prev - 1 : navigationItems.length - 1
+          )
+          break
+        case 'Home':
+          e.preventDefault()
+          setFocusedIndex(0)
+          break
+        case 'End':
+          e.preventDefault()
+          setFocusedIndex(navigationItems.length - 1)
+          break
+        case 'Escape':
+          e.preventDefault()
+          setIsMenuOpen(false)
+          setFocusedIndex(-1)
+          break
+      }
+    }
+
+    if (isMenuOpen) {
+      document.addEventListener('keydown', handleKeyDown)
+      return () => document.removeEventListener('keydown', handleKeyDown)
+    }
+  }, [isMenuOpen, navigationItems.length])
 
   const scrollToSection = (href: string) => {
     if (href.startsWith('#')) {
@@ -58,52 +99,67 @@ function NavigationContent({ className }: NavigationProps) {
   }
 
   return (
-    <motion.nav
-      className={`
-        fixed top-0 left-0 right-0 z-50 transition-all duration-300
-        ${isScrolled 
-          ? 'bg-white/95 dark:bg-gray-900/95 backdrop-blur-lg shadow-lg' 
-          : 'bg-transparent'
-        }
-        ${className || ''}
-      `}
-      initial={{ y: -100 }}
-      animate={{ y: 0 }}
-      transition={{ duration: 0.6, type: 'spring', stiffness: 100 }}
-    >
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <>
+      {/* Skip Navigation Link */}
+      <a
+        href="#main-content"
+        className="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 focus:z-[60] bg-purple-600 text-white px-4 py-2 rounded-md focus:outline-none focus:ring-2 focus:ring-purple-500 focus:ring-offset-2"
+      >
+        {t('accessibility.skipToContent')}
+      </a>
+      
+      <motion.nav
+        className={`
+          fixed top-0 left-0 right-0 z-50 transition-all duration-300
+          ${isScrolled 
+            ? 'bg-white/95 dark:bg-gray-950/95 backdrop-blur-lg shadow-lg dark:shadow-gray-900/50' 
+            : 'bg-transparent'
+          }
+          ${className || ''}
+        `}
+        initial={{ y: -100 }}
+        animate={{ y: 0 }}
+        transition={{ duration: 0.6, type: 'spring', stiffness: 100 }}
+        role="navigation"
+        aria-label={t('accessibility.mainNavigation')}
+      >
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16">
           {/* Logo */}
-          <motion.div
-            className="flex items-center space-x-2"
+          <motion.a
+            href="#"
+            className="flex items-center space-x-2 rounded-lg px-2 py-1 -ml-2 focus:outline-none focus:ring-2 focus:ring-purple-500 focus:ring-offset-2 dark:focus:ring-offset-gray-950"
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
+            aria-label="YogaTransform - Home"
           >
-            <div className="w-8 h-8 bg-gradient-to-r from-purple-500 to-pink-500 rounded-lg flex items-center justify-center">
-              <Heart className="w-5 h-5 text-white" />
+            <div className="w-8 h-8 bg-gradient-to-r from-purple-500 to-pink-500 rounded-lg flex items-center justify-center shadow-md">
+              <Heart className="w-5 h-5 text-white" aria-hidden="true" />
             </div>
             <span className="font-bold text-xl text-gray-900 dark:text-white">
               YogaTransform
             </span>
-          </motion.div>
+          </motion.a>
 
           {/* Desktop Navigation */}
-          <div className="hidden md:flex items-center space-x-8">
+          <nav className="hidden md:flex items-center space-x-2" role="navigation" aria-label={t('accessibility.primaryNavigation')}>
             {navigationItems.map((item, index) => (
               <motion.button
                 key={item.id}
                 onClick={() => handleNavClick(item.href)}
-                className={`text-gray-700 dark:text-gray-300 hover:text-purple-600 dark:hover:text-purple-400 font-medium transition-colors relative group rounded-md px-3 py-2 ${getFocusClasses('primary')}`}
+                className={`text-gray-700 dark:text-gray-200 hover:text-purple-600 dark:hover:text-purple-400 font-medium transition-all relative group rounded-md px-3 py-2 ${getFocusClasses('primary')}`}
                 initial={{ opacity: 0, y: -10 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.1 + index * 0.1 }}
                 whileHover={{ y: -2 }}
+                aria-label={`Navigate to ${item.label}`}
+                role="link"
               >
                 {item.label}
-                <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-purple-600 group-hover:w-full transition-all duration-300" />
+                <span className="absolute bottom-0 left-3 right-3 h-0.5 bg-purple-600 dark:bg-purple-400 scale-x-0 group-hover:scale-x-100 group-focus:scale-x-100 transition-transform duration-300 origin-left" aria-hidden="true" />
               </motion.button>
             ))}
-          </div>
+          </nav>
 
           {/* Desktop Actions */}
           <div className="hidden md:flex items-center space-x-4">
@@ -114,7 +170,8 @@ function NavigationContent({ className }: NavigationProps) {
             <Button 
               size="sm"
               onClick={() => scrollToSection('#pricing')}
-              className="bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700"
+              className="bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 shadow-md hover:shadow-lg transform hover:scale-105 transition-all"
+              aria-label={t('navigation.getStartedAria')}
             >
               {t('navigation.getStarted')}
             </Button>
@@ -131,11 +188,13 @@ function NavigationContent({ className }: NavigationProps) {
             
             <motion.button
               onClick={() => setIsMenuOpen(!isMenuOpen)}
-              className="p-2 text-gray-700 dark:text-gray-300 hover:text-purple-600 transition-colors"
+              className="p-2 text-gray-700 dark:text-gray-200 hover:text-purple-600 dark:hover:text-purple-400 transition-colors rounded-lg focus:outline-none focus:ring-2 focus:ring-purple-500 focus:ring-offset-2 dark:focus:ring-offset-gray-950"
               whileTap={{ scale: 0.9 }}
-              aria-label={t('accessibility.toggleMenu')}
+              aria-label={isMenuOpen ? t('accessibility.closeMenu') : t('accessibility.openMenu')}
+              aria-expanded={isMenuOpen}
+              aria-controls="mobile-menu"
             >
-              {isMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
+              {isMenuOpen ? <X className="w-6 h-6" aria-hidden="true" /> : <Menu className="w-6 h-6" aria-hidden="true" />}
             </motion.button>
           </div>
         </div>
@@ -144,30 +203,46 @@ function NavigationContent({ className }: NavigationProps) {
         <AnimatePresence>
           {isMenuOpen && (
             <motion.div
-              className="md:hidden absolute top-full left-0 right-0 bg-white dark:bg-gray-900 shadow-lg border-t border-gray-200 dark:border-gray-700"
+              id="mobile-menu"
+              className="md:hidden absolute top-full left-0 right-0 bg-white dark:bg-gray-950 shadow-lg border-t border-gray-200 dark:border-gray-800"
               initial={{ opacity: 0, height: 0 }}
               animate={{ opacity: 1, height: 'auto' }}
               exit={{ opacity: 0, height: 0 }}
               transition={{ duration: 0.2 }}
+              role="menu"
+              aria-orientation="vertical"
             >
               <div className="px-4 py-6 space-y-4">
                 {navigationItems.map((item, index) => (
                   <motion.button
                     key={item.id}
                     onClick={() => handleNavClick(item.href)}
-                    className="block w-full text-left py-2 text-gray-700 dark:text-gray-300 hover:text-purple-600 dark:hover:text-purple-400 font-medium transition-colors"
+                    className={`
+                      block w-full text-left py-3 px-2 rounded-lg text-gray-700 dark:text-gray-200 
+                      hover:text-purple-600 dark:hover:text-purple-400 hover:bg-purple-50 dark:hover:bg-purple-900/20 
+                      font-medium transition-all focus:outline-none focus:ring-2 focus:ring-purple-500 focus:ring-inset
+                      ${focusedIndex === index ? 'bg-purple-50 dark:bg-purple-900/20 text-purple-600 dark:text-purple-400' : ''}
+                    `}
                     initial={{ opacity: 0, x: -20 }}
                     animate={{ opacity: 1, x: 0 }}
                     transition={{ delay: index * 0.1 }}
+                    role="menuitem"
+                    tabIndex={isMenuOpen ? 0 : -1}
+                    ref={el => {
+                      if (el && focusedIndex === index && isMenuOpen) {
+                        el.focus()
+                      }
+                    }}
                   >
                     {item.label}
                   </motion.button>
                 ))}
-                <div className="pt-4 border-t border-gray-200 dark:border-gray-700">
+                <div className="pt-4 mt-2 border-t border-gray-200 dark:border-gray-800">
                   <Button 
                     size="sm"
-                    className="w-full bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700"
+                    className="w-full bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 focus:ring-offset-gray-950 dark:focus:ring-offset-gray-950"
                     onClick={() => scrollToSection('#pricing')}
+                    tabIndex={isMenuOpen ? 0 : -1}
                   >
                     {t('navigation.getStarted')}
                   </Button>
@@ -178,6 +253,7 @@ function NavigationContent({ className }: NavigationProps) {
         </AnimatePresence>
       </div>
     </motion.nav>
+    </>
   )
 }
 

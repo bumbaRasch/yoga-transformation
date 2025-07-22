@@ -131,15 +131,15 @@ export const PWAInstallPrompt = React.memo(function PWAInstallPrompt({
       </div>
       <div className="bg-gradient-to-br from-blue-50 to-indigo-50 dark:from-blue-900/10 dark:to-indigo-900/10 rounded-xl p-4 space-y-3">
         <div className="flex items-start space-x-3 text-sm text-gray-700 dark:text-gray-300">
-          <span className="flex-shrink-0 w-6 h-6 bg-blue-100 dark:bg-blue-800 text-blue-600 dark:text-blue-300 rounded-full flex items-center justify-center text-xs font-semibold">1</span>
+          <span className="flex-shrink-0 w-6 h-6 bg-blue-100 dark:bg-blue-900/50 text-blue-600 dark:text-blue-200 rounded-full flex items-center justify-center text-xs font-semibold">1</span>
           <p dangerouslySetInnerHTML={{ __html: t('pwa.ios.step1') }} />
         </div>
         <div className="flex items-start space-x-3 text-sm text-gray-700 dark:text-gray-300">
-          <span className="flex-shrink-0 w-6 h-6 bg-blue-100 dark:bg-blue-800 text-blue-600 dark:text-blue-300 rounded-full flex items-center justify-center text-xs font-semibold">2</span>
+          <span className="flex-shrink-0 w-6 h-6 bg-blue-100 dark:bg-blue-900/50 text-blue-600 dark:text-blue-200 rounded-full flex items-center justify-center text-xs font-semibold">2</span>
           <p dangerouslySetInnerHTML={{ __html: t('pwa.ios.step2') }} />
         </div>
         <div className="flex items-start space-x-3 text-sm text-gray-700 dark:text-gray-300">
-          <span className="flex-shrink-0 w-6 h-6 bg-blue-100 dark:bg-blue-800 text-blue-600 dark:text-blue-300 rounded-full flex items-center justify-center text-xs font-semibold">3</span>
+          <span className="flex-shrink-0 w-6 h-6 bg-blue-100 dark:bg-blue-900/50 text-blue-600 dark:text-blue-200 rounded-full flex items-center justify-center text-xs font-semibold">3</span>
           <p dangerouslySetInnerHTML={{ __html: t('pwa.ios.step3') }} />
         </div>
       </div>

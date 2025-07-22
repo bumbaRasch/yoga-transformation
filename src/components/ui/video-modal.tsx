@@ -157,7 +157,7 @@ export function VideoModal({
         <>
           {/* Backdrop */}
           <motion.div
-            className="fixed inset-0 bg-black/80 z-50 flex items-center justify-center p-4"
+            className="fixed inset-0 bg-black/50 dark:bg-black/80 backdrop-blur-sm z-50 flex items-center justify-center p-4"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
@@ -171,7 +171,7 @@ export function VideoModal({
             <motion.div
               ref={modalRef}
               className={`
-                relative bg-gray-900 rounded-xl overflow-hidden shadow-2xl w-full max-w-4xl
+                relative bg-white dark:bg-gray-900 rounded-xl overflow-hidden shadow-2xl w-full max-w-4xl
                 ${isFullscreen ? 'max-w-none w-screen h-screen rounded-none' : ''}
               `}
               initial={{ scale: 0.9, opacity: 0 }}
@@ -184,7 +184,7 @@ export function VideoModal({
               <Button
                 variant="ghost"
                 size="sm"
-                className={`absolute top-4 right-4 z-10 bg-black/50 hover:bg-black/70 text-white ${getFocusClasses('primary')}`}
+                className={`absolute top-4 right-4 z-10 bg-white/20 hover:bg-white/30 dark:bg-black/50 dark:hover:bg-black/70 text-gray-900 dark:text-white backdrop-blur-sm ${getFocusClasses('primary')}`}
                 onClick={onClose}
                 aria-label="Close video"
               >
@@ -195,7 +195,7 @@ export function VideoModal({
               <div className="relative group">
                 <video
                   ref={videoRef}
-                  className="w-full aspect-video bg-black"
+                  className="w-full aspect-video bg-gray-100 dark:bg-black"
                   poster={thumbnailUrl}
                   muted={isMuted}
                   playsInline
@@ -212,7 +212,7 @@ export function VideoModal({
                     <Button
                       variant="ghost"
                       size="lg"
-                      className="bg-black/50 hover:bg-black/70 text-white rounded-full p-4"
+                      className="bg-white/20 hover:bg-white/30 dark:bg-black/50 dark:hover:bg-black/70 text-gray-900 dark:text-white rounded-full p-4 backdrop-blur-sm"
                       onClick={togglePlay}
                       aria-label={isPlaying ? 'Pause video' : 'Play video'}
                     >
@@ -228,7 +228,7 @@ export function VideoModal({
                   <div className="absolute bottom-0 left-0 right-0 p-4">
                     {/* Progress Bar */}
                     <div 
-                      className="w-full h-2 bg-white/20 rounded-full cursor-pointer mb-3"
+                      className="w-full h-2 bg-gray-300 dark:bg-white/20 rounded-full cursor-pointer mb-3"
                       onClick={handleSeek}
                       role="slider"
                       aria-label="Video progress"
@@ -238,7 +238,7 @@ export function VideoModal({
                       tabIndex={0}
                     >
                       <div 
-                        className="h-full bg-purple-500 rounded-full transition-all"
+                        className="h-full bg-purple-600 dark:bg-purple-500 rounded-full transition-all"
                         style={{ width: `${progress}%` }}
                       />
                     </div>
@@ -249,7 +249,7 @@ export function VideoModal({
                         <Button
                           variant="ghost"
                           size="sm"
-                          className="text-white hover:bg-white/10"
+                          className="text-gray-700 dark:text-white hover:bg-gray-200 dark:hover:bg-white/10"
                           onClick={togglePlay}
                           aria-label={isPlaying ? 'Pause' : 'Play'}
                         >
@@ -259,14 +259,14 @@ export function VideoModal({
                         <Button
                           variant="ghost"
                           size="sm"
-                          className="text-white hover:bg-white/10"
+                          className="text-gray-700 dark:text-white hover:bg-gray-200 dark:hover:bg-white/10"
                           onClick={toggleMute}
                           aria-label={isMuted ? 'Unmute' : 'Mute'}
                         >
                           {isMuted ? <VolumeX className="w-4 h-4" /> : <Volume2 className="w-4 h-4" />}
                         </Button>
 
-                        <span className="text-white text-sm">
+                        <span className="text-gray-700 dark:text-white text-sm">
                           {formatTime(currentTime)} / {formatTime(duration)}
                         </span>
                       </div>
@@ -274,7 +274,7 @@ export function VideoModal({
                       <Button
                         variant="ghost"
                         size="sm"
-                        className="text-white hover:bg-white/10"
+                        className="text-gray-700 dark:text-white hover:bg-gray-200 dark:hover:bg-white/10"
                         onClick={toggleFullscreen}
                         aria-label={isFullscreen ? 'Exit fullscreen' : 'Enter fullscreen'}
                       >
@@ -287,18 +287,18 @@ export function VideoModal({
 
               {/* Video Info */}
               {!isFullscreen && (
-                <div className="p-6 bg-gray-900 text-white">
+                <div className="p-6 bg-gray-50 dark:bg-gray-900 text-gray-900 dark:text-white">
                   <h3 id="video-modal-title" className="text-xl font-semibold mb-2">
                     {title}
                   </h3>
                   {description && (
-                    <p id="video-modal-description" className="text-gray-300 text-sm leading-relaxed">
+                    <p id="video-modal-description" className="text-gray-600 dark:text-gray-300 text-sm leading-relaxed">
                       {description}
                     </p>
                   )}
                   
                   {/* Keyboard Shortcuts */}
-                  <div className="mt-4 text-xs text-gray-400">
+                  <div className="mt-4 text-xs text-gray-500 dark:text-gray-400">
                     <p>Keyboard shortcuts: Space/K = Play/Pause, M = Mute, F = Fullscreen, Esc = Close</p>
                   </div>
                 </div>

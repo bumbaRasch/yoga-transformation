@@ -6,7 +6,7 @@ import { Button } from '@/components/ui/button'
 import { footerSections, socialLinks } from '@/lib/navigation-data'
 import { ErrorBoundary } from '@/components/ui/error-boundary'
 import { useTranslations } from '@/contexts/language-context'
-import { useState, useRef } from 'react'
+import { useState, useRef, useEffect } from 'react'
 
 const socialIcons = {
   instagram: Instagram,
@@ -92,8 +92,9 @@ function NewsletterForm({ t }: NewsletterFormProps) {
                 border-2 transition-all duration-200 shadow-lg backdrop-blur-sm
                 focus:outline-none focus:ring-2 focus:ring-white/50 focus:border-white/50
                 disabled:opacity-60 disabled:cursor-not-allowed
-                ${status === 'error' ? 'border-red-300 bg-red-50' : 'border-white/20 bg-white/95'}
-                hover:border-white/40 hover:shadow-xl
+                ${status === 'error' ? 'border-red-300 bg-red-50 dark:border-red-500 dark:bg-red-950/50' : 'border-white/20 bg-white/95 dark:bg-gray-800/95 dark:border-gray-600'}
+                hover:border-white/40 dark:hover:border-gray-500 hover:shadow-xl
+                dark:text-white dark:placeholder-gray-400
               `}
               aria-label="Email address for newsletter subscription"
               aria-describedby={message ? "newsletter-message" : undefined}
@@ -110,7 +111,7 @@ function NewsletterForm({ t }: NewsletterFormProps) {
             shadow-lg hover:shadow-xl transform hover:scale-105 active:scale-95
             ${status === 'success' 
               ? 'bg-green-500 hover:bg-green-600 text-white' 
-              : 'bg-white text-purple-600 hover:bg-gray-50'
+              : 'bg-white dark:bg-gray-800 text-purple-600 dark:text-purple-400 hover:bg-gray-50 dark:hover:bg-gray-700'
             }
             disabled:transform-none disabled:hover:scale-100
           `}
@@ -160,8 +161,12 @@ function NewsletterForm({ t }: NewsletterFormProps) {
 }
 
 function FooterContent({ className }: FooterProps) {
-  const currentYear = new Date().getFullYear()
+  const [currentYear, setCurrentYear] = useState(2025)
   const t = useTranslations()
+  
+  useEffect(() => {
+    setCurrentYear(new Date().getFullYear())
+  }, [])
 
   const scrollToSection = (href: string) => {
     if (href.startsWith('#')) {
@@ -372,7 +377,7 @@ function FooterContent({ className }: FooterProps) {
 
       {/* Emergency CTA Bar */}
       <motion.div
-        className="bg-gradient-to-r from-red-600 to-orange-600 py-4"
+        className="bg-gradient-to-r from-red-600 to-orange-600 dark:from-red-700 dark:to-orange-700 py-4"
         initial={{ opacity: 0, y: 20 }}
         whileInView={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.6 }}
@@ -384,14 +389,14 @@ function FooterContent({ className }: FooterProps) {
               <p className="text-white font-semibold">
                 🔥 {t('cta.urgency.subtitle')}: 50% OFF All Plans
               </p>
-              <p className="text-orange-100 text-sm">
+              <p className="text-orange-100 dark:text-orange-200 text-sm">
                 {t('cta.urgency.title')}
               </p>
             </div>
             <Button
               size="sm"
               variant="secondary"
-              className="bg-white text-red-600 hover:bg-gray-100 min-w-32"
+              className="bg-white dark:bg-gray-100 text-red-600 dark:text-red-700 hover:bg-gray-100 dark:hover:bg-gray-200 min-w-32"
               onClick={() => scrollToSection('#pricing')}
             >
               {t('cta.urgency.button')}

@@ -1,53 +1,110 @@
 @import "tailwindcss";
 
 :root {
-  /* Light theme colors */
+  /* Light theme - Wellness-focused color palette */
   --background: #ffffff;
-  --foreground: #0f172a;
-  --muted: #f8fafc;
-  --muted-foreground: #64748b;
+  --foreground: #0f0a19;
+  --muted: #f5f3f7;
+  --muted-foreground: #564e63;
   --popover: #ffffff;
-  --popover-foreground: #0f172a;
+  --popover-foreground: #0f0a19;
   --card: #ffffff;
-  --card-foreground: #0f172a;
-  --border: #e2e8f0;
-  --input: #e2e8f0;
-  --primary: #8b5cf6;
+  --card-foreground: #0f0a19;
+  --border: #e9e5ed;
+  --input: #f5f3f7;
+  --primary: #7c3aed;
   --primary-foreground: #ffffff;
-  --secondary: #f1f5f9;
-  --secondary-foreground: #0f172a;
-  --accent: #f1f5f9;
-  --accent-foreground: #0f172a;
-  --destructive: #ef4444;
-  --destructive-foreground: #ffffff;
-  --ring: #8b5cf6;
+  --secondary: #f3e8ff;
+  --secondary-foreground: #0f0a19;
+  --accent: #e9d5ff;
+  --accent-foreground: #0f0a19;
+  --destructive: #dc2626;
+  --destructive-foreground: #fef2f2;
+  --ring: #7c3aed;
   --radius: 0.75rem;
+  
+  /* Wellness semantic colors */
+  --yoga-purple: #7c3aed;
+  --yoga-pink: #db2777;
+  --yoga-gradient-primary: linear-gradient(135deg, #7c3aed 0%, #db2777 100%);
+  --wellness-sage: #059669;
+  --wellness-sunset: #ea580c;
+  --wellness-lavender: #9333ea;
+  --wellness-coral: #f43f5e;
+  --wellness-sky: #0284c7;
+  --wellness-earth: #78716c;
+  
+  /* Subtle background variations */
+  --surface-primary: #faf5ff;
+  --surface-secondary: #f0f9ff;
+  --surface-accent: #ecfdf5;
+  --surface-warm: #fef3c7;
+  
+  /* Interactive states */
+  --hover-overlay: rgba(124, 58, 237, 0.04);
+  --active-overlay: rgba(124, 58, 237, 0.08);
+  --focus-ring: rgba(124, 58, 237, 0.5);
+  
+  /* Shadows */
+  --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+  --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+  --shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
 }
 
 .dark {
-  /* Dark theme colors */
-  --background: #0a0a0a;
-  --foreground: #f8fafc;
-  --muted: #1e293b;
-  --muted-foreground: #94a3b8;
-  --popover: #1e293b;
-  --popover-foreground: #f8fafc;
-  --card: #1e293b;
-  --card-foreground: #f8fafc;
-  --border: #334155;
-  --input: #334155;
+  /* Dark theme - Wellness-focused night palette */
+  --background: #0a0a0b;
+  --foreground: #fafafa;
+  --muted: #18181b;
+  --muted-foreground: #a8a29e;
+  --popover: #111113;
+  --popover-foreground: #fafafa;
+  --card: #111113;
+  --card-foreground: #fafafa;
+  --border: #27272a;
+  --input: #18181b;
   --primary: #a855f7;
   --primary-foreground: #ffffff;
-  --secondary: #1e293b;
-  --secondary-foreground: #f8fafc;
-  --accent: #1e293b;
-  --accent-foreground: #f8fafc;
-  --destructive: #f87171;
-  --destructive-foreground: #ffffff;
+  --secondary: #1e1b24;
+  --secondary-foreground: #fafafa;
+  --accent: #2e1065;
+  --accent-foreground: #fafafa;
+  --destructive: #ef4444;
+  --destructive-foreground: #fafafa;
   --ring: #a855f7;
+  
+  /* Wellness semantic colors - dark optimized */
+  --yoga-purple: #a855f7;
+  --yoga-pink: #ec4899;
+  --yoga-gradient-primary: linear-gradient(135deg, #a855f7 0%, #ec4899 100%);
+  --wellness-sage: #10b981;
+  --wellness-sunset: #f59e0b;
+  --wellness-lavender: #c084fc;
+  --wellness-coral: #f87171;
+  --wellness-sky: #0ea5e9;
+  --wellness-earth: #a3a3a3;
+  
+  /* Subtle background variations - dark */
+  --surface-primary: #14101a;
+  --surface-secondary: #0f1419;
+  --surface-accent: #0a1612;
+  --surface-warm: #1a1612;
+  
+  /* Interactive states - dark */
+  --hover-overlay: rgba(168, 85, 247, 0.08);
+  --active-overlay: rgba(168, 85, 247, 0.12);
+  --focus-ring: rgba(168, 85, 247, 0.5);
+  
+  /* Shadows - dark */
+  --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.8);
+  --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.8), 0 2px 4px -1px rgba(0, 0, 0, 0.6);
+  --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.8), 0 4px 6px -2px rgba(0, 0, 0, 0.6);
+  --shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.8), 0 10px 10px -5px rgba(0, 0, 0, 0.6);
 }
 
 @theme inline {
+  /* Base semantic tokens */
   --color-background: var(--background);
   --color-foreground: var(--foreground);
   --color-muted: var(--muted);
@@ -67,6 +124,35 @@
   --color-destructive: var(--destructive);
   --color-destructive-foreground: var(--destructive-foreground);
   --color-ring: var(--ring);
+  
+  /* Wellness semantic tokens */
+  --color-yoga-purple: var(--yoga-purple);
+  --color-yoga-pink: var(--yoga-pink);
+  --color-wellness-sage: var(--wellness-sage);
+  --color-wellness-sunset: var(--wellness-sunset);
+  --color-wellness-lavender: var(--wellness-lavender);
+  --color-wellness-coral: var(--wellness-coral);
+  --color-wellness-sky: var(--wellness-sky);
+  --color-wellness-earth: var(--wellness-earth);
+  
+  /* Surface variations */
+  --color-surface-primary: var(--surface-primary);
+  --color-surface-secondary: var(--surface-secondary);
+  --color-surface-accent: var(--surface-accent);
+  --color-surface-warm: var(--surface-warm);
+  
+  /* Interactive states */
+  --color-hover-overlay: var(--hover-overlay);
+  --color-active-overlay: var(--active-overlay);
+  --color-focus-ring: var(--focus-ring);
+  
+  /* Shadows */
+  --shadow-sm: var(--shadow-sm);
+  --shadow-md: var(--shadow-md);
+  --shadow-lg: var(--shadow-lg);
+  --shadow-xl: var(--shadow-xl);
+  
+  /* Typography */
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
 }
@@ -169,6 +255,12 @@ body {
 /* Smooth scroll improvements */
 html {
   scroll-behavior: smooth;
+  scroll-padding-top: 80px; /* Account for fixed navigation height + some padding */
+}
+
+/* Section scroll offset for navigation links */
+section[id] {
+  scroll-margin-top: 80px; /* Matches scroll-padding-top */
 }
 
 /* Advanced animation keyframes */
@@ -257,9 +349,187 @@ html {
   }
 }
 
-/* Dark mode 3D enhancements */
+/* Wellness-specific utility classes */
+.wellness-gradient-primary {
+  background: var(--yoga-gradient-primary);
+}
+
+.wellness-gradient-sage {
+  background: linear-gradient(135deg, var(--wellness-sage) 0%, var(--wellness-sky) 100%);
+}
+
+.wellness-gradient-sunset {
+  background: linear-gradient(135deg, var(--wellness-sunset) 0%, var(--wellness-coral) 100%);
+}
+
+.wellness-gradient-calm {
+  background: linear-gradient(135deg, var(--wellness-lavender) 0%, var(--wellness-sage) 100%);
+}
+
+.wellness-surface-primary {
+  background-color: var(--surface-primary);
+}
+
+.wellness-surface-secondary {
+  background-color: var(--surface-secondary);
+}
+
+.wellness-surface-accent {
+  background-color: var(--surface-accent);
+}
+
+.wellness-surface-warm {
+  background-color: var(--surface-warm);
+}
+
+/* Enhanced interactive states */
+button, a, [role="button"] {
+  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+button:hover, a:hover, [role="button"]:hover {
+  transform: translateY(-1px);
+}
+
+button:active, a:active, [role="button"]:active {
+  transform: translateY(0);
+}
+
+/* Focus visible styles */
+:focus-visible {
+  outline: 2px solid var(--ring);
+  outline-offset: 2px;
+}
+
+/* Button hover states */
+.hover\:bg-primary-light:hover {
+  background-color: color-mix(in srgb, var(--primary) 90%, white);
+}
+
+.hover\:bg-primary-dark:hover {
+  background-color: color-mix(in srgb, var(--primary) 90%, black);
+}
+
+/* Card hover effects */
+.card-hover {
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.card-hover:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-lg);
+}
+
+/* Input focus states */
+input:focus, textarea:focus, select:focus {
+  border-color: var(--primary);
+  box-shadow: 0 0 0 3px var(--focus-ring);
+}
+
+/* Link hover states */
+a:not(.no-underline):hover {
+  text-decoration-thickness: 2px;
+  text-underline-offset: 2px;
+}
+
+/* Enhanced wellness color animations */
+@keyframes wellness-glow {
+  0%, 100% {
+    box-shadow: 0 0 20px var(--yoga-purple);
+  }
+  50% {
+    box-shadow: 0 0 40px var(--yoga-purple), 0 0 60px var(--yoga-pink);
+  }
+}
+
+@keyframes sage-pulse {
+  0%, 100% {
+    color: var(--wellness-sage);
+    text-shadow: 0 0 10px var(--wellness-sage);
+  }
+  50% {
+    color: var(--wellness-sky);
+    text-shadow: 0 0 20px var(--wellness-sky);
+  }
+}
+
+.animate-wellness-glow {
+  animation: wellness-glow 3s ease-in-out infinite;
+}
+
+.animate-sage-pulse {
+  animation: sage-pulse 2s ease-in-out infinite;
+}
+
+/* System theme (auto) support */
+@media (prefers-color-scheme: light) {
+  :root:not(.dark) {
+    color-scheme: light;
+  }
+}
+
 @media (prefers-color-scheme: dark) {
+  :root:not(.light) {
+    color-scheme: dark;
+  }
+  
+  /* Auto dark mode colors when no theme class is set */
+  :root:not(.light) {
+    --background: #0a0a0b;
+    --foreground: #fafafa;
+    --muted: #18181b;
+    --muted-foreground: #a8a29e;
+    --popover: #111113;
+    --popover-foreground: #fafafa;
+    --card: #111113;
+    --card-foreground: #fafafa;
+    --border: #27272a;
+    --input: #18181b;
+    --primary: #a855f7;
+    --primary-foreground: #ffffff;
+    --secondary: #1e1b24;
+    --secondary-foreground: #fafafa;
+    --accent: #2e1065;
+    --accent-foreground: #fafafa;
+    --destructive: #ef4444;
+    --destructive-foreground: #fafafa;
+    --ring: #a855f7;
+    
+    /* Wellness semantic colors - dark optimized */
+    --yoga-purple: #a855f7;
+    --yoga-pink: #ec4899;
+    --yoga-gradient-primary: linear-gradient(135deg, #a855f7 0%, #ec4899 100%);
+    --wellness-sage: #10b981;
+    --wellness-sunset: #f59e0b;
+    --wellness-lavender: #c084fc;
+    --wellness-coral: #f87171;
+    --wellness-sky: #0ea5e9;
+    --wellness-earth: #a3a3a3;
+    
+    /* Subtle background variations - dark */
+    --surface-primary: #14101a;
+    --surface-secondary: #0f1419;
+    --surface-accent: #0a1612;
+    --surface-warm: #1a1612;
+    
+    /* Interactive states - dark */
+    --hover-overlay: rgba(168, 85, 247, 0.08);
+    --active-overlay: rgba(168, 85, 247, 0.12);
+    --focus-ring: rgba(168, 85, 247, 0.5);
+    
+    /* Shadows - dark */
+    --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.8);
+    --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.8), 0 2px 4px -1px rgba(0, 0, 0, 0.6);
+    --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.8), 0 4px 6px -2px rgba(0, 0, 0, 0.6);
+    --shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.8), 0 10px 10px -5px rgba(0, 0, 0, 0.6);
+  }
+  
+  /* Dark mode 3D enhancements */
   .transform-3d {
     filter: drop-shadow(0 6px 12px rgba(0,0,0,0.4)) !important;
+  }
+  
+  .wellness-gradient-primary {
+    filter: brightness(1.1) contrast(1.05);
   }
 }

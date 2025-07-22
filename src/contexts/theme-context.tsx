@@ -18,12 +18,20 @@ const ThemeContext = createContext<ThemeContextType | undefined>(undefined)
 export function ThemeProvider({ children }: { children: React.ReactNode }) {
   const [themeStorage, setThemeStorage] = useLocalStorage<Theme>('theme', 'system')
   const [systemPrefersDark, setSystemPrefersDark] = useState(false)
+  const [mounted, setMounted] = useState(false)
   
   // Ensure theme is never null
   const theme = themeStorage || 'system'
   
+  // Mark as mounted after hydration
+  useEffect(() => {
+    setMounted(true)
+  }, [])
+  
   // Detect system preference
   useEffect(() => {
+    if (!mounted) return
+    
     const mediaQuery = window.matchMedia('(prefers-color-scheme: dark)')
     setSystemPrefersDark(mediaQuery.matches)
     
@@ -33,13 +41,17 @@ export function ThemeProvider({ children }: { children: React.ReactNode }) {
     
     mediaQuery.addEventListener('change', handleChange)
     return () => mediaQuery.removeEventListener('change', handleChange)
-  }, [])
+  }, [mounted])
 
-  // Calculate actual dark mode state
-  const isDarkMode = theme === 'dark' || (theme === 'system' && systemPrefersDark)
+  // Calculate actual dark mode state - use SSR-safe default
+  const isDarkMode = mounted 
+    ? (theme === 'dark' || (theme === 'system' && systemPrefersDark))
+    : false // Default to light mode on server
   
   // Apply theme to document with smooth transitions
   useEffect(() => {
+    if (!mounted) return
+    
     const root = document.documentElement
     
     // Add transition class for smooth theme switching
@@ -59,7 +71,7 @@ export function ThemeProvider({ children }: { children: React.ReactNode }) {
     }, 300)
     
     return () => clearTimeout(timer)
-  }, [isDarkMode])
+  }, [isDarkMode, mounted])
 
   const toggleTheme = () => {
     const themeOrder: Theme[] = ['light', 'dark', 'system']
