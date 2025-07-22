@@ -20,6 +20,7 @@ const TestimonialCard = React.memo(function TestimonialCard({ testimonial, index
     <motion.div
       className={`
         relative bg-white dark:bg-gray-800 rounded-xl p-6 shadow-lg hover:shadow-xl transition-all duration-300
+        flex flex-col h-full
         ${featured ? 'ring-2 ring-purple-500 ring-opacity-50' : ''}
       `}
       initial={{ opacity: 0, y: 20 }}
@@ -45,8 +46,8 @@ const TestimonialCard = React.memo(function TestimonialCard({ testimonial, index
         </div>
       )}
 
-      {/* Header */}
-      <div className="flex items-start gap-4 mb-4">
+      {/* Header - Fixed Height Section */}
+      <div className="flex items-start gap-4 mb-6 flex-shrink-0 min-h-[100px]">
         {/* Avatar */}
         <div 
           className="w-14 h-14 bg-gradient-to-br from-purple-400 to-pink-500 rounded-full flex items-center justify-center text-white font-bold text-lg flex-shrink-0"
@@ -57,26 +58,26 @@ const TestimonialCard = React.memo(function TestimonialCard({ testimonial, index
         </div>
         
         {/* Info */}
-        <div className="flex-1">
+        <div className="flex-1 min-w-0">
           <div className="flex items-center gap-2 mb-1">
-            <h4 className="font-semibold text-gray-900 dark:text-white">
+            <h4 className="font-semibold text-gray-900 dark:text-white truncate">
               {testimonial.name}
             </h4>
             {testimonial.verified && (
-              <CheckCircle className="w-4 h-4 text-green-500" />
+              <CheckCircle className="w-4 h-4 text-green-500 flex-shrink-0" />
             )}
           </div>
-          <div className="flex items-center gap-2 text-sm text-gray-500 dark:text-gray-400 mb-2">
+          <div className="flex items-center gap-2 text-sm text-gray-500 dark:text-gray-400 mb-2 flex-wrap">
             <span>{t('testimonials.age', { age: testimonial.age })}</span>
             <span>•</span>
-            <div className="flex items-center gap-1">
-              <MapPin className="w-3 h-3" />
-              <span>{testimonial.location}</span>
+            <div className="flex items-center gap-1 min-w-0">
+              <MapPin className="w-6 h-6 flex-shrink-0" />
+              <span className="truncate">{testimonial.location}</span>
             </div>
             {testimonial.verified && (
               <>
                 <span>•</span>
-                <span className="text-green-600">{t('testimonials.verified')}</span>
+                <span className="text-green-600 whitespace-nowrap">{t('testimonials.verified')}</span>
               </>
             )}
           </div>
@@ -96,41 +97,48 @@ const TestimonialCard = React.memo(function TestimonialCard({ testimonial, index
         </div>
       </div>
 
-      {/* Content */}
-      <div className="space-y-4">
-        <h5 className="font-medium text-gray-900 dark:text-white">
-          {testimonial.title}
-        </h5>
-        <p className="text-gray-600 dark:text-gray-300 text-sm leading-relaxed">
-          &ldquo;{testimonial.content}&rdquo;
-        </p>
+      {/* Content - Flexible Section with Equal Distribution */}
+      <div className="flex flex-col flex-1 justify-between space-y-6">
+        {/* Title - Fixed Height */}
+        <div className="flex-shrink-0">
+          <h5 className="font-medium text-gray-900 dark:text-white line-clamp-2 h-[3rem] flex items-center">
+            {testimonial.title}
+          </h5>
+        </div>
 
-        {/* Transformation */}
-        <div className="bg-gradient-to-r from-green-50 to-blue-50 dark:from-green-900/20 dark:to-blue-900/20 rounded-lg p-4">
+        {/* Quote - Fixed Height with Consistent Spacing */}
+        <div className="flex-shrink-0">
+          <p className="text-gray-600 dark:text-gray-300 text-sm leading-relaxed line-clamp-4 h-[5.5rem] overflow-hidden">
+            &ldquo;{testimonial.content}&rdquo;
+          </p>
+        </div>
+
+        {/* Transformation - Fixed Height and Structure */}
+        <div className="bg-gradient-to-r from-green-50 to-blue-50 dark:from-green-900/20 dark:to-blue-900/20 rounded-lg p-4 flex-shrink-0 min-h-[140px] flex flex-col justify-between">
           <div className="flex items-center gap-2 mb-2">
-            <TrendingUp className="w-4 h-4 text-green-600" />
+            <TrendingUp className="w-4 h-4 text-green-600 flex-shrink-0" />
             <span className="text-sm font-medium text-green-700 dark:text-green-400">
               {t('testimonials.transformation', { timeframe: testimonial.transformation.timeframe })}
             </span>
           </div>
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 text-xs">
-            <div>
-              <span className="text-red-600 dark:text-red-400 font-medium">{t('testimonials.before')}</span>
-              <span className="text-gray-600 dark:text-gray-300">
+          <div className="grid grid-cols-1 gap-3 text-xs flex-1">
+            <div className="h-[2.5rem]">
+              <div className="text-red-600 dark:text-red-400 font-medium">{t('testimonials.before')}</div>
+              <div className="text-gray-600 dark:text-gray-300 line-clamp-2 leading-tight">
                 {testimonial.transformation.before}
-              </span>
+              </div>
             </div>
-            <div>
-              <span className="text-green-600 dark:text-green-400 font-medium">{t('testimonials.after')}</span>
-              <span className="text-gray-600 dark:text-gray-300">
+            <div className="h-[2.5rem]">
+              <div className="text-green-600 dark:text-green-400 font-medium">{t('testimonials.after')}</div>
+              <div className="text-gray-600 dark:text-gray-300 line-clamp-2 leading-tight">
                 {testimonial.transformation.after}
-              </span>
+              </div>
             </div>
           </div>
         </div>
 
-        {/* Tags */}
-        <div className="flex flex-wrap gap-2">
+        {/* Tags - Fixed Height at Bottom */}
+        <div className="flex flex-wrap gap-2 flex-shrink-0 h-[3rem] content-start">
           {testimonial.tags.slice(0, 3).map(tag => (
             <span
               key={tag}
@@ -223,7 +231,10 @@ function TestimonialsContent() {
         </motion.div>
 
         {/* Testimonials Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-8">
+        <div 
+          id="testimonials"
+          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-8 auto-rows-fr"
+        >
           {isLoading ? (
             // Skeleton loading state
             Array.from({ length: 6 }).map((_, index) => (
