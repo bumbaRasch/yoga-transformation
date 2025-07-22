@@ -19,11 +19,6 @@ export const navigationItems: ReadonlyArray<NavigationItem> = [
     href: '#benefits'
   },
   {
-    id: 'journey',
-    label: 'Your Journey',
-    href: '#timeline'
-  },
-  {
     id: 'instructor',
     label: 'Instructor',
     href: '#instructor'

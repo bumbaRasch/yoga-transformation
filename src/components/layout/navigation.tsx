@@ -23,7 +23,6 @@ function NavigationContent({ className }: NavigationProps) {
   // Navigation items with translations
   const navigationItems = [
     { id: 'benefits', label: t('navigation.benefits'), href: '#benefits' },
-    { id: 'timeline', label: t('navigation.timeline'), href: '#timeline' },
     { id: 'instructor', label: t('navigation.instructor'), href: '#instructor' },
     { id: 'testimonials', label: t('navigation.testimonials'), href: '#testimonials' },
     { id: 'pricing', label: t('navigation.pricing'), href: '#pricing' },

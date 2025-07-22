@@ -27,7 +27,6 @@ class PerformanceMonitor {
   private initializeBudgets() {
     // Define performance budgets
     this.setBudget('component-render', { budget: 16, warning: 10 }) // 60fps target
-    this.setBudget('timeline-animation', { budget: 100, warning: 50 })
     this.setBudget('navigation-scroll', { budget: 50, warning: 25 })
     this.setBudget('image-load', { budget: 1000, warning: 500 })
     this.setBudget('api-call', { budget: 2000, warning: 1000 })

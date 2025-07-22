@@ -107,11 +107,6 @@ export const ANIMATION_CONFIG = {
     duration: 0.8,
     ease: "easeOut"
   },
-  timeline: {
-    duration: 0.6,
-    delay: 0.2,
-    type: "spring" as const
-  },
   cards: {
     duration: 0.4,
     ease: "easeInOut"

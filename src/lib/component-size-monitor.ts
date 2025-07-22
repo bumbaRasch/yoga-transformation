@@ -75,7 +75,6 @@ export function logComponentSizes() {
   // This would be populated by a build-time analysis tool
   const componentSizes = [
     { name: 'VideoModal', lines: 308 },
-    { name: 'Timeline', lines: 273 },
     { name: 'Testimonials', lines: 278 },
     { name: 'Instructor', lines: 258 },
     { name: 'Pricing', lines: 266 },

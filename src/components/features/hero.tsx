@@ -15,10 +15,10 @@ export function Hero() {
   const t = useTranslations()
   const [isVideoOpen, setIsVideoOpen] = useState(false)
 
-  const scrollToTimeline = () => {
-    const timelineElement = document.getElementById('timeline')
-    if (timelineElement) {
-      timelineElement.scrollIntoView({ 
+  const scrollToBenefits = () => {
+    const benefitsElement = document.getElementById('benefits')
+    if (benefitsElement) {
+      benefitsElement.scrollIntoView({ 
         behavior: 'smooth',
         block: 'start'
       })
@@ -118,7 +118,7 @@ export function Hero() {
             <Button 
               size="xl" 
               className="min-w-48"
-              onClick={scrollToTimeline}
+              onClick={scrollToBenefits}
             >
               <Heart className="w-5 h-5" />
 {t('hero.ctaPrimary')}

@@ -10,7 +10,6 @@ interface SkipToContentProps {
 const skipLinks = [
   { href: '#main-content', labelKey: 'accessibility.skipToContent' },
   { href: '#benefits', labelKey: 'accessibility.skipToBenefits' },
-  { href: '#timeline', labelKey: 'accessibility.skipToJourney' },
   { href: '#testimonials', labelKey: 'accessibility.skipToReviews' },
   { href: '#pricing', labelKey: 'accessibility.skipToPricing' }
 ] as const

@@ -7,7 +7,6 @@ import { PWAInstallPrompt } from "@/components/ui/pwa-install-prompt"
 import { Hero } from "@/components/features/hero"
 import { Benefits } from "@/components/features/benefits"
 import { MidPageCTA } from "@/components/features/cta-sections"
-import { Timeline } from "@/components/features/timeline"
 import { ImageGallery } from "@/components/features/image-gallery"
 import { Instructor } from "@/components/features/instructor"
 import { Testimonials } from "@/components/features/testimonials"
@@ -27,9 +26,6 @@ export default function Home() {
           <Benefits />
         </section>
         <MidPageCTA />
-        <section id="timeline">
-          <Timeline currentDay={3} completedDays={[1, 2]} />
-        </section>
         <section id="gallery" className="bg-gray-50 dark:bg-gray-900/50">
           <ImageGallery />
         </section>
