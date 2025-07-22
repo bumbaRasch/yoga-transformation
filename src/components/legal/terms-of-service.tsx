@@ -22,10 +22,10 @@ export function TermsOfService() {
       <section className="mb-8">
         <h2>{t('legal.terms.definitions.title')}</h2>
         <ul>
-          <li><strong>"{t('legal.terms.definitions.service.title')}"</strong> {t('legal.terms.definitions.service.content')}</li>
-          <li><strong>"{t('legal.terms.definitions.user.title')}"</strong> {t('legal.terms.definitions.user.content')}</li>
-          <li><strong>"{t('legal.terms.definitions.content.title')}"</strong> {t('legal.terms.definitions.content.content')}</li>
-          <li><strong>"{t('legal.terms.definitions.account.title')}"</strong> {t('legal.terms.definitions.account.content')}</li>
+          <li><strong>&ldquo;{t('legal.terms.definitions.service.title')}&rdquo;</strong> {t('legal.terms.definitions.service.content')}</li>
+          <li><strong>&ldquo;{t('legal.terms.definitions.user.title')}&rdquo;</strong> {t('legal.terms.definitions.user.content')}</li>
+          <li><strong>&ldquo;{t('legal.terms.definitions.content.title')}&rdquo;</strong> {t('legal.terms.definitions.content.content')}</li>
+          <li><strong>&ldquo;{t('legal.terms.definitions.account.title')}&rdquo;</strong> {t('legal.terms.definitions.account.content')}</li>
         </ul>
       </section>
 
