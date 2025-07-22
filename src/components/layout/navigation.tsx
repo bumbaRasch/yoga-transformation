@@ -2,13 +2,13 @@
 
 import { useState, useEffect } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
-import { Menu, X, Heart, Sun, Moon } from 'lucide-react'
+import { Menu, X, Heart } from 'lucide-react'
 import { useTranslations } from '@/contexts/language-context'
 import { Button } from '@/components/ui/button'
 import { LanguageSwitcher } from '@/components/ui/language-switcher'
+import { ThemeToggleCompact } from '@/components/ui/theme-toggle'
 import { ErrorBoundary } from '@/components/ui/error-boundary'
 import { getFocusClasses } from '@/lib/focus-styles'
-import { useLocalStorage } from '@/hooks/useLocalStorage'
 
 interface NavigationProps {
   className?: string
@@ -18,8 +18,6 @@ function NavigationContent({ className }: NavigationProps) {
   const t = useTranslations()
   const [isMenuOpen, setIsMenuOpen] = useState(false)
   const [isScrolled, setIsScrolled] = useState(false)
-  const [isDarkMode, setIsDarkMode] = useLocalStorage('darkMode', false)
-
   // Navigation items with translations
   const navigationItems = [
     { id: 'benefits', label: t('navigation.benefits'), href: '#benefits' },
@@ -37,19 +35,6 @@ function NavigationContent({ className }: NavigationProps) {
     window.addEventListener('scroll', handleScroll)
     return () => window.removeEventListener('scroll', handleScroll)
   }, [])
-
-  // Initialize dark mode from localStorage
-  useEffect(() => {
-    if (isDarkMode) {
-      document.documentElement.classList.add('dark')
-    } else {
-      document.documentElement.classList.remove('dark')
-    }
-  }, [isDarkMode])
-
-  const toggleDarkMode = () => {
-    setIsDarkMode(!isDarkMode)
-  }
 
   const scrollToSection = (href: string) => {
     if (href.startsWith('#')) {
@@ -122,16 +107,8 @@ function NavigationContent({ className }: NavigationProps) {
 
           {/* Desktop Actions */}
           <div className="hidden md:flex items-center space-x-4">
-            {/* Dark Mode Toggle */}
-            <motion.button
-              onClick={toggleDarkMode}
-              className={`p-2 text-gray-700 dark:text-gray-300 hover:text-purple-600 dark:hover:text-purple-400 transition-colors rounded-md ${getFocusClasses('primary')}`}
-              whileHover={{ scale: 1.1 }}
-              whileTap={{ scale: 0.9 }}
-              aria-label={t('accessibility.toggleDarkMode')}
-            >
-              {isDarkMode ? <Sun className="w-5 h-5" /> : <Moon className="w-5 h-5" />}
-            </motion.button>
+            {/* Theme Toggle */}
+            <ThemeToggleCompact />
 
             {/* CTA Button */}
             <Button 
@@ -150,14 +127,7 @@ function NavigationContent({ className }: NavigationProps) {
           <div className="md:hidden flex items-center space-x-2">
             <LanguageSwitcher />
             
-            <motion.button
-              onClick={toggleDarkMode}
-              className="p-2 text-gray-700 dark:text-gray-300"
-              whileTap={{ scale: 0.9 }}
-              aria-label={t('accessibility.toggleDarkMode')}
-            >
-              {isDarkMode ? <Sun className="w-5 h-5" /> : <Moon className="w-5 h-5" />}
-            </motion.button>
+            <ThemeToggleCompact />
             
             <motion.button
               onClick={() => setIsMenuOpen(!isMenuOpen)}
