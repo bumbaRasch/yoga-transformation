@@ -306,21 +306,24 @@
       }
     },
     "additionalFeatures": {
+      "0": {
+        "title": "Expert-Guided Progress",
+        "description": "Follow Maya's structured 14-day program with daily guidance and personalized adjustments for optimal results."
+      },
+      "1": {
+        "title": "Wellness Community Access",
+        "description": "Connect with like-minded practitioners, share your journey, and get motivation from our supportive global community."
+      },
+      "2": {
+        "title": "Multi-Device Streaming",
+        "description": "Practice anywhere with seamless access across all your devices. Download sessions for offline use during travel."
+      },
+      "3": {
+        "title": "Satisfaction Guaranteed",
+        "description": "Experience real transformation with our 60-day money-back guarantee. Your wellness journey is completely risk-free."
+      },
       "moneyBackGuarantee": {
-        "title": "60-Day Money-Back Guarantee",
-        "description": "Try risk-free. If you're not completely satisfied, get a full refund."
-      },
-      "lifetimeAccess": {
-        "title": "Lifetime Access",
-        "description": "Keep all materials forever. Practice at your own pace, anytime."
-      },
-      "allDevicesSupported": {
-        "title": "All Devices Supported",
-        "description": "Access on mobile, tablet, or desktop. Download for offline use."
-      },
-      "supportiveCommunity": {
-        "title": "Supportive Community",
-        "description": "Join thousands of practitioners on the same transformation journey."
+        "title": "60-Day Money-Back Guarantee"
       }
     }
   },

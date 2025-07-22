@@ -306,21 +306,24 @@
       }
     },
     "additionalFeatures": {
+      "0": {
+        "title": "Expertengeführter Fortschritt",
+        "description": "Folge Mayas strukturiertem 14-Tage-Programm mit täglicher Anleitung und personalisierten Anpassungen für optimale Ergebnisse."
+      },
+      "1": {
+        "title": "Wellness-Community-Zugang",
+        "description": "Verbinde dich mit Gleichgesinnten, teile deine Reise und hole dir Motivation aus unserer unterstützenden globalen Gemeinschaft."
+      },
+      "2": {
+        "title": "Multi-Geräte-Streaming",
+        "description": "Übe überall mit nahtlosem Zugriff auf alle deine Geräte. Lade Sessions für Offline-Nutzung während Reisen herunter."
+      },
+      "3": {
+        "title": "Zufriedenheit garantiert",
+        "description": "Erlebe echte Transformation mit unserer 60-Tage Geld-zurück-Garantie. Deine Wellness-Reise ist völlig risikofrei."
+      },
       "moneyBackGuarantee": {
-        "title": "60-Tage Geld-zurück-Garantie",
-        "description": "Teste risikofrei. Wenn du nicht völlig zufrieden bist, erhältst du eine vollständige Rückerstattung."
-      },
-      "lifetimeAccess": {
-        "title": "Lebenslanger Zugang",
-        "description": "Behalte alle Materialien für immer. Übe in deinem eigenen Tempo, jederzeit."
-      },
-      "allDevicesSupported": {
-        "title": "Alle Geräte unterstützt",
-        "description": "Zugriff auf Handy, Tablet oder Desktop. Für Offline-Nutzung herunterladen."
-      },
-      "supportiveCommunity": {
-        "title": "Unterstützende Gemeinschaft",
-        "description": "Schließe dich Tausenden von Praktizierenden auf der gleichen Transformationsreise an."
+        "title": "60-Tage Geld-zurück-Garantie"
       }
     }
   },

@@ -306,21 +306,24 @@
       }
     },
     "additionalFeatures": {
+      "0": {
+        "title": "Progreso Guiado por Expertos",
+        "description": "Sigue el programa estructurado de 14 días de Maya con guía diaria y ajustes personalizados para resultados óptimos."
+      },
+      "1": {
+        "title": "Acceso a Comunidad de Bienestar",
+        "description": "Conéctate con practicantes afines, comparte tu viaje y obtén motivación de nuestra comunidad global de apoyo."
+      },
+      "2": {
+        "title": "Streaming Multi-Dispositivo",
+        "description": "Practica en cualquier lugar con acceso fluido en todos tus dispositivos. Descarga sesiones para uso sin conexión durante viajes."
+      },
+      "3": {
+        "title": "Satisfacción Garantizada",
+        "description": "Experimenta una transformación real con nuestra garantía de devolución de dinero de 60 días. Tu viaje de bienestar es completamente sin riesgo."
+      },
       "moneyBackGuarantee": {
-        "title": "Garantía de devolución de dinero de 60 días",
-        "description": "Prueba sin riesgo. Si no estás completamente satisfecho, obtén un reembolso completo."
-      },
-      "lifetimeAccess": {
-        "title": "Acceso de por vida",
-        "description": "Conserva todos los materiales para siempre. Practica a tu propio ritmo, en cualquier momento."
-      },
-      "allDevicesSupported": {
-        "title": "Compatible con todos los dispositivos",
-        "description": "Acceso en móvil, tablet o escritorio. Descarga para uso sin conexión."
-      },
-      "supportiveCommunity": {
-        "title": "Comunidad de apoyo",
-        "description": "Únete a miles de practicantes en el mismo viaje de transformación."
+        "title": "Garantía de Devolución de Dinero de 60 Días"
       }
     }
   },
