@@ -42,6 +42,7 @@ function PricingCard({ plan, index, isAnnual }: PricingCardProps) {
     <motion.div
       className={`
         relative bg-white dark:bg-gray-800 rounded-xl p-6 shadow-lg transition-all duration-300
+        flex flex-col h-full
         ${plan.popular ? 'ring-2 ring-purple-500 ring-opacity-50' : 'hover:shadow-xl'}
       `}
       initial={{ opacity: 0, y: 30 }}
@@ -64,17 +65,19 @@ function PricingCard({ plan, index, isAnnual }: PricingCardProps) {
         </div>
       )}
 
-      {/* Header */}
-      <div className="text-center mb-8">
-        <h3 className="text-2xl font-bold text-gray-900 dark:text-white mb-2">
-          {safeTranslate(`pricing.plans.${plan.id}.name`, plan.name)}
-        </h3>
-        <p className="text-gray-600 dark:text-gray-300 text-sm mb-6">
-          {safeTranslate(`pricing.plans.${plan.id}.description`, plan.description)}
-        </p>
+      {/* Header - Fixed Height Section */}
+      <div className="text-center mb-8 flex-shrink-0 min-h-[200px] flex flex-col justify-between">
+        <div className="flex-shrink-0">
+          <h3 className="text-2xl font-bold text-gray-900 dark:text-white mb-2">
+            {safeTranslate(`pricing.plans.${plan.id}.name`, plan.name)}
+          </h3>
+          <p className="text-gray-600 dark:text-gray-300 text-sm mb-6 line-clamp-2 h-[2.5rem] flex items-center justify-center">
+            {safeTranslate(`pricing.plans.${plan.id}.description`, plan.description)}
+          </p>
+        </div>
 
         {/* Pricing */}
-        <div className="space-y-2">
+        <div className="space-y-2 flex-shrink-0">
           {currentPrice.originalPrice && (
             <div className="flex items-center justify-center gap-2">
               <span className="text-sm text-gray-500 line-through">
@@ -102,65 +105,72 @@ function PricingCard({ plan, index, isAnnual }: PricingCardProps) {
         </div>
       </div>
 
-      {/* Features */}
-      <div className="space-y-4 mb-8">
-        {(plan.features || []).map((_, i) => (
-          <motion.div
-            key={i}
-            className="flex items-start gap-3"
-            initial={{ opacity: 0, x: -10 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ delay: index * 0.2 + i * 0.1 }}
-          >
-            <Check className="w-5 h-5 text-green-500 flex-shrink-0 mt-0.5" />
-            <span className="text-gray-700 dark:text-gray-300 text-sm">
-              {safeTranslate(`pricing.plans.${plan.id}.features.${i}`, plan.features[i])}
-            </span>
-          </motion.div>
-        ))}
-      </div>
-
-      {/* Benefits */}
-      <div className="mb-8">
-        <h4 className="font-semibold text-gray-900 dark:text-white mb-3 text-sm">
-          {safeTranslate('pricing.keyBenefits', 'Key Benefits:')}
-        </h4>
-        <div className="flex flex-wrap gap-2">
-          {(plan.benefits || []).map((_, i) => (
-            <span
-              key={i}
-              className="px-3 py-1 bg-purple-100 dark:bg-purple-900/30 text-purple-700 dark:text-purple-300 rounded-full text-xs font-medium"
-            >
-              {safeTranslate(`pricing.plans.${plan.id}.benefits.${i}`, plan.benefits[i])}
-            </span>
-          ))}
-        </div>
-      </div>
-
-      {/* CTA Button */}
-      <Button
-        size="lg"
-        className={`
-          w-full font-semibold
-          ${plan.popular 
-            ? 'bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700' 
-            : ''
-          }
-        `}
-        variant={plan.popular ? "default" : "outline"}
-      >
-        {safeTranslate(`pricing.plans.${plan.id}.cta`, plan.cta)}
-      </Button>
-
-      {/* Guarantee */}
-      {plan.id === 'vip' && (
-        <div className="mt-4 text-center">
-          <div className="flex items-center justify-center gap-2 text-sm text-green-600 dark:text-green-400">
-            <ShieldCheck className="w-4 h-4" />
-            <span>{safeTranslate('pricing.additionalFeatures.moneyBackGuarantee.title', '60-Day Money-Back Guarantee')}</span>
+      {/* Content - Flexible Section with Equal Distribution */}
+      <div className="flex flex-col flex-1 justify-between space-y-6">
+        {/* Features - Fixed Height */}
+        <div className="flex-shrink-0 min-h-[240px]">
+          <div className="space-y-3">
+            {(plan.features || []).slice(0, 6).map((_, i) => (
+              <motion.div
+                key={i}
+                className="flex items-start gap-3"
+                initial={{ opacity: 0, x: -10 }}
+                animate={{ opacity: 1, x: 0 }}
+                transition={{ delay: index * 0.2 + i * 0.1 }}
+              >
+                <Check className="w-5 h-5 text-green-500 flex-shrink-0 mt-0.5" />
+                <span className="text-gray-700 dark:text-gray-300 text-sm line-clamp-2">
+                  {safeTranslate(`pricing.plans.${plan.id}.features.${i}`, plan.features[i])}
+                </span>
+              </motion.div>
+            ))}
           </div>
         </div>
-      )}
+
+        {/* Benefits - Fixed Height */}
+        <div className="flex-shrink-0 min-h-[100px]">
+          <h4 className="font-semibold text-gray-900 dark:text-white mb-3 text-sm">
+            {safeTranslate('pricing.keyBenefits', 'Key Benefits:')}
+          </h4>
+          <div className="flex flex-wrap gap-2 content-start h-[60px] overflow-hidden">
+            {(plan.benefits || []).slice(0, 4).map((_, i) => (
+              <span
+                key={i}
+                className="px-3 py-1 bg-purple-100 dark:bg-purple-900/30 text-purple-700 dark:text-purple-300 rounded-full text-xs font-medium"
+              >
+                {safeTranslate(`pricing.plans.${plan.id}.benefits.${i}`, plan.benefits[i])}
+              </span>
+            ))}
+          </div>
+        </div>
+
+        {/* CTA Section - Fixed Height at Bottom */}
+        <div className="flex-shrink-0 mt-auto">
+          <Button
+            size="lg"
+            className={`
+              w-full font-semibold mb-4
+              ${plan.popular 
+                ? 'bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700' 
+                : ''
+              }
+            `}
+            variant={plan.popular ? "default" : "outline"}
+          >
+            {safeTranslate(`pricing.plans.${plan.id}.cta`, plan.cta)}
+          </Button>
+
+          {/* Guarantee - Fixed Height */}
+          <div className="h-[24px] flex items-center justify-center">
+            {plan.id === 'vip' && (
+              <div className="flex items-center justify-center gap-2 text-sm text-green-600 dark:text-green-400">
+                <ShieldCheck className="w-4 h-4" />
+                <span>{safeTranslate('pricing.additionalFeatures.moneyBackGuarantee.title', '60-Day Money-Back Guarantee')}</span>
+              </div>
+            )}
+          </div>
+        </div>
+      </div>
     </motion.div>
   )
 }
@@ -238,7 +248,10 @@ function PricingContent() {
         </motion.div>
 
         {/* Pricing Cards */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16">
+        <div 
+          id="pricing"
+          className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16 auto-rows-fr"
+        >
           {pricingPlans.map((plan, index) => (
             <PricingCard key={plan.id} plan={plan} index={index} isAnnual={isAnnual} />
           ))}
