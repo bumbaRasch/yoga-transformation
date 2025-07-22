@@ -41,8 +41,8 @@ function PricingCard({ plan, index, isAnnual }: PricingCardProps) {
   return (
     <motion.div
       className={`
-        relative bg-white dark:bg-gray-800 rounded-2xl p-8 shadow-lg transition-all duration-300
-        ${plan.popular ? 'ring-4 ring-purple-500 ring-opacity-50 scale-105' : 'hover:shadow-xl hover:scale-102'}
+        relative bg-white dark:bg-gray-800 rounded-xl p-6 shadow-lg transition-all duration-300
+        ${plan.popular ? 'ring-2 ring-purple-500 ring-opacity-50' : 'hover:shadow-xl'}
       `}
       initial={{ opacity: 0, y: 30 }}
       animate={{ opacity: 1, y: 0 }}
@@ -180,7 +180,7 @@ function PricingContent() {
   }
 
   return (
-    <section className="py-16 bg-white dark:bg-gray-900">
+    <section className="py-20 bg-white dark:bg-gray-900">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}
         <motion.div

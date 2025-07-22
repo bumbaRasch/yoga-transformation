@@ -13,7 +13,7 @@ export function MidPageCTA() {
   return (
     <ErrorBoundary>
       <motion.section
-        className="py-12 bg-gradient-to-r from-purple-600 to-pink-600"
+        className="py-16 bg-gradient-to-r from-purple-600 to-pink-600"
         initial={{ opacity: 0 }}
         whileInView={{ opacity: 1 }}
         transition={{ duration: 0.6 }}
@@ -55,7 +55,7 @@ export function UrgencyCTA() {
   return (
     <ErrorBoundary>
       <motion.section
-        className="py-16 bg-gradient-to-br from-orange-500 to-red-500"
+        className="py-20 bg-gradient-to-br from-orange-500 to-red-500"
         initial={{ opacity: 0 }}
         whileInView={{ opacity: 1 }}
         transition={{ duration: 0.6 }}
@@ -117,7 +117,7 @@ export function FinalCTA() {
   return (
     <ErrorBoundary>
       <motion.section
-        className="py-16 bg-gradient-to-r from-gray-900 via-purple-900 to-gray-900"
+        className="py-20 bg-gradient-to-r from-gray-900 via-purple-900 to-gray-900"
         initial={{ opacity: 0 }}
         whileInView={{ opacity: 1 }}
         transition={{ duration: 0.6 }}

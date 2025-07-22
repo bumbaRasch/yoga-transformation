@@ -67,7 +67,7 @@ function NewsletterForm({ t }: NewsletterFormProps) {
         setStatus('idle')
         setMessage('')
       }, 5000)
-    } catch (error) {
+    } catch {
       setStatus('error')
       setMessage('Something went wrong. Please try again.')
     }

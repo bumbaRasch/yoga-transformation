@@ -26,7 +26,7 @@ function InstructorContent() {
   const instructor = instructorData
 
   return (
-    <section className="py-16 bg-white dark:bg-gray-900">
+    <section className="py-20 bg-white dark:bg-gray-900">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}
         <motion.div
@@ -60,7 +60,7 @@ function InstructorContent() {
             transition={{ duration: 0.6, delay: 0.3 }}
           >
             {/* Instructor Image */}
-            <div className="relative mb-6 mt-44 sm:mt-48 md:mt-52 lg:mt-56">
+            <div className="relative mb-6">
               <motion.div
                 className="w-full aspect-square max-w-md mx-auto rounded-2xl overflow-hidden shadow-xl"
                 initial={{ scale: 0.9, opacity: 0 }}
@@ -337,7 +337,7 @@ function InstructorContent() {
               return (
                 <motion.div
                   key={achievement.id}
-                  className="bg-gradient-to-br from-white to-gray-50 dark:from-gray-800 dark:to-gray-900 rounded-lg p-6 text-center shadow-lg"
+                  className="bg-white dark:bg-gray-800 rounded-xl p-6 text-center shadow-lg hover:shadow-xl transition-all duration-300"
                   initial={{ opacity: 0, y: 20 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ delay: 1 + index * 0.1 }}

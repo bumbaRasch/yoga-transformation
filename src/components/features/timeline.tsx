@@ -27,30 +27,27 @@ interface TimelineDayCardProps {
 
 const TimelineDayCard = React.memo(function TimelineDayCard({
   day,
-  index,
   isCompleted,
   isCurrent,
   isAccessible,
   onDayClick
-}: TimelineDayCardProps) {
+}: Omit<TimelineDayCardProps, 'index'>) {
   const t = useTranslations()
   return (
-    <div className="h-full">
-      {/* Day Card - Consistent Layout */}
-      <div 
-        className={`
-          bg-white dark:bg-gray-800 rounded-xl shadow-lg p-6 h-full
-          flex flex-col min-h-[320px]
-          ${isCurrent(day) ? 'ring-2 ring-purple-500' : ''}
-          ${isCompleted(day) ? 'bg-green-50 dark:bg-green-900/20' : ''}
-          ${!isAccessible(day) ? 'opacity-60' : ''}
-          transition-all duration-300 hover:shadow-xl cursor-pointer
-        `}
-        role="article"
-        aria-labelledby={`day-${day.id}-title`}
-        aria-describedby={`day-${day.id}-description`}
-        tabIndex={isAccessible(day) ? 0 : -1}
-      >
+    <div 
+      className={`
+        bg-white dark:bg-gray-800 rounded-xl shadow-lg p-6 h-full
+        flex flex-col min-h-[320px]
+        ${isCurrent(day) ? 'ring-2 ring-purple-500' : ''}
+        ${isCompleted(day) ? 'bg-green-50 dark:bg-green-900/20' : ''}
+        ${!isAccessible(day) ? 'opacity-60' : ''}
+        transition-all duration-300 hover:shadow-xl cursor-pointer
+      `}
+      role="article"
+      aria-labelledby={`day-${day.id}-title`}
+      aria-describedby={`day-${day.id}-description`}
+      tabIndex={isAccessible(day) ? 0 : -1}
+    >
         {/* Day Number - Fixed Header */}
         <div className={`
           inline-flex items-center justify-center w-12 h-12 rounded-full mb-4 flex-shrink-0
@@ -124,7 +121,6 @@ const TimelineDayCard = React.memo(function TimelineDayCard({
           </Button>
         </div>
       </div>
-    </div>
   )
 })
 
@@ -140,13 +136,13 @@ function TimelineContent({ currentDay = 1, completedDays = [], onDayClick, class
     throw new Error('Invalid completedDays: All days must be between 1 and 14.')
   }
   // Use custom hook for optimized timeline logic
-  const { isCompleted, isCurrent, isAccessible, progressStats } = useTimeline({
+  const { isCompleted, isCurrent, isAccessible } = useTimeline({
     currentDay,
     completedDays
   })
 
   return (
-    <section className={`py-16 bg-gradient-to-b from-white to-gray-50 dark:from-gray-900 dark:to-gray-800 ${className || ''}`}>
+    <section className={`py-20 bg-gradient-to-b from-white to-gray-50 dark:from-gray-900 dark:to-gray-800 ${className || ''}`}>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-12">
           <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 dark:text-white mb-4">
@@ -158,12 +154,11 @@ function TimelineContent({ currentDay = 1, completedDays = [], onDayClick, class
         </div>
 
         {/* Timeline Days - Consistent Layout Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 auto-rows-fr">
-          {timelineData.map((day, index) => (
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          {timelineData.map((day) => (
             <TimelineDayCard
               key={day.id}
               day={day}
-              index={index}
               isCompleted={isCompleted}
               isCurrent={isCurrent}
               isAccessible={isAccessible}
