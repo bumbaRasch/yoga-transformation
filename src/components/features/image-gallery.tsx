@@ -69,7 +69,7 @@ export const ImageGallery = React.memo(function ImageGallery({
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section header */}
         <motion.div
-          className="text-center mb-16"
+          className="text-center mb-8"
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
@@ -85,7 +85,7 @@ export const ImageGallery = React.memo(function ImageGallery({
 
         {/* Gallery grid */}
         <motion.div
-          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8"
+          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4"
           variants={containerVariants}
           initial="hidden"
           whileInView="visible"
@@ -97,9 +97,9 @@ export const ImageGallery = React.memo(function ImageGallery({
               variants={itemVariants}
               className="group"
             >
-              <div className="relative overflow-hidden rounded-2xl bg-white dark:bg-gray-800 shadow-lg hover:shadow-2xl transition-all duration-300">
+              <div className="relative overflow-hidden rounded-lg bg-white dark:bg-gray-800 shadow-sm hover:shadow-md transition-all duration-300 hover:-translate-y-0.5">
                 {/* Image container */}
-                <div className="relative h-64 overflow-hidden">
+                <div className="relative h-78 overflow-hidden">
                   <OptimizedImage
                     src={image.src}
                     alt={image.altKey}
@@ -115,11 +115,11 @@ export const ImageGallery = React.memo(function ImageGallery({
                 </div>
 
                 {/* Content */}
-                <div className="p-6">
-                  <h3 className="text-xl font-semibold text-gray-900 dark:text-white mb-2 group-hover:text-purple-600 dark:group-hover:text-purple-400 transition-colors">
+                <div className="p-3">
+                  <h3 className="text-base font-semibold text-gray-900 dark:text-white mb-1 group-hover:text-purple-600 dark:group-hover:text-purple-400 transition-colors">
                     {t(`gallery.poses.${image.titleKey}.title`)}
                   </h3>
-                  <p className="text-gray-600 dark:text-gray-300 text-sm leading-relaxed">
+                  <p className="text-gray-600 dark:text-gray-300 text-xs leading-tight">
                     {t(`gallery.poses.${image.descriptionKey}.description`)}
                   </p>
                 </div>
@@ -141,7 +141,7 @@ export const ImageGallery = React.memo(function ImageGallery({
 
         {/* Performance note */}
         <motion.div
-          className="mt-12 text-center"
+          className="mt-6 text-center"
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
           viewport={{ once: true }}
