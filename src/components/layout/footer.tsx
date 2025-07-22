@@ -1,11 +1,12 @@
 'use client'
 
 import { motion } from 'framer-motion'
-import { Heart, Mail, Phone, MapPin, Instagram, Youtube, Twitter } from 'lucide-react'
+import { Heart, Mail, Phone, MapPin, Instagram, Youtube, Twitter, Send, CheckCircle, AlertCircle, Loader2 } from 'lucide-react'
 import { Button } from '@/components/ui/button'
 import { footerSections, socialLinks } from '@/lib/navigation-data'
 import { ErrorBoundary } from '@/components/ui/error-boundary'
 import { useTranslations } from '@/contexts/language-context'
+import { useState, useRef } from 'react'
 
 const socialIcons = {
   instagram: Instagram,
@@ -15,6 +16,147 @@ const socialIcons = {
 
 interface FooterProps {
   className?: string
+}
+
+interface NewsletterFormProps {
+  t: (key: string) => string
+}
+
+function NewsletterForm({ t }: NewsletterFormProps) {
+  const [email, setEmail] = useState('')
+  const [status, setStatus] = useState<'idle' | 'loading' | 'success' | 'error'>('idle')
+  const [message, setMessage] = useState('')
+  const inputRef = useRef<HTMLInputElement>(null)
+
+  const validateEmail = (email: string) => {
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/
+    return emailRegex.test(email)
+  }
+
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault()
+    
+    if (!email.trim()) {
+      setStatus('error')
+      setMessage('Please enter your email address.')
+      inputRef.current?.focus()
+      return
+    }
+
+    if (!validateEmail(email)) {
+      setStatus('error')
+      setMessage('Please enter a valid email address.')
+      inputRef.current?.focus()
+      return
+    }
+
+    setStatus('loading')
+    setMessage('')
+
+    try {
+      // Simulate API call - replace with actual newsletter subscription
+      await new Promise(resolve => setTimeout(resolve, 2000))
+      
+      // For now, just simulate success
+      setStatus('success')
+      setMessage(t('footer.newsletter.success'))
+      setEmail('')
+      
+      // Reset status after 5 seconds
+      setTimeout(() => {
+        setStatus('idle')
+        setMessage('')
+      }, 5000)
+    } catch (error) {
+      setStatus('error')
+      setMessage('Something went wrong. Please try again.')
+    }
+  }
+
+  const isDisabled = status === 'loading' || status === 'success'
+
+  return (
+    <form onSubmit={handleSubmit} className="space-y-4">
+      <div className="flex flex-col sm:flex-row gap-3 justify-center items-stretch max-w-lg mx-auto">
+        <div className="flex-1 relative">
+          <div className="relative">
+            <input
+              ref={inputRef}
+              type="email"
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
+              placeholder={t('footer.newsletter.placeholder')}
+              disabled={isDisabled}
+              className={`
+                w-full px-4 py-3.5 pr-10 rounded-xl text-gray-900 placeholder-gray-500 
+                border-2 transition-all duration-200 shadow-lg backdrop-blur-sm
+                focus:outline-none focus:ring-2 focus:ring-white/50 focus:border-white/50
+                disabled:opacity-60 disabled:cursor-not-allowed
+                ${status === 'error' ? 'border-red-300 bg-red-50' : 'border-white/20 bg-white/95'}
+                hover:border-white/40 hover:shadow-xl
+              `}
+              aria-label="Email address for newsletter subscription"
+              aria-describedby={message ? "newsletter-message" : undefined}
+            />
+            <Mail className="absolute right-3 top-1/2 transform -translate-y-1/2 w-5 h-5 text-gray-400" />
+          </div>
+        </div>
+        <Button 
+          type="submit"
+          size="lg"
+          disabled={isDisabled}
+          className={`
+            min-w-[160px] h-[54px] rounded-xl font-semibold transition-all duration-300
+            shadow-lg hover:shadow-xl transform hover:scale-105 active:scale-95
+            ${status === 'success' 
+              ? 'bg-green-500 hover:bg-green-600 text-white' 
+              : 'bg-white text-purple-600 hover:bg-gray-50'
+            }
+            disabled:transform-none disabled:hover:scale-100
+          `}
+        >
+          {status === 'loading' ? (
+            <>
+              <Loader2 className="w-4 h-4 mr-2 animate-spin" />
+              Subscribing...
+            </>
+          ) : status === 'success' ? (
+            <>
+              <CheckCircle className="w-4 h-4 mr-2" />
+              Subscribed!
+            </>
+          ) : (
+            <>
+              <Send className="w-4 h-4 mr-2" />
+              {t('footer.newsletter.button')}
+            </>
+          )}
+        </Button>
+      </div>
+      
+      {/* Status Message */}
+      {message && (
+        <motion.div
+          id="newsletter-message"
+          initial={{ opacity: 0, y: -10 }}
+          animate={{ opacity: 1, y: 0 }}
+          className={`
+            flex items-center justify-center gap-2 text-sm max-w-lg mx-auto
+            ${status === 'error' ? 'text-red-200' : 'text-green-200'}
+          `}
+          role={status === 'error' ? 'alert' : 'status'}
+          aria-live="polite"
+        >
+          {status === 'error' ? (
+            <AlertCircle className="w-4 h-4 flex-shrink-0" />
+          ) : (
+            <CheckCircle className="w-4 h-4 flex-shrink-0" />
+          )}
+          <span>{message}</span>
+        </motion.div>
+      )}
+    </form>
+  )
 }
 
 function FooterContent({ className }: FooterProps) {
@@ -37,39 +179,69 @@ function FooterContent({ className }: FooterProps) {
     <footer className={`bg-gray-900 text-white ${className || ''}`}>
       {/* Newsletter Section */}
       <motion.section
-        className="bg-gradient-to-r from-purple-600 to-pink-600 py-12"
+        className="relative bg-gradient-to-br from-purple-600 via-purple-700 to-pink-600 py-16 overflow-hidden"
         initial={{ opacity: 0, y: 20 }}
         whileInView={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.6 }}
         viewport={{ once: true }}
       >
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        {/* Background Pattern */}
+        <div className="absolute inset-0 opacity-10">
+          <div className="absolute top-10 left-10 w-32 h-32 bg-white rounded-full blur-3xl"></div>
+          <div className="absolute bottom-10 right-10 w-40 h-40 bg-pink-300 rounded-full blur-3xl"></div>
+          <div className="absolute top-1/2 left-1/3 w-24 h-24 bg-purple-300 rounded-full blur-2xl"></div>
+        </div>
+        
+        <div className="relative max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center">
-            <h3 className="text-2xl font-bold text-white mb-4">
-              {t('footer.newsletter.title')}
-            </h3>
-            <p className="text-purple-100 mb-6 max-w-2xl mx-auto">
-              {t('footer.newsletter.subtitle')}
-            </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center items-center max-w-md mx-auto">
-              <div className="flex-1 w-full">
-                <input
-                  type="email"
-                  placeholder={t('footer.newsletter.placeholder')}
-                  className="w-full px-4 py-3 rounded-lg text-gray-900 placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-white/50"
-                />
+            {/* Header */}
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.1 }}
+              viewport={{ once: true }}
+              className="mb-8"
+            >
+              <div className="inline-flex items-center justify-center w-16 h-16 bg-white/20 rounded-full backdrop-blur-sm mb-4">
+                <Mail className="w-8 h-8 text-white" />
               </div>
-              <Button 
-                size="lg" 
-                variant="secondary"
-                className="min-w-32 bg-white text-purple-600 hover:bg-gray-100"
-              >
-                {t('footer.newsletter.button')}
-              </Button>
-            </div>
-            <p className="text-xs text-purple-200 mt-3">
+              <h3 className="text-3xl md:text-4xl font-bold text-white mb-4 leading-tight">
+                {t('footer.newsletter.title')}
+              </h3>
+              <p className="text-purple-100 text-lg mb-2 max-w-2xl mx-auto leading-relaxed">
+                {t('footer.newsletter.subtitle')}
+              </p>
+              <div className="flex items-center justify-center gap-2 text-purple-200 text-sm">
+                <CheckCircle className="w-4 h-4" />
+                <span>Free weekly content</span>
+                <span className="mx-2">•</span>
+                <CheckCircle className="w-4 h-4" />
+                <span>No spam, ever</span>
+              </div>
+            </motion.div>
+
+            {/* Newsletter Form */}
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.2 }}
+              viewport={{ once: true }}
+              className="mb-6"
+            >
+              <NewsletterForm t={t} />
+            </motion.div>
+
+            {/* Privacy Notice */}
+            <motion.p
+              initial={{ opacity: 0 }}
+              whileInView={{ opacity: 1 }}
+              transition={{ duration: 0.6, delay: 0.3 }}
+              viewport={{ once: true }}
+              className="text-xs text-purple-200 flex items-center justify-center gap-2"
+            >
+              <Heart className="w-3 h-3" />
               {t('footer.newsletter.privacy')}
-            </p>
+            </motion.p>
           </div>
         </div>
       </motion.section>
